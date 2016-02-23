@@ -3,6 +3,8 @@ HostsToolforMac是Mac平台下的一个简易工具，来获取最新的hosts更
 
 hosts由 (https://github.com/racaljk/hosts.git) 提供
 
+开发语言：Swift
+
 ##预览
 ####手动更新：
 ![image](https://github.com/ZzzM/hosts/blob/master/hosts_tools/HostsToolforMac/Preview/manual.gif)
