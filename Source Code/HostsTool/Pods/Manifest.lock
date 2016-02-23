@@ -1,0 +1,10 @@
+PODS:
+  - DJProgressHUD_OSX (0.0.1)
+
+DEPENDENCIES:
+  - DJProgressHUD_OSX
+
+SPEC CHECKSUMS:
+  DJProgressHUD_OSX: a8de6d2da8750dbf671fcddc649a44a9cd2807c4
+
+COCOAPODS: 0.39.0
