@@ -17,6 +17,7 @@ class ViewController: NSViewController {
     let kAddHosts = "请导入hosts文件"
     let kNoHosts = "hosts文件为空"
     let kDownloadFail = "hosts下载失败,请检查网络连接"
+     let kNoPermission = "请依次开启\"/private/etc/hosts\"目录下，etc文件夹和hosts的\"读与写\"权限"
     
     var content : NSString!
     let alert:NSAlert = NSAlert()
@@ -116,9 +117,17 @@ class ViewController: NSViewController {
                 
                 alert.messageText = self.kUpdateSuccess
             }
-            catch
+            catch let error as NSError
             {
-                alert.messageText = self.kUpdateFail
+                if error.localizedDescription.containsString("permission")
+                {
+                    alert.messageText = self.kNoPermission
+                }
+                else
+                {
+                    alert.messageText = self.kUpdateFail
+                }
+                
             }
             
         }
