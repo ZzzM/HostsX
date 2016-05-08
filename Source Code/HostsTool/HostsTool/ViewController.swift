@@ -14,44 +14,30 @@ class ViewController: NSViewController {
 
     let kUpdateFail = "更新失败"
     let kUpdateSuccess = "更新成功"
-    let kAddHosts = "请导入hosts文件"
-    let kNoHosts = "hosts文件为空"
+    let kAddHosts = "请导入正确的hosts"
+    let kNoHosts = "hosts为空"
     let kDownloadFail = "hosts下载失败,请检查网络连接"
-     let kNoPermission = "请依次开启\"/private/etc/hosts\"目录下，etc文件夹和hosts的\"读与写\"权限"
+    let kNoPermission = "请依次开启\"/private/etc/hosts\"目录下，etc文件夹和hosts的\"读与写\"权限"
+    let kPlaceholder = "拖拽或者点击来添加hosts"
+    let  kHostsUrl = "https://raw.githubusercontent.com/racaljk/hosts/master/hosts"
     
     var content : NSString!
     let alert:NSAlert = NSAlert()
     
-    @IBOutlet weak var pathLabel: NSTextField!
-    
+    @IBOutlet weak var dragView: DragView!
+    @IBOutlet weak var hostsPathText: NSTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        // Do any additional setup after loading the view.
+        self.dragView.filePathClosure = {
+            (filePathString)->Void in
+            self.hostsPathText.stringValue = filePathString;
+        }
     }
 
-    @IBAction func selectHostsPathButtonClicked(sender: AnyObject) {
-    
-        let openPanel = NSOpenPanel()
-        openPanel.allowsMultipleSelection = false
-        openPanel.canChooseDirectories = false
-        openPanel.canCreateDirectories = false
-        openPanel.canChooseFiles = true
-        openPanel.beginWithCompletionHandler { (result) -> Void in
-            if result == NSFileHandlingPanelOKButton {
-                self.pathLabel.stringValue = openPanel.URL!.path!
-            }
-        }
-      
-    }
-    
-    @IBAction func manualUpdateHosts(sender: AnyObject) {
-    
-        
-        let pathString:NSString =  self.pathLabel.stringValue
-       
+   
+    @IBAction func manualClicked(sender: AnyObject) {
+        let pathString:NSString =  self.hostsPathText.stringValue
         let array:NSArray = pathString.componentsSeparatedByString("/")
         
         DJProgressHUD.showStatus("", fromView: self.view)
@@ -65,7 +51,7 @@ class ViewController: NSViewController {
             {
                 do
                 {
-                    self.content = try NSString(contentsOfFile: self.pathLabel.stringValue, encoding: NSUTF8StringEncoding)
+                    self.content = try NSString(contentsOfFile: self.hostsPathText.stringValue, encoding: NSUTF8StringEncoding)
                     self.updateHosts()
                 }
                 catch
@@ -76,21 +62,23 @@ class ViewController: NSViewController {
             
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 DJProgressHUD.dismiss()
+                if self.alert.messageText != self.kUpdateSuccess
+                {
+                    self.dragView.configBackgroundColor(0.1)
+                    self.hostsPathText.stringValue = self.kPlaceholder
+                }
                 self.alert.runModal()
             })
         })
-        
-        
-        
+
     }
 
-    @IBAction func autoUpdateHosts(sender: AnyObject) {
-        
+    @IBAction func autoClicked(sender: AnyObject) {
         DJProgressHUD.showStatus("", fromView: self.view)
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), { () -> Void in
             do
             {
-                self.content = try NSString(contentsOfURL: NSURL(string: "https://raw.githubusercontent.com/racaljk/hosts/master/hosts")!, encoding: NSUTF8StringEncoding)
+                self.content = try NSString(contentsOfURL: NSURL(string: self.kHostsUrl)!, encoding: NSUTF8StringEncoding)
                 self.updateHosts()
             }
             catch
@@ -102,19 +90,17 @@ class ViewController: NSViewController {
                 self.alert.runModal()
             })
         })
-        
+
     }
-    
+
     func updateHosts()
     {
         let hosts:String = "/private/etc/hosts"
         if content.length > 0
         {
-            
             do
             {
                 try content .writeToFile(hosts, atomically: true, encoding: NSUTF8StringEncoding)
-                
                 alert.messageText = self.kUpdateSuccess
             }
             catch let error as NSError
@@ -127,9 +113,7 @@ class ViewController: NSViewController {
                 {
                     alert.messageText = self.kUpdateFail
                 }
-                
             }
-            
         }
         else
         {
@@ -137,6 +121,9 @@ class ViewController: NSViewController {
         }
     }
     
+    @IBAction func lookClicked(sender: AnyObject) {
+        NSWorkspace.sharedWorkspace().openURL(NSURL(string:kHostsUrl)!)
+    }
     override var representedObject: AnyObject? {
         didSet {
         // Update the view, if already loaded.

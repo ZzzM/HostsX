@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		354CA93A9A9D3463CAE28EF7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F5C5E6E7447B5A8288E408EC /* libPods.a */; };
+		986E46E91CD1FB6E004BA9C7 /* DragView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986E46E81CD1FB6E004BA9C7 /* DragView.swift */; };
+		98940EFE1CDE2A2D0060EB2D /* update@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 98940EFD1CDE2A2D0060EB2D /* update@2x.png */; };
 		98953CC31C7318720061CD27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98953CC21C7318720061CD27 /* AppDelegate.swift */; };
 		98953CC51C7318720061CD27 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98953CC41C7318720061CD27 /* ViewController.swift */; };
 		98953CC71C7318720061CD27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98953CC61C7318720061CD27 /* Assets.xcassets */; };
@@ -18,6 +20,8 @@
 		0136280727DA792DF41979B1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		2B474500696B07453B2D0AA7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		984002401C7459E200CDE47F /* Bridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bridge.h; sourceTree = "<group>"; };
+		986E46E81CD1FB6E004BA9C7 /* DragView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragView.swift; sourceTree = "<group>"; };
+		98940EFD1CDE2A2D0060EB2D /* update@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "update@2x.png"; sourceTree = "<group>"; };
 		98953CBF1C7318720061CD27 /* HostsTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HostsTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98953CC21C7318720061CD27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98953CC41C7318720061CD27 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -48,9 +52,18 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		986E474E1CD9BFEE004BA9C7 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				98940EFD1CDE2A2D0060EB2D /* update@2x.png */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		98953CB61C7318720061CD27 = {
 			isa = PBXGroup;
 			children = (
+				986E474E1CD9BFEE004BA9C7 /* Resource */,
 				98953CC11C7318720061CD27 /* HostsTool */,
 				98953CC01C7318720061CD27 /* Products */,
 				4D32854EE17D1F58F50A5A6C /* Pods */,
@@ -75,6 +88,7 @@
 				98953CC81C7318720061CD27 /* Main.storyboard */,
 				98953CCB1C7318720061CD27 /* Info.plist */,
 				984002401C7459E200CDE47F /* Bridge.h */,
+				986E46E81CD1FB6E004BA9C7 /* DragView.swift */,
 			);
 			path = HostsTool;
 			sourceTree = "<group>";
@@ -149,6 +163,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				98953CC71C7318720061CD27 /* Assets.xcassets in Resources */,
+				98940EFE1CDE2A2D0060EB2D /* update@2x.png in Resources */,
 				98953CCA1C7318720061CD27 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -210,6 +225,7 @@
 			files = (
 				98953CC51C7318720061CD27 /* ViewController.swift in Sources */,
 				98953CC31C7318720061CD27 /* AppDelegate.swift in Sources */,
+				986E46E91CD1FB6E004BA9C7 /* DragView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
