@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="XfG-lQ-9wD">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="XfG-lQ-9wD">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9532"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -650,10 +650,9 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hasShadow="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                        <windowStyleMask key="styleMask" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <rect key="contentRect" x="644" y="405" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                     </window>
                     <connections>
@@ -664,83 +663,76 @@
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
-        <!--🐵hosts Tool-->
+        <!--🙈-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController title="🐵hosts Tool" id="XfG-lQ-9wD" customClass="ViewController" customModule="HostsTool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="🙈" id="XfG-lQ-9wD" customClass="ViewController" customModule="HostsTool" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="265"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GRE-oS-aeW">
-                                <rect key="frame" x="20" y="219" width="280" height="22"/>
-                                <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" borderStyle="bezel" alignment="center" placeholderString="hosts路径" id="pSE-d5-6LR">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="elP-zh-2SC">
-                                <rect key="frame" x="181" y="171" width="119" height="25"/>
-                                <buttonCell key="cell" type="roundTextured" title="手动更新hosts" bezelStyle="texturedRounded" alignment="center" borderStyle="border" inset="2" id="UGb-2n-MVk">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" size="13" name=".PingFangSC-Regular"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="manualUpdateHosts:" target="XfG-lQ-9wD" id="tLP-e0-6mi"/>
-                                </connections>
-                            </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NN1-2d-4M3">
-                                <rect key="frame" x="350" y="214" width="110" height="25"/>
-                                <buttonCell key="cell" type="roundTextured" title="选择hosts" bezelStyle="texturedRounded" alignment="center" borderStyle="border" inset="2" id="VSL-4h-5Sd">
+                            <customView wantsLayer="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mIV-dm-Sbw" customClass="DragView" customModule="HostsTool" customModuleProvider="target">
+                                <rect key="frame" x="29" y="95" width="150" height="150"/>
+                                <subviews>
+                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w7F-Nu-4k7">
+                                        <rect key="frame" x="18" y="30" width="114" height="89"/>
+                                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="拖拽或者点击来添加hosts" placeholderString="" id="9Oj-yD-wCM">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </subviews>
+                            </customView>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lUy-HY-1jo">
+                                <rect key="frame" x="54" y="34" width="101" height="44"/>
+                                <buttonCell key="cell" type="square" title="-&gt;点击更新&lt;-" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="iCN-Rp-DYJ">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="selectHostsPathButtonClicked:" target="XfG-lQ-9wD" id="On1-wc-9Rj"/>
+                                    <action selector="manualClicked:" target="XfG-lQ-9wD" id="X4C-5V-8Ir"/>
                                 </connections>
                             </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Ln-ca-VfO">
-                                <rect key="frame" x="178" y="79" width="125" height="25"/>
-                                <buttonCell key="cell" type="roundTextured" title="自动下载更新hosts" bezelStyle="texturedRounded" alignment="center" borderStyle="border" inset="2" id="QOr-hQ-gXb">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" size="13" name=".PingFangSC-Regular"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="autoUpdateHosts:" target="XfG-lQ-9wD" id="RVV-8l-JIk"/>
-                                </connections>
-                            </button>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nf1-EW-BlD">
-                                <rect key="frame" x="94" y="148" width="291" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="（需要选择一个hosts）" id="MCb-9p-akL">
-                                    <font key="font" size="13" name=".PingFangSC-Regular"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gWl-eP-ghh">
-                                <rect key="frame" x="95" y="61" width="291" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="（网络下载hosts）" id="5g6-C7-nK7">
-                                    <font key="font" size="13" name=".PingFangSC-Regular"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="lZ1-Sz-RLK">
-                                <rect key="frame" x="0.0" y="133" width="480" height="5"/>
+                            <box horizontalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="iIK-BY-U3N">
+                                <rect key="frame" x="198" y="0.0" width="5" height="265"/>
                                 <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                                 <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <font key="titleFont" metaFont="system"/>
                             </box>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p0f-hq-Hhx">
+                                <rect key="frame" x="230" y="95" width="150" height="150"/>
+                                <buttonCell key="cell" type="square" title="点击可直接从网络更新hosts" bezelStyle="shadowlessSquare" image="update" imagePosition="above" alignment="center" lineBreakMode="charWrapping" imageScaling="proportionallyDown" inset="2" id="wWR-Eh-Pj4">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system" size="11"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="autoClicked:" target="XfG-lQ-9wD" id="pAa-94-OP2"/>
+                                </connections>
+                            </button>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3XT-h0-HBn">
+                                <rect key="frame" x="230" y="32" width="150" height="48"/>
+                                <buttonCell key="cell" type="square" title="-&gt;点击查看网络hosts-&lt;" bezelStyle="shadowlessSquare" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="9hn-Qn-1j5">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="lookClicked:" target="XfG-lQ-9wD" id="MvR-IW-QYb"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <connections>
-                        <outlet property="pathLabel" destination="GRE-oS-aeW" id="gsz-zW-F2r"/>
+                        <outlet property="dragView" destination="mIV-dm-Sbw" id="l22-Fk-AwQ"/>
+                        <outlet property="hostsPathText" destination="w7F-Nu-4k7" id="enV-tw-nNS"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="117" y="677"/>
+            <point key="canvasLocation" x="142" y="694.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="update" width="128" height="128"/>
+    </resources>
 </document>
