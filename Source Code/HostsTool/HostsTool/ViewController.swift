@@ -17,7 +17,6 @@ class ViewController: NSViewController {
     let kAddHosts = "请导入正确的hosts"
     let kNoHosts = "hosts为空"
     let kDownloadFail = "hosts下载失败,请检查网络连接"
-    let kNoPermission = "请依次开启\"/private/etc/hosts\"目录下，etc文件夹和hosts的\"读与写\"权限"
     let kPlaceholder = "拖拽或者点击来添加hosts"
     let  kHostsUrl = "https://raw.githubusercontent.com/racaljk/hosts/master/hosts"
     
@@ -107,7 +106,8 @@ class ViewController: NSViewController {
             {
                 if error.localizedDescription.containsString("permission")
                 {
-                    alert.messageText = self.kNoPermission
+                    self.updateByShellScript()
+                    //alert.messageText = self.kNoPermission
                 }
                 else
                 {
@@ -121,9 +121,29 @@ class ViewController: NSViewController {
         }
     }
     
+    func updateByShellScript()
+    {
+        let myAppleScript = String(format: "do shell script \"echo '%@' >~/../../private/etc/hosts\" with administrator privileges", content)
+        var error: NSDictionary?
+        if let scriptObject = NSAppleScript(source: myAppleScript) {
+            if let output: NSAppleEventDescriptor = scriptObject.executeAndReturnError(
+                &error) {
+                alert.messageText = self.kUpdateSuccess
+                print(output.stringValue)
+            } else if (error != nil) {
+                alert.messageText = self.kUpdateFail
+                print("error: \(error)")
+            }
+        }
+    }
+    
+    
     @IBAction func lookClicked(sender: AnyObject) {
         NSWorkspace.sharedWorkspace().openURL(NSURL(string:kHostsUrl)!)
     }
+
+    
+    
     override var representedObject: AnyObject? {
         didSet {
         // Update the view, if already loaded.
