@@ -7,8 +7,9 @@
 
 
 ####Update:
-1.可拖拽添加hosts<br/>
-2.UI简化
+提高安全性，在无hosts写入权限时，会提示以管理员身份写入（不会修改hosts读写权限）
+![](http://ww4.sinaimg.cn/large/77a575a6gw1f3w251z0l3g20nw0i5dxc.gif)
+
 
 ####操作预览：
 #####手动更新：
