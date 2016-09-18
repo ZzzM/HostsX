@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		354CA93A9A9D3463CAE28EF7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F5C5E6E7447B5A8288E408EC /* libPods.a */; };
 		986E46E91CD1FB6E004BA9C7 /* DragView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986E46E81CD1FB6E004BA9C7 /* DragView.swift */; };
+		987D751E1D8E9B49005CA71A /* me@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 987D751D1D8E9B49005CA71A /* me@2x.png */; };
 		98940EFE1CDE2A2D0060EB2D /* update@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 98940EFD1CDE2A2D0060EB2D /* update@2x.png */; };
 		98953CC31C7318720061CD27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98953CC21C7318720061CD27 /* AppDelegate.swift */; };
 		98953CC51C7318720061CD27 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98953CC41C7318720061CD27 /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 		2B474500696B07453B2D0AA7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		984002401C7459E200CDE47F /* Bridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bridge.h; sourceTree = "<group>"; };
 		986E46E81CD1FB6E004BA9C7 /* DragView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragView.swift; sourceTree = "<group>"; };
+		987D751D1D8E9B49005CA71A /* me@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "me@2x.png"; sourceTree = "<group>"; };
 		98940EFD1CDE2A2D0060EB2D /* update@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "update@2x.png"; sourceTree = "<group>"; };
 		98953CBF1C7318720061CD27 /* HostsTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HostsTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98953CC21C7318720061CD27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				98940EFD1CDE2A2D0060EB2D /* update@2x.png */,
+				987D751D1D8E9B49005CA71A /* me@2x.png */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -131,11 +134,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = ZhangMeng;
 				TargetAttributes = {
 					98953CBE1C7318720061CD27 = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -162,6 +166,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				987D751E1D8E9B49005CA71A /* me@2x.png in Resources */,
 				98953CC71C7318720061CD27 /* Assets.xcassets in Resources */,
 				98940EFE1CDE2A2D0060EB2D /* update@2x.png in Resources */,
 				98953CCA1C7318720061CD27 /* Main.storyboard in Resources */,
@@ -256,8 +261,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -279,7 +286,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -300,8 +307,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -317,9 +326,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
 		};
@@ -341,6 +351,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.iptop.HostsTool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/Bridge.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -362,6 +373,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.iptop.HostsTool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/Bridge.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="XfG-lQ-9wD">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="XfG-lQ-9wD">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11201"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -661,21 +661,22 @@
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="250"/>
+            <point key="canvasLocation" x="202" y="191"/>
         </scene>
-        <!--🙈-->
+        <!--HostsTool-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController title="🙈" id="XfG-lQ-9wD" customClass="ViewController" customModule="HostsTool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="HostsTool" id="XfG-lQ-9wD" customClass="ViewController" customModule="HostsTool" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="400" height="265"/>
+                        <rect key="frame" x="0.0" y="0.0" width="401" height="265"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <customView wantsLayer="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mIV-dm-Sbw" customClass="DragView" customModule="HostsTool" customModuleProvider="target">
-                                <rect key="frame" x="29" y="95" width="150" height="150"/>
+                            <customView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mIV-dm-Sbw" customClass="DragView" customModule="HostsTool" customModuleProvider="target">
+                                <rect key="frame" x="20" y="75" width="150" height="150"/>
                                 <subviews>
-                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w7F-Nu-4k7">
+                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="w7F-Nu-4k7">
                                         <rect key="frame" x="18" y="30" width="114" height="89"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="拖拽或者点击来添加hosts" placeholderString="" id="9Oj-yD-wCM">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -683,36 +684,49 @@
                                         </textFieldCell>
                                     </textField>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="2Yz-ZQ-Pc0"/>
+                                    <constraint firstAttribute="width" constant="150" id="Iqp-0z-u8D"/>
+                                </constraints>
                             </customView>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lUy-HY-1jo">
-                                <rect key="frame" x="54" y="34" width="101" height="44"/>
-                                <buttonCell key="cell" type="square" title="-&gt;点击更新&lt;-" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="iCN-Rp-DYJ">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lUy-HY-1jo">
+                                <rect key="frame" x="45" y="14" width="100" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="aqr-hv-qQ5"/>
+                                    <constraint firstAttribute="height" constant="30" id="yzc-H5-Mbg"/>
+                                </constraints>
+                                <buttonCell key="cell" type="inline" title="更新" bezelStyle="inline" alignment="center" refusesFirstResponder="YES" borderStyle="border" inset="2" id="iCN-Rp-DYJ">
+                                    <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
                                     <action selector="manualClicked:" target="XfG-lQ-9wD" id="X4C-5V-8Ir"/>
                                 </connections>
                             </button>
-                            <box horizontalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="iIK-BY-U3N">
+                            <box horizontalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="iIK-BY-U3N">
                                 <rect key="frame" x="198" y="0.0" width="5" height="265"/>
-                                <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                                <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <font key="titleFont" metaFont="system"/>
                             </box>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p0f-hq-Hhx">
-                                <rect key="frame" x="230" y="95" width="150" height="150"/>
-                                <buttonCell key="cell" type="square" title="点击可直接从网络更新hosts" bezelStyle="shadowlessSquare" image="update" imagePosition="above" alignment="center" lineBreakMode="charWrapping" imageScaling="proportionallyDown" inset="2" id="wWR-Eh-Pj4">
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="p0f-hq-Hhx">
+                                <rect key="frame" x="231" y="74" width="150" height="151"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="Mmr-QM-MdH"/>
+                                    <constraint firstAttribute="height" constant="150" id="Nwe-lV-yF8"/>
+                                </constraints>
+                                <buttonCell key="cell" type="inline" bezelStyle="inline" image="update" imagePosition="only" alignment="center" lineBreakMode="charWrapping" refusesFirstResponder="YES" borderStyle="border" inset="2" id="wWR-Eh-Pj4">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system" size="11"/>
+                                    <font key="font" metaFont="smallSystemBold"/>
                                 </buttonCell>
                                 <connections>
                                     <action selector="autoClicked:" target="XfG-lQ-9wD" id="pAa-94-OP2"/>
                                 </connections>
                             </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3XT-h0-HBn">
-                                <rect key="frame" x="230" y="32" width="150" height="48"/>
-                                <buttonCell key="cell" type="square" title="-&gt;点击查看网络hosts-&lt;" bezelStyle="shadowlessSquare" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="9hn-Qn-1j5">
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3XT-h0-HBn">
+                                <rect key="frame" x="256" y="14" width="100" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="1hd-jq-3Xz"/>
+                                    <constraint firstAttribute="height" constant="30" id="8e4-T2-ySf"/>
+                                </constraints>
+                                <buttonCell key="cell" type="inline" title="hosts" bezelStyle="inline" alignment="center" refusesFirstResponder="YES" borderStyle="border" inset="2" id="9hn-Qn-1j5">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -720,7 +734,36 @@
                                     <action selector="lookClicked:" target="XfG-lQ-9wD" id="MvR-IW-QYb"/>
                                 </connections>
                             </button>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="kiY-cG-0CP">
+                                <rect key="frame" x="380" y="244" width="16" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="7zS-zp-YxR"/>
+                                    <constraint firstAttribute="width" constant="16" id="UmO-5B-u1P"/>
+                                </constraints>
+                                <buttonCell key="cell" type="bevel" bezelStyle="circular" image="me" imagePosition="overlaps" alignment="left" lineBreakMode="charWrapping" refusesFirstResponder="YES" imageScaling="proportionallyUpOrDown" inset="2" id="idz-aF-Z9h">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="githubClicked:" target="XfG-lQ-9wD" id="HBX-nH-5xt"/>
+                                </connections>
+                            </button>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="p0f-hq-Hhx" firstAttribute="centerY" secondItem="mIV-dm-Sbw" secondAttribute="centerY" id="15E-lX-SrV"/>
+                            <constraint firstItem="p0f-hq-Hhx" firstAttribute="leading" secondItem="iIK-BY-U3N" secondAttribute="trailing" constant="30" id="5eo-u8-Bhf"/>
+                            <constraint firstItem="iIK-BY-U3N" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="AvC-Z4-7Gn"/>
+                            <constraint firstItem="iIK-BY-U3N" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="Ibp-E0-eQE"/>
+                            <constraint firstItem="kiY-cG-0CP" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="5" id="VUA-6o-U37"/>
+                            <constraint firstItem="iIK-BY-U3N" firstAttribute="leading" secondItem="mIV-dm-Sbw" secondAttribute="trailing" constant="30" id="Y05-QE-HMf"/>
+                            <constraint firstAttribute="bottom" secondItem="iIK-BY-U3N" secondAttribute="bottom" id="bmN-ke-vFt"/>
+                            <constraint firstItem="mIV-dm-Sbw" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="40" id="hAc-MY-XHj"/>
+                            <constraint firstItem="3XT-h0-HBn" firstAttribute="centerY" secondItem="lUy-HY-1jo" secondAttribute="centerY" id="hZW-Qb-faw"/>
+                            <constraint firstItem="3XT-h0-HBn" firstAttribute="centerX" secondItem="p0f-hq-Hhx" secondAttribute="centerX" id="jdz-Gg-sve"/>
+                            <constraint firstAttribute="trailing" secondItem="kiY-cG-0CP" secondAttribute="trailing" constant="5" id="o1I-QO-8JQ"/>
+                            <constraint firstItem="lUy-HY-1jo" firstAttribute="top" secondItem="mIV-dm-Sbw" secondAttribute="bottom" constant="30" id="x0c-CU-oHv"/>
+                            <constraint firstItem="lUy-HY-1jo" firstAttribute="centerX" secondItem="mIV-dm-Sbw" secondAttribute="centerX" id="y1L-bw-far"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="dragView" destination="mIV-dm-Sbw" id="l22-Fk-AwQ"/>
@@ -729,10 +772,11 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="142" y="694.5"/>
+            <point key="canvasLocation" x="142.5" y="694.5"/>
         </scene>
     </scenes>
     <resources>
+        <image name="me" width="32" height="32"/>
         <image name="update" width="128" height="128"/>
     </resources>
 </document>
