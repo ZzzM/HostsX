@@ -14,13 +14,13 @@ class ViewController: NSViewController {
 
     let kUpdateFail = "更新失败"
     let kUpdateSuccess = "更新成功"
-    let kAddHosts = "请导入正确的hosts"
+    let kAddHosts = "请检查导入的内容"
     let kNoHosts = "hosts为空"
     let kDownloadFail = "hosts下载失败,请检查网络连接"
     let kPlaceholder = "拖拽或者点击来添加hosts"
-    let  kHostsUrl = "https://raw.githubusercontent.com/racaljk/hosts/master/hosts"
+    let  kHostsUrl = "https://coding.net/u/scaffrey/p/hosts/git/raw/master/hosts"
     
-    var content : NSString!
+    var content : String!
     let alert:NSAlert = NSAlert()
     
     @IBOutlet weak var dragView: DragView!
@@ -35,121 +35,98 @@ class ViewController: NSViewController {
     }
 
    
-    @IBAction func manualClicked(sender: AnyObject) {
-        let pathString:NSString =  self.hostsPathText.stringValue
-        let array:NSArray = pathString.componentsSeparatedByString("/")
-        
-        DJProgressHUD.showStatus("", fromView: self.view)
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), { () -> Void in
-            
-            if String(array.lastObject!) != "hosts"
+    @IBAction func manualClicked(_ sender: AnyObject) {
+        self.updateHostsByNetwork(flag:false)
+    }
+
+    @IBAction func autoClicked(_ sender: AnyObject) {
+        self.updateHostsByNetwork(flag:true)
+    }
+
+    func updateHostsByNetwork(flag:Bool)->()
+    {
+        DJProgressHUD.showStatus("", from: self.view)
+        DispatchQueue.global().async {
+            do
             {
-                self.alert.messageText = self.kAddHosts
-            }
-            else
-            {
-                do
+                if flag
                 {
-                    self.content = try NSString(contentsOfFile: self.hostsPathText.stringValue, encoding: NSUTF8StringEncoding)
-                    self.updateHosts()
+                    self.content = try String(contentsOf: URL(string: self.kHostsUrl)!, encoding: String.Encoding(rawValue: String.Encoding.utf8.rawValue))
                 }
-                catch
+                else
+                {
+                    self.content = try String(contentsOfFile: self.hostsPathText.stringValue, encoding: String.Encoding(rawValue: String.Encoding.utf8.rawValue))
+                }
+            }
+            catch
+            {
+                if flag
+                {
+                    self.alert.messageText = self.kDownloadFail
+                }
+                else
                 {
                     self.alert.messageText = self.kUpdateFail
                 }
             }
             
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                DJProgressHUD.dismiss()
+            if self.content != nil
+            {
+                if self.content!.characters.count > 85 &&
+                    self.content!.contains("localhost") &&
+                    self.content!.contains("broadcasthost")
+                {
+                    self.updateByShellScript()
+                }
+                else
+                {
+                    self.alert.messageText = self.kAddHosts
+                }
+            }
+            else
+            {
+                self.alert.messageText = self.kNoHosts
+            }
+            
+            DispatchQueue.main.async(execute: {
                 if self.alert.messageText != self.kUpdateSuccess
                 {
                     self.dragView.configBackgroundColor(0.1)
                     self.hostsPathText.stringValue = self.kPlaceholder
                 }
-                self.alert.runModal()
-            })
-        })
-
-    }
-
-    @IBAction func autoClicked(sender: AnyObject) {
-        DJProgressHUD.showStatus("", fromView: self.view)
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), { () -> Void in
-            do
-            {
-                self.content = try NSString(contentsOfURL: NSURL(string: self.kHostsUrl)!, encoding: NSUTF8StringEncoding)
-                self.updateHosts()
-            }
-            catch
-            {
-                self.alert.messageText = self.kDownloadFail
-            }
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 DJProgressHUD.dismiss()
                 self.alert.runModal()
             })
-        })
-
-    }
-
-    func updateHosts()
-    {
-        let hosts:String = "/private/etc/hosts"
-        if content.length > 0
-        {
-            do
-            {
-                try content .writeToFile(hosts, atomically: true, encoding: NSUTF8StringEncoding)
-                alert.messageText = self.kUpdateSuccess
-            }
-            catch let error as NSError
-            {
-                if error.localizedDescription.containsString("permission")
-                {
-                    self.updateByShellScript()
-                    //alert.messageText = self.kNoPermission
-                }
-                else
-                {
-                    alert.messageText = self.kUpdateFail
-                }
-            }
         }
-        else
-        {
-            alert.messageText = self.kNoHosts
-        }
+        
     }
     
     func updateByShellScript()
     {
-        let myAppleScript = String(format: "do shell script \"echo '%@' >~/../../private/etc/hosts\" with administrator privileges", content)
-        var error: NSDictionary?
-        if let scriptObject = NSAppleScript(source: myAppleScript) {
-            if let output: NSAppleEventDescriptor = scriptObject.executeAndReturnError(
-                &error) {
+        
+        let script = String(format: "do shell script \"echo '%@' >~/../../private/etc/hosts\" with administrator privileges", content)
+       
+        if let scriptObject = NSAppleScript(source: script)
+        {
+            var error: NSDictionary?
+            scriptObject.executeAndReturnError(&error)
+            if error != nil {
+               alert.messageText = self.kUpdateFail
+            }
+            else
+            {
                 alert.messageText = self.kUpdateSuccess
-                print(output.stringValue)
-            } else if (error != nil) {
-                alert.messageText = self.kUpdateFail
-                print("error: \(error)")
             }
         }
+ 
     }
     
-    
-    @IBAction func lookClicked(sender: AnyObject) {
-        NSWorkspace.sharedWorkspace().openURL(NSURL(string:kHostsUrl)!)
+    @IBAction func lookClicked(_ sender: AnyObject) {
+        NSWorkspace.shared().open(URL(string:kHostsUrl)!)
     }
 
-    
-    
-    override var representedObject: AnyObject? {
-        didSet {
-        // Update the view, if already loaded.
-        }
+    @IBAction func githubClicked(_ sender: AnyObject) {
+        NSWorkspace.shared().open(URL(string:"https://github.com/ZzzM")!)
     }
-
-
 }
 

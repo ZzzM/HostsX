@@ -18,7 +18,7 @@ class DragView: NSView{
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.registerForDraggedTypes([NSFilenamesPboardType])
+        self.register(forDraggedTypes: [NSFilenamesPboardType])
         self.wantsLayer = true
         self.configBackgroundColor(0.1)
         
@@ -27,30 +27,28 @@ class DragView: NSView{
         self.addGestureRecognizer(tap)
     }
 
-    override func draggingEntered(sender: NSDraggingInfo) -> NSDragOperation {
+    override func draggingEntered(_ sender: NSDraggingInfo) -> NSDragOperation {
         
-        if ((sender.draggingPasteboard().propertyListForType("NSFilenamesPboardType") as? NSArray) != nil) {
-                return NSDragOperation.Copy
+        if ((sender.draggingPasteboard().propertyList(forType: "NSFilenamesPboardType") as? NSArray) != nil) {
+                return NSDragOperation.copy
         }
-        return NSDragOperation.None
+        return NSDragOperation()
     }
     
   
-    override func draggingExited(sender: NSDraggingInfo?) {
+    override func draggingExited(_ sender: NSDraggingInfo?) {
         self.configBackgroundColor(0.1)
     }
     
-    override func performDragOperation(sender: NSDraggingInfo) -> Bool {
+    override func performDragOperation(_ sender: NSDraggingInfo) -> Bool {
         
-        if let pasteboard = sender.draggingPasteboard().propertyListForType("NSFilenamesPboardType") as? NSArray {
+        if let pasteboard = sender.draggingPasteboard().propertyList(forType: "NSFilenamesPboardType") as? NSArray {
             
             if let pathString = pasteboard.firstObject as? String {
                 
                 if (filePathClosure != nil) {
                     filePathClosure!(pathString)
                 }
-                //self.filePath?:self.filePath(pathString)
-                //Swift.print(pathString)
                 self.configBackgroundColor(0.3)
                 return true
             }
@@ -58,8 +56,8 @@ class DragView: NSView{
         return false
     }
     
-    func configBackgroundColor(alpha: CGFloat) {
-        self.layer?.backgroundColor = NSColor.init(deviceRed: 0.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: alpha).CGColor
+    func configBackgroundColor(_ alpha: CGFloat) {
+        self.layer?.backgroundColor = NSColor.init(deviceRed: 0.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: alpha).cgColor
     }
     
     func tapped(){
@@ -69,11 +67,11 @@ class DragView: NSView{
         openPanel.canChooseDirectories = false
         openPanel.canCreateDirectories = false
         openPanel.canChooseFiles = true
-        openPanel.beginWithCompletionHandler { (result) -> Void in
+        openPanel.begin { (result) -> Void in
             if result == NSFileHandlingPanelOKButton {
                 
                 if (self.filePathClosure != nil) {
-                    self.filePathClosure!(openPanel.URL!.path!)
+                    self.filePathClosure!(openPanel.url!.path)
                 }
                 
             }
