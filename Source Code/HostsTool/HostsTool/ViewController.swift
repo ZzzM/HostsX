@@ -60,6 +60,7 @@ class ViewController: NSViewController {
             }
             catch
             {
+                
                 if flag
                 {
                     self.alert.messageText = self.kDownloadFail
@@ -95,6 +96,7 @@ class ViewController: NSViewController {
                     self.hostsPathText.stringValue = self.kPlaceholder
                 }
                 DJProgressHUD.dismiss()
+                self.content = nil
                 self.alert.runModal()
             })
         }
