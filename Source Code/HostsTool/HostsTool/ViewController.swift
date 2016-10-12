@@ -18,7 +18,8 @@ class ViewController: NSViewController {
     let kNoHosts = "hosts为空"
     let kDownloadFail = "hosts下载失败,请检查网络连接"
     let kPlaceholder = "拖拽或者点击来添加hosts"
-    let  kHostsUrl = "https://coding.net/u/scaffrey/p/hosts/git/raw/master/hosts"
+    let kHostsUrl = "https://coding.net/u/scaffrey/p/hosts/git/raw/master/hosts"
+    
     
     var content : String!
     let alert:NSAlert = NSAlert()
@@ -34,7 +35,6 @@ class ViewController: NSViewController {
         }
     }
 
-   
     @IBAction func manualClicked(_ sender: AnyObject) {
         self.updateHostsByNetwork(flag:false)
     }
@@ -49,26 +49,15 @@ class ViewController: NSViewController {
         DispatchQueue.global().async {
             do
             {
-                if flag
-                {
-                    self.content = try String(contentsOf: URL(string: self.kHostsUrl)!, encoding: String.Encoding(rawValue: String.Encoding.utf8.rawValue))
-                }
-                else
-                {
-                    self.content = try String(contentsOfFile: self.hostsPathText.stringValue, encoding: String.Encoding(rawValue: String.Encoding.utf8.rawValue))
-                }
+                self.content = try flag ?
+                    String(contentsOf: URL(string: self.kHostsUrl)!, encoding: String.Encoding(rawValue: String.Encoding.utf8.rawValue)):
+                    String(contentsOfFile: self.hostsPathText.stringValue, encoding: String.Encoding(rawValue: String.Encoding.utf8.rawValue))
             }
             catch
             {
-                
-                if flag
-                {
-                    self.alert.messageText = self.kDownloadFail
-                }
-                else
-                {
-                    self.alert.messageText = self.kUpdateFail
-                }
+                self.alert.messageText = flag ?
+                    self.kDownloadFail:
+                    self.kUpdateFail
             }
             
             if self.content != nil
@@ -105,30 +94,71 @@ class ViewController: NSViewController {
     
     func updateByShellScript()
     {
-        
-        let script = String(format: "do shell script \"echo '%@' >~/../../private/etc/hosts\" with administrator privileges", content)
-       
-        if let scriptObject = NSAppleScript(source: script)
-        {
-            var error: NSDictionary?
-            scriptObject.executeAndReturnError(&error)
-            if error != nil {
-               alert.messageText = self.kUpdateFail
-            }
-            else
+        if self.fetchNewHosts() {
+            let script = String(format: "do shell script \"echo '%@' >~/../../private/etc/hosts\" with administrator privileges",content)
+            
+            if let scriptObject = NSAppleScript(source: script)
             {
-                alert.messageText = self.kUpdateSuccess
+                var error: NSDictionary?
+                scriptObject.executeAndReturnError(&error)
+                if error != nil {
+                    alert.messageText = self.kUpdateFail
+                }
+                else
+                {
+                    alert.messageText = self.kUpdateSuccess
+                }
             }
         }
- 
     }
     
     @IBAction func lookClicked(_ sender: AnyObject) {
+
         NSWorkspace.shared().open(URL(string:kHostsUrl)!)
     }
 
     @IBAction func githubClicked(_ sender: AnyObject) {
         NSWorkspace.shared().open(URL(string:"https://github.com/ZzzM")!)
     }
+    
+     func fetchNewHosts() -> (Bool) {
+
+        do {
+            
+            let OriginalIPStr = try String.init(contentsOfFile: "/private/etc/hosts")
+            var startIndex = OriginalIPStr.range(of: "# Modified hosts start") as Range!
+            var endIndex = OriginalIPStr.range(of: "# Modified hosts end") as Range!
+            
+            var ipStr_Base1 = OriginalIPStr[OriginalIPStr.startIndex..<startIndex!.lowerBound].trimmingCharacters(in: NSCharacterSet.whitespacesAndNewlines)
+            let ipStr_Base2 = OriginalIPStr[endIndex!.upperBound..<OriginalIPStr.endIndex].trimmingCharacters(in: NSCharacterSet.whitespacesAndNewlines)
+            
+            
+            var timeStarIndex = content.range(of: "# Last updated:") as Range!
+            var timeEndIndex = content.index(timeStarIndex!.upperBound, offsetBy: 11)
+            let upTimeStr = content[timeStarIndex!.lowerBound..<timeEndIndex]
+            
+            timeStarIndex = ipStr_Base1.range(of: "# Last updated:") as Range!
+            timeEndIndex = ipStr_Base1.index(timeStarIndex!.upperBound, offsetBy: 11)
+            
+            ipStr_Base1.replaceSubrange(timeStarIndex!.lowerBound..<timeEndIndex, with: upTimeStr)
+            
+            startIndex = content.range(of: "# Modified hosts start") as Range!
+            endIndex = content.range(of: "# Modified hosts end") as Range!
+            
+
+            content =
+                (ipStr_Base1 + "\n" + "\n" +
+                ipStr_Base2  + "\n" + "\n" +
+                content[startIndex!.lowerBound..<endIndex!.upperBound]).trimmingCharacters(in: NSCharacterSet.whitespacesAndNewlines)
+            return true
+            
+        } catch {
+            print(error)
+            return false
+        }
+    }
+    
+    
 }
+
 
