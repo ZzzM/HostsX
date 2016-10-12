@@ -4,9 +4,7 @@
 开发语言：Swift3<br/>
 运行环境：OS X 10.10 或以上<br/>
 
-####Update:
-1.适配macOS Sierra<br/>
-2.更新UI<br/>
-3.使用[**hosts**](https://coding.net/u/scaffrey/p/hosts/git/raw/master/hosts)镜像，提升更新速度
+####Fix:
+1.更新后将不会覆盖hosts中自定义的ip
 
 ![](http://ww1.sinaimg.cn/large/77a575a6gw1f7xws28trfj214w0p8wjd.jpg)
