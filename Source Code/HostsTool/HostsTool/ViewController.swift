@@ -22,6 +22,7 @@ class ViewController: NSViewController {
     
     
     var content : String!
+    var isManual : Bool!
     let alert:NSAlert = NSAlert()
     
     @IBOutlet weak var dragView: DragView!
@@ -36,35 +37,39 @@ class ViewController: NSViewController {
     }
 
     @IBAction func manualClicked(_ sender: AnyObject) {
-        self.updateHostsByNetwork(flag:false)
+        isManual = true
+        self.updateHostsByNetwork()
     }
 
     @IBAction func autoClicked(_ sender: AnyObject) {
-        self.updateHostsByNetwork(flag:true)
+        isManual = false
+        self.updateHostsByNetwork()
     }
 
-    func updateHostsByNetwork(flag:Bool)->()
+    func updateHostsByNetwork()->()
     {
         DJProgressHUD.showStatus("", from: self.view)
         DispatchQueue.global().async {
             do
             {
-                self.content = try flag ?
+                self.content = try !self.isManual ?
                     String(contentsOf: URL(string: self.kHostsUrl)!, encoding: String.Encoding(rawValue: String.Encoding.utf8.rawValue)):
                     String(contentsOfFile: self.hostsPathText.stringValue, encoding: String.Encoding(rawValue: String.Encoding.utf8.rawValue))
             }
             catch
             {
-                self.alert.messageText = flag ?
+                self.alert.messageText = !self.isManual ?
                     self.kDownloadFail:
                     self.kUpdateFail
             }
+            
             
             if self.content != nil
             {
                 if self.content!.characters.count > 85 &&
                     self.content!.contains("localhost") &&
-                    self.content!.contains("broadcasthost")
+                    self.content!.contains("127.0.0.1") &&
+                    self.content!.contains("::1")
                 {
                     self.updateByShellScript()
                 }
@@ -113,7 +118,6 @@ class ViewController: NSViewController {
     }
     
     @IBAction func lookClicked(_ sender: AnyObject) {
-
         NSWorkspace.shared().open(URL(string:kHostsUrl)!)
     }
 
@@ -122,7 +126,11 @@ class ViewController: NSViewController {
     }
     
      func fetchNewHosts() -> (Bool) {
-
+        
+        if self.isManual! {
+            return true
+        }
+        
         do {
             
             let OriginalIPStr = try String.init(contentsOfFile: "/private/etc/hosts")
