@@ -145,10 +145,18 @@ class ViewController: NSViewController {
             var timeEndIndex = content.index(timeStarIndex!.upperBound, offsetBy: 11)
             let upTimeStr = content[timeStarIndex!.lowerBound..<timeEndIndex]
             
-            timeStarIndex = ipStr_Base1.range(of: "# Last updated:") as Range!
-            timeEndIndex = ipStr_Base1.index(timeStarIndex!.upperBound, offsetBy: 11)
             
-            ipStr_Base1.replaceSubrange(timeStarIndex!.lowerBound..<timeEndIndex, with: upTimeStr)
+            if ipStr_Base1.contains("# Last updated:") {
+                
+                timeStarIndex = ipStr_Base1.range(of: "# Last updated:") as Range!
+                timeEndIndex = ipStr_Base1.index(timeStarIndex!.upperBound, offsetBy: 11)
+                ipStr_Base1.replaceSubrange(timeStarIndex!.lowerBound..<timeEndIndex, with: upTimeStr)
+                
+            }else{
+                ipStr_Base1 = upTimeStr + "\n" + "\n"  + ipStr_Base1
+            }
+            
+            
             
             startIndex = content.range(of: "# Modified hosts start") as Range!
             endIndex = content.range(of: "# Modified hosts end") as Range!
