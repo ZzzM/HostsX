@@ -18,7 +18,7 @@ class ViewController: NSViewController {
     let kNoHosts = "hosts为空"
     let kDownloadFail = "hosts下载失败,请检查网络连接"
     let kPlaceholder = "拖拽或者点击来添加hosts"
-    let kHostsUrl = "https://coding.net/u/scaffrey/p/hosts/git/raw/master/hosts"
+    let kHostsUrl = "https://raw.githubusercontent.com/racaljk/hosts/master/hosts"
     
     
     var content : String!
