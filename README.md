@@ -5,6 +5,5 @@
 运行环境：OS X 10.10 或以上<br/>
 
 ####Fix:
-1.更新后将不会覆盖hosts中自定义的ip
-
+1.自动更新导致闪退
 ![](http://ww1.sinaimg.cn/large/77a575a6gw1f7xws28trfj214w0p8wjd.jpg)
