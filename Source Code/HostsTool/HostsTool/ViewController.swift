@@ -100,6 +100,7 @@ class ViewController: NSViewController {
     func updateByShellScript()
     {
         if self.fetchNewHosts() {
+            
             let script = String(format: "do shell script \"echo '%@' >~/../../private/etc/hosts\" with administrator privileges",content)
             
             if let scriptObject = NSAppleScript(source: script)
@@ -134,6 +135,14 @@ class ViewController: NSViewController {
         do {
             
             let OriginalIPStr = try String.init(contentsOfFile: "/private/etc/hosts")
+            
+            
+            if !OriginalIPStr.contains("# Modified hosts start") ||
+                !OriginalIPStr.contains("# Modified hosts end"){
+                return true
+            }
+            
+            
             var startIndex = OriginalIPStr.range(of: "# Modified hosts start") as Range!
             var endIndex = OriginalIPStr.range(of: "# Modified hosts end") as Range!
             
@@ -166,6 +175,7 @@ class ViewController: NSViewController {
                 (ipStr_Base1 + "\n" + "\n" +
                 ipStr_Base2  + "\n" + "\n" +
                 content[startIndex!.lowerBound..<endIndex!.upperBound]).trimmingCharacters(in: NSCharacterSet.whitespacesAndNewlines)
+           
             return true
             
         } catch {
