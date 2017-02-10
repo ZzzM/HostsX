@@ -126,7 +126,7 @@ class ViewController: NSViewController {
         NSWorkspace.shared().open(URL(string:"https://github.com/ZzzM")!)
     }
     
-     func fetchNewHosts() -> (Bool) {
+      func fetchNewHosts() -> (Bool) {
         
         if self.isManual! {
             return true
