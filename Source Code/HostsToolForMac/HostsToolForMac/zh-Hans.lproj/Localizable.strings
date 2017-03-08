@@ -1,0 +1,23 @@
+/* 
+  File.strings
+  HostsToolForMac
+
+  Created by Zhang.M on 03/03/2017.
+  Copyright © 2017 ZzzM. All rights reserved.
+*/
+"DownloadFail" = "hosts下载失败";
+"UpdateFail" = "hosts更新失败";
+"HostsError" = "hosts内容错误";
+"HostsBlank" = "hosts为空(或者自定义更新链接无效)";
+"HostsNotExsit" = "hosts不存在";
+
+"UpdateSucceed" = "hosts更新成功";
+
+"CheckUpdateFail" = "检查更新失败";
+"HaveNewVersion" = "有新版本可以更新";
+"NewestVersion" = "当前是最新版本";
+
+"OK" = "确定";
+"GoDownload" = "去下载";
+
+"LinkError" = "链接格式错误";

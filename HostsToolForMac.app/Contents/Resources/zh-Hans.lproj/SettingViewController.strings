@@ -1,0 +1,18 @@
+
+/* Class = "NSButtonCell"; title = "自定义Hosts更新链接"; ObjectID = "128-Q6-VVJ"; */
+"128-Q6-VVJ.title" = "自定义hosts更新链接";
+
+/* Class = "NSTextFieldCell"; placeholderString = "请输入Hosts更新链接"; ObjectID = "1CA-C1-nh4"; */
+"1CA-C1-nh4.placeholderString" = "请输入hosts更新链接（如：https://raw.githubusercontent.com/racaljk/hosts/master/hosts）";
+
+/* Class = "NSButtonCell"; title = "取消"; ObjectID = "4DD-oW-r7t"; */
+"4DD-oW-r7t.title" = "取消";
+
+/* Class = "NSButtonCell"; title = "确认"; ObjectID = "Cr0-yJ-nDf"; */
+"Cr0-yJ-nDf.title" = "确认";
+
+/* Class = "NSButtonCell"; title = "默认"; ObjectID = "NSr-aY-HVB"; */
+"NSr-aY-HVB.title" = "默认";
+
+/* Class = "NSButtonCell"; title = "镜像"; ObjectID = "R28-1v-xum"; */
+"R28-1v-xum.title" = "镜像";
