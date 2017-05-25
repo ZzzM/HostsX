@@ -119,14 +119,24 @@ class UpdateHosts: NSObject {
             let originalIPStr = try String.init(contentsOfFile: "/private/etc/hosts")
             
             if !originalIPStr.contains("# Modified hosts start") ||
-                !originalIPStr.contains("# Modified hosts end"){
+                !originalIPStr.contains("# Modified hosts end") ||
+                !originalIPStr.contains("# Modified Hosts Start") ||
+                !originalIPStr.contains("# Modified Hosts End"){
                 return true
             }
             
+            var startFlag,endFlag:String
+            if originalIPStr.contains("# Modified hosts start"){
+                startFlag = "# Modified hosts start"
+                endFlag = "# Modified hosts end"
+            }else{
+                startFlag = "# Modified Hosts Start"
+                endFlag = "# Modified Hosts End"
+            }
             
-            var startIndex = originalIPStr.range(of: "# Modified hosts start") as Range!
-            var endIndex = originalIPStr.range(of: "# Modified hosts end") as Range!
-            
+            var startIndex = originalIPStr.range(of: startFlag) as Range!
+            var endIndex = originalIPStr.range(of:endFlag) as Range!
+
             var ipStr_Base1 = originalIPStr[originalIPStr.startIndex..<startIndex!.lowerBound].trimmingCharacters(in: NSCharacterSet.whitespacesAndNewlines)
             let ipStr_Base2 = originalIPStr[endIndex!.upperBound..<originalIPStr.endIndex].trimmingCharacters(in: NSCharacterSet.whitespacesAndNewlines)
             
@@ -146,8 +156,16 @@ class UpdateHosts: NSObject {
                 ipStr_Base1 = upTimeStr + "\n" + "\n"  + ipStr_Base1
             }
             
-            startIndex = hostsContent.range(of: "# Modified hosts start") as Range!
-            endIndex = hostsContent.range(of: "# Modified hosts end") as Range!
+            if hostsContent.contains("# Modified hosts start"){
+                startFlag = "# Modified hosts start"
+                endFlag = "# Modified hosts end"
+            }else{
+                startFlag = "# Modified Hosts Start"
+                endFlag = "# Modified Hosts End"
+            }
+            
+            startIndex = hostsContent.range(of: startFlag) as Range!
+            endIndex = hostsContent.range(of:endFlag) as Range!
             
             hostsContent =
                 (ipStr_Base1 + "\n" + "\n" +
