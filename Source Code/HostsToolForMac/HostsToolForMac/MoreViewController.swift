@@ -40,6 +40,7 @@ class MoreViewController: NSViewController {
             if error != nil {
                 self.alert.informativeText = NSLocalizedString("CheckUpdateFail", comment: "")
             }else{
+                
                 if isOldVersion {
                     self.goDownloadAlert.informativeText = NSLocalizedString("HaveNewVersion", comment: "")
                 }else{
