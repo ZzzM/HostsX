@@ -6,10 +6,17 @@
 最新版本：v2.2.1 <br/>
 支持语言：中、英 <br/>
 
-### Version 2.2.1：
--Fixed crash
+### Version 2.2.2：
+-Save local hosts
+#### 效果：
+1.更新前，原hosts：
+![](https://ws1.sinaimg.cn/large/77a575a6gy1fgdugffdr5j20kj0e7wew.jpg)
+
+2.点击网络更新后，原hosts保存在“# 👇My Hosts👇”下面：
+![](https://ws1.sinaimg.cn/large/77a575a6gy1fgdugfiif6j20lb0ezdhs.jpg)
+
+3.如果需要编辑原hosts，只要在“# 👇My Hosts👇”下面进行操作即可：
+![](https://ws1.sinaimg.cn/large/77a575a6gy1fgdugfejodj20lb0ezdhu.jpg)
 
 ### Screenshot：
 ![](https://ws1.sinaimg.cn/large/77a575a6gy1fdfkgw9dptj20na0fkjta)
-![](https://ws1.sinaimg.cn/large/77a575a6gy1fdfkgwbo5nj20na0fkmz6)
-![](https://ws1.sinaimg.cn/large/77a575a6gy1fdfkgw95joj20pi0fkdhk)
