@@ -13,6 +13,8 @@ class Utils: NSObject {
     static let  CustomUpdateLink = "CustomUpdateLink"
     static let  CurrentHostsLink = "CurrentHostsLink"
     
+    static let MyHosts = "# 👇My Hosts👇"
+    
     static let kDefaultHostsLink = "https://raw.githubusercontent.com/racaljk/hosts/master/hosts"
     static let kMirrorHostsLink = "https://coding.net/u/scaffrey/p/hosts/git/raw/master/hosts"
     static let kProjectLink = "https://github.com/ZzzM/HostsToolforMac"

@@ -63,8 +63,7 @@ class UpdateHosts: NSObject {
             
             if self.hostsContent != nil
             {
-                if self.hostsContent!.characters.count > 85 &&
-                    self.hostsContent!.contains("localhost") &&
+                if self.hostsContent!.contains("localhost") &&
                     self.hostsContent!.contains("127.0.0.1") &&
                     self.hostsContent!.contains("::1")
                 {
@@ -117,60 +116,14 @@ class UpdateHosts: NSObject {
         do {
             
             let originalIPStr = try String.init(contentsOfFile: "/private/etc/hosts")
+            var myHostsPart = Utils.MyHosts + "\n" + "\n" + originalIPStr
             
-            if !originalIPStr.contains("# Modified hosts start") ||
-                !originalIPStr.contains("# Modified hosts end") ||
-                !originalIPStr.contains("# Modified Hosts Start") ||
-                !originalIPStr.contains("# Modified Hosts End"){
-                return true
+            if originalIPStr.contains(Utils.MyHosts){
+                let myHostsIndex = originalIPStr.range(of:Utils.MyHosts) as Range!
+                myHostsPart = originalIPStr[myHostsIndex!.lowerBound..<originalIPStr.endIndex].trimmingCharacters(in: NSCharacterSet.whitespacesAndNewlines)
             }
             
-            var startFlag,endFlag:String
-            if originalIPStr.contains("# Modified hosts start"){
-                startFlag = "# Modified hosts start"
-                endFlag = "# Modified hosts end"
-            }else{
-                startFlag = "# Modified Hosts Start"
-                endFlag = "# Modified Hosts End"
-            }
-            
-            var startIndex = originalIPStr.range(of: startFlag) as Range!
-            var endIndex = originalIPStr.range(of:endFlag) as Range!
-
-            var ipStr_Base1 = originalIPStr[originalIPStr.startIndex..<startIndex!.lowerBound].trimmingCharacters(in: NSCharacterSet.whitespacesAndNewlines)
-            let ipStr_Base2 = originalIPStr[endIndex!.upperBound..<originalIPStr.endIndex].trimmingCharacters(in: NSCharacterSet.whitespacesAndNewlines)
-            
-            
-            var timeStarIndex = hostsContent.range(of: "# Last updated:") as Range!
-            var timeEndIndex = hostsContent.index(timeStarIndex!.upperBound, offsetBy: 11)
-            let upTimeStr = hostsContent[timeStarIndex!.lowerBound..<timeEndIndex]
-            
-            
-            if ipStr_Base1.contains("# Last updated:") {
-                
-                timeStarIndex = ipStr_Base1.range(of: "# Last updated:") as Range!
-                timeEndIndex = ipStr_Base1.index(timeStarIndex!.upperBound, offsetBy: 11)
-                ipStr_Base1.replaceSubrange(timeStarIndex!.lowerBound..<timeEndIndex, with: upTimeStr)
-                
-            }else{
-                ipStr_Base1 = upTimeStr + "\n" + "\n"  + ipStr_Base1
-            }
-            
-            if hostsContent.contains("# Modified hosts start"){
-                startFlag = "# Modified hosts start"
-                endFlag = "# Modified hosts end"
-            }else{
-                startFlag = "# Modified Hosts Start"
-                endFlag = "# Modified Hosts End"
-            }
-            
-            startIndex = hostsContent.range(of: startFlag) as Range!
-            endIndex = hostsContent.range(of:endFlag) as Range!
-            
-            hostsContent =
-                (ipStr_Base1 + "\n" + "\n" +
-                    ipStr_Base2  + "\n" + "\n" +
-                    hostsContent[startIndex!.lowerBound..<endIndex!.upperBound]).trimmingCharacters(in: NSCharacterSet.whitespacesAndNewlines)
+            hostsContent = hostsContent + "\n" + myHostsPart
             
             return true
             
