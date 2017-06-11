@@ -116,7 +116,8 @@ class UpdateHosts: NSObject {
         do {
             
             let originalIPStr = try String.init(contentsOfFile: "/private/etc/hosts")
-            var myHostsPart = Utils.MyHosts + "\n" + "\n" + originalIPStr
+            
+            var myHostsPart = Utils.MyHosts
             
             if originalIPStr.contains(Utils.MyHosts){
                 let myHostsIndex = originalIPStr.range(of:Utils.MyHosts) as Range!
