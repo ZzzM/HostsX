@@ -53,12 +53,9 @@ class UpdateHosts: NSObject {
             }
             catch
             {
-                if !self.isNetworkModify {
-                    self.hintString = NSLocalizedString("UpdateFail", comment: "")
-                }
-                else{
-                    self.hintString = NSLocalizedString("DownloadFail", comment: "")
-                }
+                self.hintString = !self.isNetworkModify ?
+                    NSLocalizedString("UpdateFail", comment: ""):
+                    NSLocalizedString("DownloadFail", comment: "")
             }
             
             if self.hostsContent != nil
@@ -96,13 +93,10 @@ class UpdateHosts: NSObject {
             {
                 var error: NSDictionary?
                 scriptObject.executeAndReturnError(&error)
-                if error != nil {
-                    hintString = NSLocalizedString("UpdateFail", comment: "")
-                }
-                else
-                {
-                    hintString = NSLocalizedString("UpdateSucceed", comment: "")
-                }
+                
+                hintString = error != nil ?
+                    NSLocalizedString("UpdateFail", comment: ""):
+                    NSLocalizedString("UpdateSucceed", comment: "")
             }
         }
     }
@@ -117,14 +111,29 @@ class UpdateHosts: NSObject {
             
             let originalIPStr = try String.init(contentsOfFile: "/private/etc/hosts")
             
-            var myHostsPart = Utils.MyHosts
-            
-            if originalIPStr.contains(Utils.MyHosts){
-                let myHostsIndex = originalIPStr.range(of:Utils.MyHosts) as Range!
-                myHostsPart = originalIPStr[myHostsIndex!.lowerBound..<originalIPStr.endIndex].trimmingCharacters(in: NSCharacterSet.whitespacesAndNewlines)
+            //v2.2.3
+            var oldYourHosts = String()
+            if originalIPStr.contains(Utils.YourMark){
+                let yourMarkIndex = originalIPStr.range(of:Utils.YourMark) as Range!
+                oldYourHosts = originalIPStr[yourMarkIndex!.upperBound..<originalIPStr.endIndex].trimmingCharacters(in: NSCharacterSet.whitespacesAndNewlines)
             }
             
-            hostsContent = hostsContent + "\n" + myHostsPart
+            // new version
+            var newYourHosts = String()
+
+            if originalIPStr.contains(Utils.StartMark) &&
+                originalIPStr.contains(Utils.EndMark){
+                let startMarkIndex = originalIPStr.range(of:Utils.StartMark) as Range!
+                let endMarkIndex = originalIPStr.range(of:Utils.EndMark) as Range!
+                
+                newYourHosts = originalIPStr[startMarkIndex!.upperBound..<endMarkIndex!.lowerBound].trimmingCharacters(in: NSCharacterSet.whitespacesAndNewlines)
+            }
+            
+            hostsContent =
+                Utils.StartMark + "\n\n" +
+                oldYourHosts + (oldYourHosts.isEmpty ?"":"\n") +
+                newYourHosts  + "\n\n" +
+                Utils.EndMark + "\n\n" + hostsContent
             
             return true
             
