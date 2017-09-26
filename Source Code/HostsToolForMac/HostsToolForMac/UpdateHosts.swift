@@ -87,17 +87,35 @@ class UpdateHosts: NSObject {
     {
         if self.checkHostsContent() {
             
-            let script = String(format: "do shell script \"echo '%@' >~/../../private/etc/hosts\" with administrator privileges",hostsContent)
+            let docPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first
+            let hostsPath = docPath! + "/hosts"
+
+            let fm = FileManager.default
+            let result = fm.createFile(atPath:hostsPath, contents: hostsContent.data(using: .utf8), attributes: nil)
             
-            if let scriptObject = NSAppleScript(source: script)
-            {
-                var error: NSDictionary?
-                scriptObject.executeAndReturnError(&error)
-                
-                hintString = error != nil ?
-                    NSLocalizedString("UpdateFail", comment: ""):
-                    NSLocalizedString("UpdateSucceed", comment: "")
+            if result {
+                let script = String(format: "do shell script \"cp -f %@ ~/../../private/etc/hosts\" with administrator privileges",hostsPath)
+                //            let script = String(format: "do shell script \"echo '%@' >~/../../private/etc/hosts\" with administrator privileges",hostsContent)
+                if let scriptObject = NSAppleScript(source: script)
+                {
+
+                    var error: NSDictionary?
+                    scriptObject.executeAndReturnError(&error)
+
+                    hintString = error != nil ?
+                        NSLocalizedString("UpdateFail", comment: ""):
+                        NSLocalizedString("UpdateSucceed", comment: "")
+                    
+                    do {
+                        try fm.removeItem(atPath: hostsPath)
+                    }
+                    catch  {
+                    }
+                }
+            }else{
+                hintString = NSLocalizedString("UpdateFail", comment: "")
             }
+            
         }
     }
     

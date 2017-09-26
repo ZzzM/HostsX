@@ -17,8 +17,8 @@ class Utils: NSObject {
     static let StartMark = "# My Hosts Start"
     static let EndMark = "# My Hosts End"
     
-    static let kDefaultHostsLink = "https://raw.githubusercontent.com/racaljk/hosts/master/hosts"
-    static let kMirrorHostsLink = "https://coding.net/u/scaffrey/p/hosts/git/raw/master/hosts"
+    static let kDefaultHostsLink = "https://raw.githubusercontent.com/googlehosts/hosts/master/hosts-files/hosts"
+    static let kMirrorHostsLink = "https://coding.net/u/scaffrey/p/hosts/git/raw/master/hosts-files/hosts"
     static let kProjectLink = "https://github.com/ZzzM/HostsToolforMac"
     static let kProjectName = "HostsToolforMac"
     static let kProjectReleasesLink = "https://api.github.com/repos/ZzzM/HostsToolforMac/releases"
