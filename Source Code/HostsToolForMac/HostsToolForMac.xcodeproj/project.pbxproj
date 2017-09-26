@@ -209,6 +209,7 @@
 				TargetAttributes = {
 					1F1AB2961E666D9F00171458 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 7823BJG877;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -465,6 +466,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 7823BJG877;
 				INFOPLIST_FILE = HostsToolForMac/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
@@ -480,6 +482,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 7823BJG877;
 				INFOPLIST_FILE = HostsToolForMac/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
