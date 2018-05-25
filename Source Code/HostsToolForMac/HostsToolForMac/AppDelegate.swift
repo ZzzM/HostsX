@@ -7,51 +7,30 @@
 //
 
 import Cocoa
+import RxCocoa
+import RxSwift
 
 
 @NSApplicationMain
+
+
+
+
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    fileprivate let statusItem = NSStatusBar.system().statusItem(withLength: NSSquareStatusItemLength)
-    fileprivate let popover = NSPopover()
+    @IBOutlet weak var menu: NSMenu!
 
+    let barItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        self.initHostsUpdateLink()
-        self.initStatusItem()
-    
+
+        
+        setStatusBarItem(barItem)
+        setUserNotification()
+
+        
     }
 
-    fileprivate func initHostsUpdateLink(){
-        if Utils.fetchCurrentHostsLink() == "" {
-            Utils.saveCurrentHostsLink(link: Utils.kDefaultHostsLink)
-        }
-    }
     
-    fileprivate func initStatusItem() {
-        
-        statusItem.button?.image = Utils.StatusIcon
-        statusItem.target = self
-        statusItem.action = #selector(statusItemClicked(sender:))
-        
-        popover.contentViewController = MainViewController(nibName: "MainViewController", bundle: nil)
-        
-        NSEvent.addGlobalMonitorForEvents(matching: .leftMouseDown) { (event) in
-            if self.popover.isShown{self.popover.close()}
-        }
-    }
-    
-    @objc fileprivate func statusItemClicked(sender:NSButton) {
-        if popover.isShown {
-            popover.close()
-        }else{
-            popover.show(relativeTo: sender.bounds, of: sender, preferredEdge:.minY)
-        }
-    }
-    
-    func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
-    }
-
-
 }
 

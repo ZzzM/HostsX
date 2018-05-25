@@ -5,21 +5,22 @@
   Created by Zhang.M on 03/03/2017.
   Copyright © 2017 ZzzM. All rights reserved.
 */
+"Menu.Title.Import" = "Local Import";
+"Menu.Title.Network" = "Network Update";
+"Menu.Title.Check" = "Check for Update";
+"Menu.Title.Exit" = "Exit";
 
-"DownloadFail" = "Fail to download hosts";
-"UpdateFail" = "Fail to update hosts";
-"HostsError" = "Hosts content error";
-"HostsBlank" = "Hosts is blank(or Custom update link is invalid)";
-"HostsNotExsit" = "Hosts not exsit";
+"Submenu.Title.Default" = "Default";
+"Submenu.Title.Mirror" = "Mirror";
 
-"UpdateSucceed" = "Update Succeed";
+"Error.Hosts.Invalid" = "Hosts is Invalid!";
+"Error.Hosts.Creation" = "Hosts Creation Failed:";
+
+"Error.Script.Compile" = "Script Failed To Compile!";
+"Error.Script.Execution" = "Script Execution Failed:";
+
+"Hint.Version.Availble" = "New Version Availble!";
+"Hint.Version.Latest" = "The Latest Version!";
+"Hint.Script.Succeed" = "Succeed!";
 
 
-"CheckUpdateFail" = "Fail to check for update";
-"HaveNewVersion" = "A new version is availble";
-"NewestVersion" = "Current version is newest";
-
-"OK" = "OK";
-"GoDownload" = "Go Download";
-
-"LinkError" = "The format of the link  is incorrect";
