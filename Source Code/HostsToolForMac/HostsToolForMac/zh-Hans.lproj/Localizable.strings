@@ -5,19 +5,24 @@
   Created by Zhang.M on 03/03/2017.
   Copyright © 2017 ZzzM. All rights reserved.
 */
-"DownloadFail" = "hosts下载失败";
-"UpdateFail" = "hosts更新失败";
-"HostsError" = "hosts内容错误";
-"HostsBlank" = "hosts为空(或者自定义更新链接无效)";
-"HostsNotExsit" = "hosts不存在";
+"Menu.Title.Import" = "本地导入";
+"Menu.Title.Network" = "网络更新";
+"Menu.Title.Check" = "检查更新";
+"Menu.Title.Exit" = "退出";
 
-"UpdateSucceed" = "hosts更新成功";
+"Submenu.Title.Default" = "默认";
+"Submenu.Title.Mirror" = "镜像";
 
-"CheckUpdateFail" = "检查更新失败";
-"HaveNewVersion" = "有新版本可以更新";
-"NewestVersion" = "当前是最新版本";
+"Error.Hosts.Invalid" = "无效的Hosts！";
+"Error.Hosts.Creation" = "Hosts创建失败！";
 
-"OK" = "确定";
-"GoDownload" = "去下载";
+"Error.Script.Compile" = "脚本编译失败!";
+"Error.Script.Execution" = "脚本执行失败:";
 
-"LinkError" = "链接格式错误";
+"Hint.Version.Availble" = "最新版本可供使用！";
+"Hint.Version.Latest" = "这是最新版本!";
+"Hint.Script.Succeed" = "成功!";
+
+
+
+

@@ -1,7 +1,0 @@
-target “HostsToolForMac” do
-
-use_frameworks!
-platform:osx,'10.10.0’
-pod 'SwiftyJSON'
-
-end
