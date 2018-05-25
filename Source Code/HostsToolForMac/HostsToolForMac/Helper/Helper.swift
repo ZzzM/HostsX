@@ -15,7 +15,7 @@ import SwifterSwift
 let AppVersion = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
 let AppName = "HostsToolforMac"
 
-let ApiReleasesURL = URL(string: "https://api.github.com/repos/ZzzM/HostsToolforMac/releases")!
+let ApiReleasesURL = URL(string: "https://api.github.com/repos/ZzzM/HostsToolforMac/releases/latest")!
 let ReleasesURL = URL(string: "https://github.com/ZzzM/HostsToolforMac/releases")!
 
 let DefaultUpdateURL = URL(string:"https://raw.githubusercontent.com/googlehosts/hosts/master/hosts-files/hosts")!
@@ -162,9 +162,9 @@ extension String{
     }
     
     var intVersion: Int {
-        return self.replacingOccurrences(of: "v", with: "").replacingOccurrences(of: ".", with: "").int!
+        return self.replacingOccurrences(of: ".", with: "").int!
     }
-    var isLatest: Bool{
+    var needUpdate: Bool{
         return AppVersion.intVersion >= self.intVersion
     }
     

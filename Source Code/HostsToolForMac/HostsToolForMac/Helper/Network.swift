@@ -20,13 +20,10 @@ class Network: NSObject {
                 
                 let data = try JSONSerialization.data(withJSONObject: $0, options: .prettyPrinted)
 
-                guard let release = try! JSONDecoder().decode([Release].self, from: data).first else{
+                guard let release = try? JSONDecoder().decode(Release.self, from: data) else{
                     return true
                 }
-                guard release.name == AppName else{
-                    return true
-                }
-                return release.tag_name.isLatest
+                return release.tag_name.needUpdate
         }
         
     }
