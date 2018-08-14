@@ -5,6 +5,7 @@
 运行环境：macOS 10.10 或以上<br/>
 最新版本：2.3.0 <br/>
 支持语言：中、英 <br/>
+Release：[下载地址](https://github.com/ZzzM/HostsToolforMac/releases)
 
 ### Version 2.3.0：
 -优化项目结构<br/>
