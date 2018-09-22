@@ -11,7 +11,7 @@
 [![CocoaPods](https://img.shields.io/cocoapods/dt/SwifterSwift.svg)](https://cocoapods.org/pods/SwifterSwift)
 [![CocoaPods](https://img.shields.io/cocoapods/dm/SwifterSwift.svg)](https://cocoapods.org/pods/SwifterSwift)
 [![Swift](https://img.shields.io/badge/Swift-4.1-orange.svg)](https://swift.org)
-[![Xcode](https://img.shields.io/badge/Xcode-9.3-blue.svg)](https://developer.apple.com/xcode)
+[![Xcode](https://img.shields.io/badge/Xcode-9.4-blue.svg)](https://developer.apple.com/xcode)
 [![MIT](https://img.shields.io/badge/License-MIT-red.svg)](https://opensource.org/licenses/MIT)
 [![Slack Channel](https://slackin-ppvrggbpgn.now.sh/badge.svg)](https://slackin-ppvrggbpgn.now.sh/)
 
@@ -19,11 +19,11 @@
 SwifterSwift is a collection of **over 500 native Swift extensions**, with handy methods, syntactic sugar, and performance improvements for wide range of primitive data types, UIKit and Cocoa classes –over 500 in 1– for iOS, macOS, tvOS, watchOS and Linux.
 
 
-### [Whats New in v4.3.0?](https://github.com/SwifterSwift/SwifterSwift/blob/master/CHANGELOG.md#v430)
+### [Whats New in v4.5.0?](https://github.com/SwifterSwift/SwifterSwift/blob/master/CHANGELOG.md#v450)
 
 ## Requirements:
 - **iOS** 8.0+ / **tvOS** 9.0+ / **watchOS** 2.0+ / **macOS** 10.10+ / **Ubuntu** 14.04+
-- Swift 4.0+
+- Swift 4.2+
 
 
 
@@ -52,11 +52,17 @@ SwifterSwift is a collection of **over 500 native Swift extensions**, with handy
 <h4>- Integrate AppKit extensions only:</h4>
 <pre><code class="ruby language-ruby">pod 'SwifterSwift/AppKit'</code></pre>
 
+<h4>- Integrate MapKit extensions only:</h4>
+<pre><code class="ruby language-ruby">pod 'SwifterSwift/MapKit'</code></pre>
+
 <h4>- Integrate CoreGraphics extensions only:</h4>
 <pre><code class="ruby language-ruby">pod 'SwifterSwift/CoreGraphics'</code></pre>
 
 <h4>- Integrate CoreLocation extensions only:</h4>
 <pre><code class="ruby language-ruby">pod 'SwifterSwift/CoreLocation'</code></pre>
+
+<h4>- Integrate SpriteKit extensions only:</h4>
+<pre><code class="ruby language-ruby">pod 'SwifterSwift/SpriteKit'</code></pre>
 </details>
 
 
@@ -81,7 +87,7 @@ let package = Package(
     name: "YOUR_PROJECT_NAME",
     targets: [],
     dependencies: [
-        .Package(url: "https://github.com/SwifterSwift/SwifterSwift.git", majorVersion: 4),
+        .package(url: "https://github.com/SwifterSwift/SwifterSwift.git", from: "4.0.0")
     ]
 )
 </code></pre>
@@ -170,6 +176,7 @@ let package = Package(
 <li><a href="https://github.com/SwifterSwift/SwifterSwift/tree/master/Sources/Extensions/UIKit/UITextViewExtensions.swift"><code>UITextView extensions</code></a></li>
 <li><a href="https://github.com/SwifterSwift/SwifterSwift/tree/master/Sources/Extensions/UIKit/UIViewControllerExtensions.swift"><code>UIViewController extensions</code></a></li>
 <li><a href="https://github.com/SwifterSwift/SwifterSwift/tree/master/Sources/Extensions/UIKit/UIViewExtensions.swift"><code>UIView extensions</code></a></li>
+<li><a href="https://github.com/SwifterSwift/SwifterSwift/tree/master/Sources/Extensions/UIKit/UIWindowExtensions.swift"><code>UIWindow extensions</code></a></li>
 </ul>
 </details>
 
@@ -208,6 +215,14 @@ let package = Package(
 </br>
 <ul>
 <li><a href="https://github.com/SwifterSwift/SwifterSwift/blob/master/Sources/Extensions/MapKit/MKPolylineExtensions.swift"><code>MKPolylineExtensions</code></a></li>
+</ul>
+</details>
+
+<details>
+<summary>SpriteKit Extensions</summary>
+</br>
+<ul>
+<li><a href="https://github.com/SwifterSwift/SwifterSwift/blob/master/Sources/Extensions/SpriteKit/SKNodeExtensions.swift"><code>SKNodeExtensions</code></a></li>
 </ul>
 </details>
 

@@ -6,10 +6,11 @@
 //  Copyright © 2017 SwifterSwift
 //
 
-#if os(iOS)
-
 import XCTest
 @testable import SwifterSwift
+
+#if os(iOS)
+import UIKit
 
 final class UIStoryboardExtensionsTests: XCTestCase {
 
@@ -17,11 +18,11 @@ final class UIStoryboardExtensionsTests: XCTestCase {
         XCTAssertNil(UIStoryboard.main)
     }
 
-	func testInstantiateViewController() {
-		let storyboard = UIStoryboard(name: "TestStoryboard", bundle: Bundle(for: UIStoryboardExtensionsTests.self))
-		let viewController = storyboard.instantiateViewController(withClass: UIViewController.self)
-		XCTAssertNotNil(viewController)
-	}
+    func testInstantiateViewController() {
+        let storyboard = UIStoryboard(name: "TestStoryboard", bundle: Bundle(for: UIStoryboardExtensionsTests.self))
+        let viewController = storyboard.instantiateViewController(withClass: UIViewController.self)
+        XCTAssertNotNil(viewController)
+    }
 
 }
 #endif

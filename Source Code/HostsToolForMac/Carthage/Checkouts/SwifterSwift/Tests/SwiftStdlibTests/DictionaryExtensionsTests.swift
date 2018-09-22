@@ -26,6 +26,17 @@ final class DictionaryExtensionsTests: XCTestCase {
         XCTAssertFalse(dict.keys.contains("key2"))
     }
 
+    func testRemoveElementForRandomKey() {
+        var emptyDict = [String: String]()
+        XCTAssertNil(emptyDict.removeValueForRandomKey())
+
+        var dict = ["key1": "value1", "key2": "value2", "key3": "value3"]
+        let elements = dict.count
+        let removedElement = dict.removeValueForRandomKey()
+        XCTAssertEqual(elements - 1, dict.count)
+        XCTAssertFalse(dict.contains(where: {$0.value == removedElement}))
+    }
+
     func testJsonData() {
         let dict = ["key": "value"]
 
@@ -53,12 +64,12 @@ final class DictionaryExtensionsTests: XCTestCase {
         XCTAssertNil([1: 2].jsonString())
     }
 
-    func testCountWhere() {
-        let dict: [String: String] = ["key1": "value", "key2": "value", "key3": "value3"]
-        let count = dict.count { (tuple) -> Bool in
-            return tuple.0 == "key1" || tuple.1 == "value"
-        }
-        XCTAssertEqual(count, 2)
+    func testKeysForValue() {
+        let dict = ["key1": "value1", "key2": "value1", "key3": "value2"]
+        let result = dict.keys(forValue: "value1")
+        XCTAssertTrue(result.contains("key1"))
+        XCTAssertTrue(result.contains("key2"))
+        XCTAssertFalse(result.contains("key3"))
     }
 
     func testLowercaseAllKeys() {
@@ -97,6 +108,38 @@ final class DictionaryExtensionsTests: XCTestCase {
         XCTAssertTrue(dict.keys.contains("key3"))
         XCTAssertFalse(dict.keys.contains("key1"))
         XCTAssertFalse(dict.keys.contains("key2"))
+    }
+
+    func testMapKeysAndValues() {
+        let intToString = [0: "0", 1: "1", 2: "2", 3: "3", 4: "4", 5: "5", 6: "6", 7: "7", 8: "8", 9: "9"]
+
+        let stringToInt: [String: Int] = intToString.mapKeysAndValues { (key, value) in
+            return (String(describing: key), Int(value)!)
+        }
+
+        XCTAssertEqual(stringToInt, ["0": 0, "1": 1, "2": 2, "3": 3, "4": 4, "5": 5, "6": 6, "7": 7, "8": 8, "9": 9])
+    }
+
+    func testCompactMapKeysAndValues() {
+        // swiftlint:disable:next nesting
+        enum IntWord: String {
+            case zero
+            case one
+            case two
+        }
+
+        let strings = [
+            0: "zero",
+            1: "one",
+            2: "two",
+            3: "three"
+        ]
+        let words: [String: IntWord] = strings.compactMapKeysAndValues { (key, value) in
+            guard let word = IntWord(rawValue: value) else { return nil }
+            return (String(describing: key), word)
+        }
+
+        XCTAssertEqual(words, ["0": .zero, "1": .one, "2": .two])
     }
 
 }

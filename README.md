@@ -1,7 +1,7 @@
 # HostsToolforMac
 
 #### [**HostsToolforMac**](https://github.com/ZzzM/HostToolforMac)是Mac平台下的一个简易工具，来获取最新的[**hosts**](https://github.com/racaljk/hosts.git)更新。
-开发语言：Swift 4.1<br/>
+开发语言：Swift 4.2<br/>
 运行环境：macOS 10.10 或以上<br/>
 最新版本：2.3.0 <br/>
 支持语言：中、英 <br/>

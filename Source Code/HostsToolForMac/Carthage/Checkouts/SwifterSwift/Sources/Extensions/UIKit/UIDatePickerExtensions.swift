@@ -6,24 +6,21 @@
 //  Copyright © 2017 SwifterSwift
 //
 
-#if canImport(UIKit)
+#if canImport(UIKit) && os(iOS)
 import UIKit
 
-#if os(iOS)
 // MARK: - Properties
 public extension UIDatePicker {
 
-	/// SwifterSwift: Text color of UIDatePicker.
-	public var textColor: UIColor? {
-		set {
-			setValue(newValue, forKeyPath: "textColor")
-		}
-		get {
-			return value(forKeyPath: "textColor") as? UIColor
-		}
-	}
+    /// SwifterSwift: Text color of UIDatePicker.
+    public var textColor: UIColor? {
+        set {
+            setValue(newValue, forKeyPath: "textColor")
+        }
+        get {
+            return value(forKeyPath: "textColor") as? UIColor
+        }
+    }
 
 }
-#endif
-
 #endif

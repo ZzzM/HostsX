@@ -1,4 +1,4 @@
 framework module RxTest {
-    header "RxTest-Swift.h"
-    requires objc
+  header "RxTest-Swift.h"
+  requires objc
 }

@@ -18,18 +18,18 @@ extension RxTest {
 
     func ensurePropertyDeallocated<C, T>(_ createControl: () -> C, _ initialValue: T, comparer: (T, T) -> Bool, file: StaticString = #file, line: UInt = #line, _ propertySelector: (C) -> ControlProperty<T>) where C: NSObject  {
 
-        let variable = Variable(initialValue)
+        let relay = BehaviorRelay(value: initialValue)
 
         var completed = false
         var deallocated = false
-        var lastReturnedPropertyValue: T!
+        var lastReturnedPropertyValue: T?
 
         autoreleasepool {
             var control: C! = createControl()
 
             let property = propertySelector(control)
 
-            let disposable = variable.asObservable().bind(to: property)
+            let disposable = relay.bind(to: property)
 
             _ = property.subscribe(onNext: { n in
                 lastReturnedPropertyValue = n
@@ -59,7 +59,12 @@ extension RxTest {
 
         XCTAssertTrue(deallocated, "property not deallocated", file: file, line: line)
         XCTAssertTrue(completed, "property not completed", file: file, line: line)
-        XCTAssertTrue(comparer(initialValue, lastReturnedPropertyValue), "last property value (\(lastReturnedPropertyValue)) does not match initial value (\(initialValue))", file: file, line: line)
+        XCTAssertTrue(
+            lastReturnedPropertyValue.map { comparer(initialValue, $0) } ?? false,
+            "last property value (\(lastReturnedPropertyValue.map { "\($0)" } ?? "nil"))) does not match initial value (\(initialValue))",
+            file: file,
+            line: line
+        )
     }
 
     func ensureEventDeallocated<C, T>(_ createControl: @escaping () -> C, file: StaticString = #file, line: UInt = #line, _ eventSelector: (C) -> ControlEvent<T>) where C: NSObject {

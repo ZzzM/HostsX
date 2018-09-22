@@ -139,7 +139,11 @@ final class UICollectionViewTests : RxTest {
             })
 
         let testSupplementaryView = UICollectionReusableView(frame: CGRect(x: 0, y: 0, width: 1, height: 1))
-        let testElementKind = UICollectionElementKindSectionHeader
+        #if swift(>=4.2)
+            let testElementKind = UICollectionView.elementKindSectionHeader
+        #else
+            let testElementKind = UICollectionElementKindSectionHeader
+        #endif
         let testIndexPath = IndexPath(row: 1, section: 0)
         collectionView.delegate!.collectionView!(collectionView, willDisplaySupplementaryView: testSupplementaryView, forElementKind: testElementKind, at: testIndexPath)
 
@@ -189,7 +193,11 @@ final class UICollectionViewTests : RxTest {
             })
 
         let testSupplementaryView = UICollectionReusableView(frame: CGRect(x: 0, y: 0, width: 1, height: 1))
-        let testElementKind = UICollectionElementKindSectionHeader
+        #if swift(>=4.2)
+            let testElementKind = UICollectionView.elementKindSectionHeader
+        #else
+            let testElementKind = UICollectionElementKindSectionHeader
+        #endif
         let testIndexPath = IndexPath(row: 1, section: 0)
         collectionView.delegate!.collectionView!(collectionView, didEndDisplayingSupplementaryView: testSupplementaryView, forElementOfKind: testElementKind, at: testIndexPath)
 
@@ -197,6 +205,53 @@ final class UICollectionViewTests : RxTest {
         XCTAssertEqual(resultElementKind, testElementKind)
         XCTAssertEqual(resultIndexPath, testIndexPath)
         subscription.dispose()
+    }
+
+    @available(iOS 10.0, tvOS 10.0, *)
+    func test_prefetchItems() {
+        let layout = UICollectionViewFlowLayout()
+        let collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: 1, height: 1), collectionViewLayout: layout)
+
+        var indexPaths: [IndexPath] = []
+
+        let subscription = collectionView.rx.prefetchItems
+            .subscribe(onNext: {
+                indexPaths = $0
+            })
+
+        let testIndexPaths = [IndexPath(item: 1, section: 0), IndexPath(item: 2, section: 0)]
+        collectionView.prefetchDataSource!.collectionView(collectionView, prefetchItemsAt: testIndexPaths)
+
+        XCTAssertEqual(indexPaths, testIndexPaths)
+        subscription.dispose()
+    }
+
+    @available(iOS 10.0, tvOS 10.0, *)
+    func test_cancelPrefetchingForItems() {
+        let layout = UICollectionViewFlowLayout()
+        let collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: 1, height: 1), collectionViewLayout: layout)
+
+        var indexPaths: [IndexPath] = []
+
+        let subscription = collectionView.rx.cancelPrefetchingForItems
+            .subscribe(onNext: {
+                indexPaths = $0
+            })
+
+        let testIndexPaths = [IndexPath(item: 1, section: 0), IndexPath(item: 2, section: 0)]
+        collectionView.prefetchDataSource!.collectionView!(collectionView, cancelPrefetchingForItemsAt: testIndexPaths)
+
+        XCTAssertEqual(indexPaths, testIndexPaths)
+        subscription.dispose()
+    }
+
+    @available(iOS 10.0, tvOS 10.0, *)
+    func test_PrefetchDataSourceEventCompletesOnDealloc() {
+        let layout = UICollectionViewFlowLayout()
+        let createView: () -> UICollectionView = { UICollectionView(frame: CGRect(x: 0, y: 0, width: 1, height: 1), collectionViewLayout: layout) }
+
+        ensureEventDeallocated(createView) { (view: UICollectionView) in view.rx.prefetchItems }
+        ensureEventDeallocated(createView) { (view: UICollectionView) in view.rx.cancelPrefetchingForItems }
     }
 
     func test_DelegateEventCompletesOnDealloc1() {

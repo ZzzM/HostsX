@@ -4,7 +4,56 @@ All notable changes to this project will be documented in this file.
 ---
 ## Master
 
+## [4.3.1](https://github.com/ReactiveX/RxSwift/releases/tag/4.3.1)
+
 #### Anomalies
+
+* Fixes issues with CocoaPods and Swift 4.2 version.
+
+## [4.3.0](https://github.com/ReactiveX/RxSwift/releases/tag/4.3.0)
+
+* Compatibility with Xcode 10.0
+* Adds new `insert` extension to collect and add multiple disposables to `DisposeBag`.
+* Removes string interpolation warning
+* Adds `scan(into:accumulator:)`.
+* Adds `queuePriority` parameter (defaults to `.normal`) to `OperationQueueScheduler`.
+* Performance enhancement reduces Bag dispatch inline code size by 12%.
+* Adds `customCaptureSubscriptionCallstack` hook to allow custom subscription callstacks to be generated.
+* Remove usage of `Variable` from Playground, Example projects and Tests.
+* Add `XCTAssertRecordedElements` to `XCTest+Rx`.
+
+#### Anomalies
+
+* Fix build issues on new arm64_32 architecture (watchOS 5).
+
+## [4.2.0](https://github.com/ReactiveX/RxSwift/releases/tag/4.2.0)
+
+* Adds Smart Key Path subscripting to create a binder for property of object.
+* Adds `UICollectionView` extensions:
+    * `prefetchItems`
+    * cancelPrefetchingForItems
+* Adds `UITableView` extensions:
+    * `prefetchRows`
+    * `cancelPrefetchingForRows`
+* Fixes various spelling mistakes and missing parameters.
+* Adds `UISegmentedControlExtensions`:
+    * `titleForSegment(at:)`
+    * `imageForSegment(at:)`
+* Adds `Maybe.ifEmpty(default:)` operator.
+* Adds `Maybe.ifEmpty(switchTo:)` operator.
+* Adds `Maybe.catchErrorJustReturn(_:)` operator.
+* Add  `Single.flatMapMaybe(_:)` operator.
+* Add  `Single.flatMapCompletable(_:)` operator.
+* Add  `Single.zip(_:)` operator.
+* Add  `Single.catchErrorJustReturn(_:)` operator.
+* Add  `Single.asMaybe(_:)` operator.
+* Add  `Single.asCompletable(_:)` operator.
+* Use `editingEvents` argument in `controlPropertyWithDefaultEvents`.
+
+#### Anomalies
+
+* Lower macOS Deployment Target to 10.9
+* Deprecates `UISegmentedControl.enabled(forSegmentAt:)` in favor of `UISegmentedControl.enabledForSegment(at:)`.
 
 ## [4.1.2](https://github.com/ReactiveX/RxSwift/releases/tag/4.1.2)
 

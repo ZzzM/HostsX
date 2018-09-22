@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "RxTest"
-  s.version          = "4.1.2"
+  s.version          = "4.3.1"
   s.summary          = "RxSwift Testing extensions"
   s.description      = <<-DESC
 Unit testing extensions for RxSwift. This library contains mock schedulers, observables, and observers
@@ -48,7 +48,7 @@ func testMap() {
   s.requires_arc          = true
 
   s.ios.deployment_target = '8.0'
-  s.osx.deployment_target = '10.10'
+  s.osx.deployment_target = '10.9'
   s.tvos.deployment_target = '9.0'
 
   s.source_files          = 'RxTest/**/*.swift', 'Platform/**/*.swift'
