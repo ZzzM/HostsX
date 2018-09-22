@@ -9,6 +9,9 @@
 import XCTest
 @testable import SwifterSwift
 
+#if canImport(Foundation)
+import Foundation
+
 class CalendarExtensionTests: XCTestCase {
 
     func testNumberOfDaysInAMonth() {
@@ -30,3 +33,5 @@ class CalendarExtensionTests: XCTestCase {
     }
 
 }
+
+#endif

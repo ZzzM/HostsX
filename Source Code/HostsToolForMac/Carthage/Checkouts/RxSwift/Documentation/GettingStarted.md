@@ -8,15 +8,15 @@ This project tries to be consistent with [ReactiveX.io](http://reactivex.io/). T
 1. [Implicit `Observable` guarantees](#implicit-observable-guarantees)
 1. [Creating your first `Observable` (aka observable sequence)](#creating-your-own-observable-aka-observable-sequence)
 1. [Creating an `Observable` that performs work](#creating-an-observable-that-performs-work)
-1. [Sharing subscription and `shareReplay` operator](#sharing-subscription-and-sharereplay-operator)
+1. [Sharing subscription and `share` operator](#sharing-subscription-and-share-operator)
 1. [Operators](#operators)
 1. [Playgrounds](#playgrounds)
 1. [Custom operators](#custom-operators)
 1. [Error handling](#error-handling)
 1. [Debugging Compile Errors](#debugging-compile-errors)
 1. [Debugging](#debugging)
-1. [Debugging memory leaks](#debugging-memory-leaks)
 1. [Enabling Debug Mode](#enabling-debug-mode)
+1. [Debugging memory leaks](#debugging-memory-leaks)
 1. [KVO](#kvo)
 1. [UI layer tips](#ui-layer-tips)
 1. [Making HTTP requests](#making-http-requests)
@@ -30,7 +30,7 @@ This project tries to be consistent with [ReactiveX.io](http://reactivex.io/). T
 ## Basics
 The [equivalence](MathBehindRx.md) of observer pattern (`Observable<Element>` sequence) and normal sequences (`Sequence`) is the most important thing to understand about Rx.
 
-**Every `Observable` sequence is just a sequence. The key advantage for an `Observable` vs Swift's `Sequence` is that it can also receive elements asynchronously. This is the kernel of the RxSwift, documentation from here is about ways that we expand on that idea.**
+**Every `Observable` sequence is just a sequence. The key advantage for an `Observable` vs Swift's `Sequence` is that it can also receive elements asynchronously. This is the kernel of RxSwift, documentation from here is about ways that we expand on that idea.**
 
 * `Observable`(`ObservableType`) is equivalent to `Sequence`
 * `ObservableType.subscribe` method is equivalent to `Sequence.makeIterator` method.
@@ -69,7 +69,7 @@ These are called marble diagrams. There are more marble diagrams at [rxmarbles.c
 
 If we were to specify sequence grammar as a regular expression it would look like:
 
-**next* (error | completed)?**
+**next\* (error | completed)?**
 
 This describes the following:
 
@@ -286,7 +286,7 @@ let cancel = searchForMe
 
 There are a lot of ways to create your own `Observable` sequence. The easiest way is probably to use the `create` function.
 
-Let's write a function that creates a sequence which returns one element upon subscription. That function is called 'just'.
+RxSwift provides a method that creates a sequence which returns one element upon subscription. That method is called `just`. Let's write our own implementation of it:
 
 *This is the actual implementation*
 
@@ -487,7 +487,7 @@ Ended ----
 
 **Every subscriber upon subscription usually generates it's own separate sequence of elements. Operators are stateless by default. There are vastly more stateless operators than stateful ones.**
 
-## Sharing subscription and `shareReplay` operator
+## Sharing subscription and `share` operator
 
 But what if you want that multiple observers share events (elements) from only one subscription?
 
@@ -496,11 +496,11 @@ There are two things that need to be defined.
 * How to handle past elements that have been received before the new subscriber was interested in observing them (replay latest only, replay all, replay last n)
 * How to decide when to fire that shared subscription (refCount, manual or some other algorithm)
 
-The usual choice is a combination of `replay(1).refCount()` aka `shareReplay()`.
+The usual choice is a combination of `replay(1).refCount()`, aka `share(replay: 1)`.
 
 ```swift
 let counter = myInterval(0.1)
-    .shareReplay(1)
+    .share(replay: 1)
 
 print("Started ----")
 
@@ -594,7 +594,7 @@ Almost all operators are demonstrated in [Playgrounds](../Rx.playground).
 
 To use playgrounds please open `Rx.xcworkspace`, build `RxSwift-macOS` scheme and then open playgrounds in `Rx.xcworkspace` tree view.
 
-In case you need an operator, and don't know how to find it there a [decision tree of operators](http://reactivex.io/documentation/operators.html#tree).
+In case you need an operator, and don't know how to find it there is a [decision tree of operators](http://reactivex.io/documentation/operators.html#tree).
 
 ### Custom operators
 
@@ -685,7 +685,7 @@ This isn't something that should be practiced often, and is a bad code smell, bu
   // Another mess
   //
 
-  let kittens = Variable(firstKitten) // again back in Rx monad
+  let kittens = BehaviorRelay(value: firstKitten) // again back in Rx monad
 
   kittens.asObservable()
     .map { kitten in
@@ -876,65 +876,6 @@ leak somewhere.
 
 The reason why 2 navigations are suggested is because first navigation forces loading of lazy resources.
 
-## Variables
-
-`Variable`s represent some observable state. `Variable` without containing value can't exist because initializer requires initial value.
-
-Variable wraps a [`Subject`](http://reactivex.io/documentation/subject.html). More specifically it is a `BehaviorSubject`.  Unlike `BehaviorSubject`, it only exposes `value` interface, so variable can never terminate with error.
-
-It will also broadcast its current value immediately on subscription.
-
-After variable is deallocated, it will complete the observable sequence returned from `.asObservable()`.
-
-```swift
-let variable = Variable(0)
-
-print("Before first subscription ---")
-
-_ = variable.asObservable()
-    .subscribe(onNext: { n in
-        print("First \(n)")
-    }, onCompleted: {
-        print("Completed 1")
-    })
-
-print("Before send 1")
-
-variable.value = 1
-
-print("Before second subscription ---")
-
-_ = variable.asObservable()
-    .subscribe(onNext: { n in
-        print("Second \(n)")
-    }, onCompleted: {
-        print("Completed 2")
-    })
-
-print("Before send 2")
-
-variable.value = 2
-
-print("End ---")
-```
-
-will print
-
-```
-Before first subscription ---
-First 0
-Before send 1
-First 1
-Before second subscription ---
-Second 1
-Before send 2
-First 2
-Second 2
-End ---
-Completed 1
-Completed 2
-```
-
 ## KVO
 
 KVO is an Objective-C mechanism. That means that it wasn't built with type safety in mind. This project tries to solve some of the problems.
@@ -1054,14 +995,14 @@ let searchResults = searchText
             .startWith([]) // clears results on new search term
             .catchErrorJustReturn([])
     }
-    .shareReplay(1)              // <- notice the `shareReplay` operator
+    .share(replay: 1)    // <- notice the `share` operator
 ```
 
-What you usually want is to share search results once calculated. That is what `shareReplay` means.
+What you usually want is to share search results once calculated. That is what `share` means.
 
-**It is usually a good rule of thumb in the UI layer to add `shareReplay` at the end of transformation chain because you really want to share calculated results. You don't want to fire separate HTTP connections when binding `searchResults` to multiple UI elements.**
+**It is usually a good rule of thumb in the UI layer to add `share` at the end of transformation chain because you really want to share calculated results. You don't want to fire separate HTTP connections when binding `searchResults` to multiple UI elements.**
 
-**Also take a look at `Driver` unit. It is designed to transparently wrap those `shareReply` calls, make sure elements are observed on main UI thread and that no error can be bound to UI.**
+**Also take a look at `Driver` unit. It is designed to transparently wrap those `share` calls, make sure elements are observed on main UI thread and that no error can be bound to UI.**
 
 ## Making HTTP requests
 

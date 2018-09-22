@@ -9,67 +9,77 @@
 import XCTest
 @testable import SwifterSwift
 
+#if canImport(Foundation)
+import Foundation
+
 final class FileManagerExtensionsTests: XCTestCase {
 
-	func testJSONFromFileAtPath() {
-		do {
-			let bundle = Bundle(for: FileManagerExtensionsTests.self)
-			let filePath = bundle.path(forResource: "test", ofType: "json")
+    func testJSONFromFileAtPath() {
+        do {
+            let bundle = Bundle(for: FileManagerExtensionsTests.self)
+            let filePath = bundle.path(forResource: "test", ofType: "json")
 
-			guard let path = filePath else {
-				XCTFail("File path undefined.")
+            guard let path = filePath else {
+                XCTFail("File path undefined.")
+                return
+            }
 
-				return
-			}
+            let json = try FileManager.default.jsonFromFile(atPath: path)
 
-			let json = try FileManager.default.jsonFromFile(atPath: path)
+            XCTAssertNotNil(json)
 
-			XCTAssertNotNil(json)
+            // Check contents
+            if let dict = json {
+                if let string = dict["title"] as? String, let itemId = dict["id"] as? Int {
+                    XCTAssert(string == "Test")
+                    XCTAssert(itemId == 1)
+                } else {
+                    XCTFail("Does not contain the correct content.")
+                }
+            } else {
+                XCTFail("Opening of file returned nil.")
+            }
+        } catch {
+            XCTFail("Error encountered during opening of file. \(error.localizedDescription)")
+        }
+    }
 
-			// Check contents
-			if let dict = json {
-				if let string = dict["title"] as? String, let itemId = dict["id"] as? Int {
-					XCTAssert(string == "Test")
-					XCTAssert(itemId == 1)
-				} else {
-					XCTFail("Does not contain the correct content.")
-				}
-			} else {
-				XCTFail("Opening of file returned nil.")
-			}
-		} catch {
-			XCTFail("Error encountered during opening of file.")
-		}
-	}
+    func testJSONFromFileWithFilename() {
+        do {
+            var filename = "test.json"  // With extension
+            var json = try FileManager.default.jsonFromFile(withFilename: filename, at: FileManagerExtensionsTests.self)
 
-	func testJSONFromFileWithFilename() {
-		do {
-			var filename = "test.json"  // With extension
-			var json = try FileManager.default.jsonFromFile(withFilename: filename,
-															at: FileManagerExtensionsTests.self)
+            XCTAssertNotNil(json)
 
-			XCTAssertNotNil(json)
+            filename = "test"  // Without extension
+            json = try FileManager.default.jsonFromFile(withFilename: filename, at: FileManagerExtensionsTests.self)
 
-			filename = "test"  // Without extension
-			json = try FileManager.default.jsonFromFile(withFilename: filename,
-														at: FileManagerExtensionsTests.self)
+            XCTAssertNotNil(json)
 
-			XCTAssertNotNil(json)
+            // Check contents
+            if let dict = json {
+                if let string = dict["title"] as? String, let itemId = dict["id"] as? Int {
+                    XCTAssert(string == "Test")
+                    XCTAssert(itemId == 1)
+                } else {
+                    XCTFail("Does not contain the correct content.")
+                }
+            } else {
+                XCTFail("Opening of file returned nil.")
+            }
+        } catch {
+            XCTFail("Error encountered during opening of file. \(error.localizedDescription)")
+        }
+    }
 
-			// Check contents
-			if let dict = json {
-				if let string = dict["title"] as? String, let itemId = dict["id"] as? Int {
-					XCTAssert(string == "Test")
-					XCTAssert(itemId == 1)
-				} else {
-					XCTFail("Does not contain the correct content.")
-				}
-			} else {
-				XCTFail("Opening of file returned nil.")
-			}
-		} catch {
-			XCTFail("Error encountered during opening of file.")
-		}
-	}
+    func testInvalidFile() {
+        let filename = "another_test.not_json"
+        do {
+            let json = try FileManager.default.jsonFromFile(withFilename: filename, at: FileManagerExtensionsTests.self)
+            XCTAssertNil(json)
+        } catch {}
+    }
 
 }
+
+#endif

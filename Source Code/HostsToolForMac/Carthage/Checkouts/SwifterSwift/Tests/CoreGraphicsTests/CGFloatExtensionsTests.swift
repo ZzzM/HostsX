@@ -9,77 +9,55 @@
 import XCTest
 @testable import SwifterSwift
 
+#if canImport(CoreGraphics)
+import CoreGraphics
+
 final class CGFloatExtensionsTests: XCTestCase {
 
-	#if !os(macOS)
-	func testAbs() {
-		XCTAssertEqual(CGFloat(-9.3).abs, CGFloat(9.3))
-	}
-	#endif
+    func testAbs() {
+        XCTAssertEqual(CGFloat(-9.3).abs, CGFloat(9.3))
+    }
 
-	#if !os(macOS)
-	func testCeil() {
-		XCTAssertEqual(CGFloat(9.3).ceil, CGFloat(10.0))
-	}
-	#endif
+    func testCeil() {
+        XCTAssertEqual(CGFloat(9.3).ceil, CGFloat(10.0))
+    }
 
-	#if !os(macOS)
-	func testDegreesToRadians() {
-		XCTAssertEqual(CGFloat(180).degreesToRadians, CGFloat.pi)
-	}
-	#endif
+    func testDegreesToRadians() {
+        XCTAssertEqual(CGFloat(180).degreesToRadians, CGFloat.pi)
+    }
 
-	#if !os(macOS)
-	func testIsPositive() {
-		XCTAssert(CGFloat(9.3).isPositive)
-		XCTAssertFalse(CGFloat(0).isPositive)
-		XCTAssertFalse(CGFloat(-9.2).isPositive)
-	}
-	#endif
+    func testIsPositive() {
+        XCTAssert(CGFloat(9.3).isPositive)
+        XCTAssertFalse(CGFloat(0).isPositive)
+        XCTAssertFalse(CGFloat(-9.2).isPositive)
+    }
 
-	#if !os(macOS)
-	func testIsNegative() {
-		XCTAssert(CGFloat(-9.3).isNegative)
-		XCTAssertFalse(CGFloat(0).isNegative)
-		XCTAssertFalse(CGFloat(9.3).isNegative)
-	}
-	#endif
+    func testIsNegative() {
+        XCTAssert(CGFloat(-9.3).isNegative)
+        XCTAssertFalse(CGFloat(0).isNegative)
+        XCTAssertFalse(CGFloat(9.3).isNegative)
+    }
 
-	#if !os(macOS)
-	func testInt() {
-		XCTAssertEqual(CGFloat(9.3).int, Int(9))
-	}
-	#endif
+    func testInt() {
+        XCTAssertEqual(CGFloat(9.3).int, Int(9))
+    }
 
-	#if !os(macOS)
-	func testDouble() {
-		XCTAssertEqual(CGFloat(9.3).double, Double(9.3))
-	}
-	#endif
+    func testDouble() {
+        XCTAssertEqual(CGFloat(9.3).double, Double(9.3))
+    }
 
-	#if !os(macOS)
-	func testFloat() {
-		XCTAssertEqual(CGFloat(9.3).float, Float(9.3))
-	}
-	#endif
+    func testFloat() {
+        XCTAssertEqual(CGFloat(9.3).float, Float(9.3))
+    }
 
-	#if !os(macOS)
-	func testRandomBetween() {
-		XCTAssertGreaterThan(CGFloat.randomBetween(min: 1, max: 5), 0)
-		XCTAssertLessThan(CGFloat.randomBetween(min: 1, max: 5), 5)
-	}
-	#endif
+    func testFloor() {
+        XCTAssertEqual(CGFloat(9.3).floor, CGFloat(9.0))
+    }
 
-	#if !os(macOS)
-	func testFloor() {
-		XCTAssertEqual(CGFloat(9.3).floor, CGFloat(9.0))
-	}
-	#endif
-
-	#if !os(macOS)
-	func testRadiansToDegrees() {
-		XCTAssertEqual(CGFloat.pi.radiansToDegrees, CGFloat(180))
-	}
-	#endif
+    func testRadiansToDegrees() {
+        XCTAssertEqual(CGFloat.pi.radiansToDegrees, CGFloat(180))
+    }
 
 }
+
+#endif

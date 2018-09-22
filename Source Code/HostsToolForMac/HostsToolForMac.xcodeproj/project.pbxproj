@@ -20,6 +20,18 @@
 		1FA54AA720B2CF39005B2515 /* Release.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA54AA620B2CF39005B2515 /* Release.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		1F1D38BA2144FB4300BCA38A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		1F1AB29A1E666D9F00171458 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F1AB29C1E666D9F00171458 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -121,6 +133,7 @@
 				1F1AB2941E666D9F00171458 /* Frameworks */,
 				1F1AB2951E666D9F00171458 /* Resources */,
 				1FA54A9B20B2BB6C005B2515 /* ShellScript */,
+				1F1D38BA2144FB4300BCA38A /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -363,7 +376,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ZzzM.HostsToolForMac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -383,7 +396,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ZzzM.HostsToolForMac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};

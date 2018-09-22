@@ -93,7 +93,7 @@ function ensureVersionEqual() {
 }
 
 function ensureNoGitChanges() {
-	if [ `git diff HEAD | wc -l` -gt 0 ]; then
+	if [ `(git add . && git diff HEAD && git reset) | wc -l` -gt 0 ]; then
 		echo $1
 		exit -1
 	fi
@@ -133,7 +133,7 @@ fi
 CONFIGURATIONS=(Release-Tests)
 
 if [ "${RELEASE_TEST}" -eq 1 ]; then
-	CONFIGURATIONS=(Release Release-Tests Debug)
+	CONFIGURATIONS=(Debug Release Release-Tests)
 fi
 
 if [ "${RELEASE_TEST}" -eq 1 ]; then

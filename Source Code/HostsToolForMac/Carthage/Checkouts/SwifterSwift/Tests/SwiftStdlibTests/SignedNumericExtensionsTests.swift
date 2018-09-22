@@ -9,7 +9,7 @@
 import XCTest
 @testable import SwifterSwift
 
-class SignedNumericExtensionsTests: XCTestCase {
+final class SignedNumericExtensionsTests: XCTestCase {
 
     func testString() {
         let number1: Double = -1.2

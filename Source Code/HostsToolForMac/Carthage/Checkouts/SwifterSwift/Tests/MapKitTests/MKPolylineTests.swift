@@ -6,19 +6,23 @@
 //  Copyright © 2018 SwifterSwift
 //
 
+import XCTest
 @testable import SwifterSwift
 
-import XCTest
+#if canImport(MapKit)
 import MapKit
+
 import struct CoreLocation.CLLocationCoordinate2D
 
 final class MKPolylineTests: XCTestCase {
 
-    let coordinates = [(37.330514, -121.888863),
-                       (37.330832, -121.888337),
-                       (37.329599, -121.886859),
-                       (37.330019, -121.885993),
-                       (37.329767, -121.885813)].map(CLLocationCoordinate2D.init)
+    let coordinates = [
+        (37.330514, -121.888863),
+        (37.330832, -121.888337),
+        (37.329599, -121.886859),
+        (37.330019, -121.885993),
+        (37.329767, -121.885813)
+        ].map(CLLocationCoordinate2D.init)
 
     func testInitWithCoordinates() {
         var refCoordinates = coordinates
@@ -44,3 +48,5 @@ final class MKPolylineTests: XCTestCase {
     }
 
 }
+
+#endif
