@@ -172,9 +172,9 @@ extension String{
         
         guard
             self.contains("localhost") &&
-            self.contains("127.0.0.1") &&
-            self.contains("::1") else{
-            return Observable.error(Helper.error("Error.Hosts.Invalid".localized()))
+                self.contains("127.0.0.1")
+            else{
+                return Observable.error(Helper.error("Error.Hosts.Invalid".localized()))
         }
         return Observable.just(self)
     }
