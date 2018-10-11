@@ -7,9 +7,8 @@
 支持语言：中、英 <br/>
 下载地址：[Release](https://github.com/ZzzM/HostsToolforMac/releases)
 
-### Version 2.3.0：
--优化项目结构<br/>
--精简UI
+### Version 2.3.1：
+-修复读取 Hosts 无效 ，导致无法更新bug<br/>
 
 #### 网络更新机制：
 -第一次更新会完全覆盖原hosts，然后生成“# My Hosts Start”、“# My Hosts End”标识<br/>
