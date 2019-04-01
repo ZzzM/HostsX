@@ -1,9 +1,9 @@
 {
-  "commitish" : "4.5.0",
+  "commitish" : "5.0.0",
   "Mac" : [
     {
       "name" : "SwifterSwift",
-      "hash" : "82287028fe5e4ddc1f0a15d8084b2eef770e1363b73012811e3ee61cc880e469"
+      "hash" : "bbfc907ae37a5a011f0df0762df057cdbe4fab4b06075b77a6a238b5c499d928"
     }
   ]
 }

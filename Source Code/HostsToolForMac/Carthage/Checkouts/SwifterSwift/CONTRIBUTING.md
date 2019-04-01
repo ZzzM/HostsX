@@ -80,6 +80,7 @@ public extension SomeType {
 - All extensions should be tested. See [Adding Tests](#adding-tests) to know more.
 - Files are named based on the type that the contained extensions extend.
    - (example: all String extensions are found in "**StringExtensions.swift**" file)
+- Add [subspec](https://github.com/SwifterSwift/SwifterSwift/blob/master/SwifterSwift.podspec) if you submit extensions for a module that is not presented in podspec file yet.
 - Extensions and tests are ordered inside files in the following order:
 
 ```swift
@@ -173,7 +174,7 @@ Use the following template to add documentation for extensions
 ///    [1, 2, 3, 4, 5].sum() -> 15
 ///
 /// - Returns: Sum of the array's elements.
-public func sum() -> Element {
+func sum() -> Element {
     // ...
 }
 
@@ -183,7 +184,7 @@ public func sum() -> Element {
 ///   - component: component type.
 ///   - value: new value of component to change.
 /// - Returns: original date after changing given component to given value.
-public func changing(_ component: Calendar.Component, value: Int) -> Date? {
+func changing(_ component: Calendar.Component, value: Int) -> Date? {
     // ...
 }
 

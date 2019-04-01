@@ -13,7 +13,7 @@ import SwifterSwift
 
 
 let AppVersion = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
-let AppName = "HostsToolforMac"
+let AppName = Bundle.main.infoDictionary!["CFBundleDisplayName"] as! String
 
 let ApiReleasesURL = URL(string: "https://api.github.com/repos/ZzzM/HostsToolforMac/releases/latest")!
 let ReleasesURL = URL(string: "https://github.com/ZzzM/HostsToolforMac/releases")!
@@ -31,7 +31,36 @@ let TargetDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .u
 
 let TargetPath = TargetDirectory + "/hosts"
 
-var openPanel: Observable<String> {
+enum VersionStatus {
+    case latest, availble, error(String)
+    
+    var message: String {
+        switch self {
+        case .latest:
+            return "Hint.Version.Latest".localized()
+        case .availble:
+            return "Hint.Version.Availble".localized()
+        case .error(let msg):
+            return msg
+        }
+    }
+}
+
+enum ExecutionResult {
+    case success(String), invalid, error(String)
+    
+    var message: String? {
+        switch self {
+        case .success(let msg),
+             .error(let msg):
+            return msg
+        default:
+            return nil
+        }
+    }
+}
+
+var openPanel: Observable<ExecutionResult> {
     let value = NSOpenPanel()
     value.allowsMultipleSelection = false
     value.canChooseDirectories = false
@@ -39,118 +68,150 @@ var openPanel: Observable<String> {
     value.canChooseFiles = true
     
     guard value.runModal().rawValue == NSFileHandlingPanelOKButton else {
-        return Observable.just("")
+        return Observable.just(ExecutionResult.invalid)
     }
     guard let path = value.url?.path  else {
-        return Observable.just("")
+        return Observable.just(ExecutionResult.invalid)
     }
     do {
         return try String(contentsOfFile: path).checked
-    } catch{
-        return Observable.error(error)
+    } catch {
+        return Observable.just(
+            ExecutionResult.error(error.localizedDescription))
+    }
+
+}
+
+import UserNotifications
+
+func deliverNotification(_ message: String?) {
+    guard message != nil else {
+        return
+    }
+    
+    if #available(OSX 10.14, *) {
+        let content = UNMutableNotificationContent()
+        content.title = "\(AppName) v\(AppVersion)"
+        content.body = message!
+        content.sound = .default
+        let request = UNNotificationRequest(identifier: AppName, content: content, trigger: nil)
+        UNUserNotificationCenter.current().add(request)
+    } else {
+        let notification = NSUserNotification()
+        notification.title = "\(AppName) v\(AppVersion)"
+        notification.informativeText = message!
+        notification.soundName = NSUserNotificationDefaultSoundName
+        NSUserNotificationCenter.default.deliver(notification)
     }
 
 }
 
 
-class Helper: NSObject {
-    
+extension Observable where Element == ExecutionResult {
 
-    static func error(_ message: String) -> NSError {
-        return NSError(domain: "HelperError", code: -1, userInfo: [NSLocalizedDescriptionKey:message])
-    }
-    
-    static func showMessage(_ message:String) {
-        let n = NSUserNotification()
-        n.title = AppName + " v" + AppVersion
-        n.informativeText = message
-        n.soundName = NSUserNotificationDefaultSoundName
-        NSUserNotificationCenter.default.deliver(n)
-    }
-    
-    
-}
-
-extension Observable where Element == String {
-
-    func compare() -> Observable<Element> {
+    var compare: Observable<Element> {
         
     
-        return self.map({ network in
-
-            let content = StartMark
-                + "\n"*2 + ShowMark
-                + "\n"*2 + EndMark
-                + "\n"*2 + network
-
+        return
             
-            guard let local = try? String.init(contentsOfFile: "/private/etc/hosts") else{
-                return content
-            }
-            
-            guard
-                let startIndex = local.range(of: StartMark)?.upperBound,
-                let endIndex = local.range(of: EndMark)?.lowerBound else{
+            map{
                 
-                return content
+                switch $0 {
+                case .success:
+                    break
+                default:
+                    return $0
+                }
                 
-            }
-            
-            return content.replacingOccurrences(of: ShowMark, with: local[startIndex..<endIndex].trimmingCharacters(in: NSCharacterSet.whitespacesAndNewlines))
-            
-        })
-
+                let content = StartMark
+                    + "\n"*2 + ShowMark
+                    + "\n"*2 + EndMark
+                    + "\n"*2 + $0.message!
+                
+                
+                guard let local = try? String(contentsOfFile: "/private/etc/hosts") else{
+                    return ExecutionResult.success(content)
+                }
+                
+                guard
+                    let startIndex = local.range(of: StartMark)?.upperBound,
+                    let endIndex = local.range(of: EndMark)?.lowerBound else{
+                        
+                        return ExecutionResult.success(content)
+                }
+                return ExecutionResult.success(
+                    content
+                        .replacingOccurrences(of: ShowMark, with: local[startIndex..<endIndex]
+                            .trimmingCharacters(in: .whitespacesAndNewlines)))
+        }
+        
         
     }
     
     
-    func execute() -> Observable<Element> {
+    var execute: Observable<Element> {
         
-        return self.map{ hosts in
+
+        return
             
-            defer{try? FileManager.default.removeItem(atPath: TargetPath)}
-            
-            guard hosts.create else{
-                throw Helper.error("Error.Hosts.Creation".localized())
-            }
-            
-            guard let scriptObject = NSAppleScript(source: TargetPath.script) else{
-                throw Helper.error("Error.Script.Compile".localized())
-            }
-            
-            var errorDic : NSDictionary? = nil
-            scriptObject.executeAndReturnError(&errorDic)
-            
-            
-            guard let error = errorDic,let message = error["NSAppleScriptErrorMessage"] as? String else {
-                return "Hint.Script.Succeed".localized()
-            }
-            
-            throw Helper.error("Error.Script.Execution".localized() + message)
+            map{
+                
+                defer{ try? FileManager.default.removeItem(atPath: TargetPath) }
+                
+                switch $0 {
+                case .success:
+                    break
+                default:
+                    return $0
+                }
+                
+                guard $0.message!.create else{
+                    
+                    return ExecutionResult
+                        .error("Error.Hosts.Creation".localized())
+                }
+                
+                guard let scriptObject = NSAppleScript(source: TargetPath.script) else{
+                    return ExecutionResult
+                        .error("Error.Script.Compile".localized())
+                }
+                
+                var errorDic : NSDictionary?
+                scriptObject.executeAndReturnError(&errorDic)
+                
+                
+                guard let error = errorDic,let message = error["NSAppleScriptErrorMessage"] as? String else {
+                    return ExecutionResult
+                        .error("Hint.Script.Succeed".localized())
+                }
+                
+                return ExecutionResult
+                    .error("Error.Script.Execution".localized() + message)
         }
     }
-
-  
+    
+    
 }
 
 
 extension URL{
-    var hosts: Observable<String> {
-
+    var hosts: Observable<ExecutionResult> {
+        
         do {
             return try String(contentsOf: self).checked
         } catch{
-        
+            
             guard let underlyingError = error.userInfo["NSUnderlyingError"] as? Error else {
-                return Observable.error(error)
+                return Observable.just(ExecutionResult.error(error.localizedDescription))
             }
-            return Observable.error(underlyingError)
+            return Observable.just(ExecutionResult.error(underlyingError.localizedDescription))
             
         }
     }
 }
 
 extension String{
+    
     var create: Bool {
         
         return FileManager.default.createFile(atPath:TargetPath, contents: self.data(using: .utf8), attributes: nil)
@@ -158,25 +219,27 @@ extension String{
     
     
     var script: String {
-        return "do shell script \"cp -f \(self) ~/../../private/etc/hosts\" with administrator privileges"
+        return #"do shell script "cp -f \#(self) ~/../../private/etc/hosts" with administrator privileges"#
     }
     
     var intVersion: Int {
         return self.replacingOccurrences(of: ".", with: "").int!
     }
-    var needUpdate: Bool{
+    
+    var isLatest: Bool{
         return AppVersion.intVersion >= self.intVersion
     }
     
-    var checked: Observable<String>  {
+    var checked: Observable<ExecutionResult>  {
         
         guard
             self.contains("localhost") &&
                 self.contains("127.0.0.1")
             else{
-                return Observable.error(Helper.error("Error.Hosts.Invalid".localized()))
+                return Observable
+                    .just(ExecutionResult.error("Error.Hosts.Invalid".localized()))
         }
-        return Observable.just(self)
+        return Observable.just(ExecutionResult.success(self))
     }
  
 }
@@ -195,6 +258,7 @@ extension AppDelegate:NSUserNotificationCenterDelegate{
         let itemIcon = #imageLiteral(resourceName: "AppIcon_s")
         itemIcon.isTemplate = true
         barItem.image = itemIcon
+
         barItem.menu = menu
     }
     

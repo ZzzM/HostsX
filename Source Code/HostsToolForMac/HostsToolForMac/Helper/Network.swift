@@ -10,20 +10,22 @@ import Cocoa
 import RxSwift
 
 
-class Network: NSObject {
+struct Network {
 
-    static func checkVersion() -> Observable<Bool>{
+    static var checkVersion: Observable<VersionStatus> {
+        
         return URLSession.shared.rx
             .json(url: ApiReleasesURL)
-            .catchError{Observable.error($0)}
+            .catchError{ Observable.just(VersionStatus.error($0.localizedDescription))}
             .map{
                 
                 let data = try JSONSerialization.data(withJSONObject: $0, options: .prettyPrinted)
 
                 guard let release = try? JSONDecoder().decode(Release.self, from: data) else{
-                    return true
+                    return VersionStatus.latest
                 }
-                return release.tag_name.needUpdate
+                return release.tag_name.isLatest ?
+                    VersionStatus.latest: VersionStatus.availble
         }
         
     }

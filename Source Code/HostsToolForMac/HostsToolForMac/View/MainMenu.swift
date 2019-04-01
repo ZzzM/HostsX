@@ -8,11 +8,11 @@
 
 import Cocoa
 import RxSwift
+import RxCocoa
 
 
 class MainMenu: NSMenu {
 
-    let disposeBag = DisposeBag()
 
     @IBOutlet weak var importItem: NSMenuItem!
     
@@ -40,18 +40,13 @@ class MainMenu: NSMenu {
         
     }
     
+
     
     @IBAction func importAction(_ sender: Any) {
         
-        openPanel
-            .filter{!$0.isEmpty}
-            .execute()
-            .subscribe(onNext: {
-                Helper.showMessage($0)
-            }, onError: {
-                Helper.showMessage($0.localizedDescription)
-            })
-            .disposed(by: disposeBag)
+        _ = openPanel
+            .execute
+            .bind { deliverNotification($0.message) }
 
     }
     
@@ -67,36 +62,27 @@ class MainMenu: NSMenu {
     
     
     func openURL(_ url:URL) {
-        url
+        _ = url
             .hosts
-            .compare()
-            .execute()
-            .subscribe(onNext: {
-                Helper.showMessage($0)
-            }, onError: {
-                Helper.showMessage($0.localizedDescription)
-            })
-            .disposed(by: disposeBag)
+            .compare
+            .execute
+            .bind { deliverNotification($0.message) }
+
     }
     
     //MARK: Other
 
     @IBAction func appUpdateAction(_ sender: Any) {
-        Network
-            .checkVersion()
-            .subscribe(onNext: {
-                Helper.showMessage($0 ?
-                    "Hint.Version.Latest".localized():
-                    "Hint.Version.Availble".localized())
-            }, onError: {
-                Helper.showMessage($0.localizedDescription)
-            })
-            .disposed(by: disposeBag)
+        
+        _ = Network
+            .checkVersion
+            .bind { deliverNotification($0.message) }
+
     }
     
     
     
     @IBAction func exitAction(_ sender: Any) {
-        NSApplication.shared.terminate(nil)
+        NSApp.terminate(nil)
     }
 }

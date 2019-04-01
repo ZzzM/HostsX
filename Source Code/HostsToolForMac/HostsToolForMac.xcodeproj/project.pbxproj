@@ -13,11 +13,11 @@
 		1F2396D320B5065E00618BB8 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2396D220B5065E00618BB8 /* MainMenu.swift */; };
 		1F338EBF1E696A1D004A3265 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F338EC11E696A1D004A3265 /* Localizable.strings */; };
 		1FA54A9A20B2BAB5005B2515 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA54A9920B2BAB5005B2515 /* Helper.swift */; };
-		1FA54AA020B2BBD0005B2515 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FA54A9D20B2BBD0005B2515 /* RxCocoa.framework */; };
-		1FA54AA120B2BBD0005B2515 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FA54A9E20B2BBD0005B2515 /* RxSwift.framework */; };
-		1FA54AA220B2BBD0005B2515 /* SwifterSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FA54A9F20B2BBD0005B2515 /* SwifterSwift.framework */; };
 		1FA54AA420B2BD52005B2515 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA54AA320B2BD52005B2515 /* Network.swift */; };
 		1FA54AA720B2CF39005B2515 /* Release.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA54AA620B2CF39005B2515 /* Release.swift */; };
+		1FECAE8C2251A525009B6C12 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FECAE892251A525009B6C12 /* RxSwift.framework */; };
+		1FECAE8D2251A525009B6C12 /* SwifterSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FECAE8A2251A525009B6C12 /* SwifterSwift.framework */; };
+		1FECAE8E2251A525009B6C12 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FECAE8B2251A525009B6C12 /* RxCocoa.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -42,11 +42,11 @@
 		1F338EC31E696A20004A3265 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		1FA54A9620B2BA72005B2515 /* HostsToolForMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HostsToolForMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FA54A9920B2BAB5005B2515 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
-		1FA54A9D20B2BBD0005B2515 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/Mac/RxCocoa.framework; sourceTree = "<group>"; };
-		1FA54A9E20B2BBD0005B2515 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/Mac/RxSwift.framework; sourceTree = "<group>"; };
-		1FA54A9F20B2BBD0005B2515 /* SwifterSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwifterSwift.framework; path = Carthage/Build/Mac/SwifterSwift.framework; sourceTree = "<group>"; };
 		1FA54AA320B2BD52005B2515 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		1FA54AA620B2CF39005B2515 /* Release.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Release.swift; sourceTree = "<group>"; };
+		1FECAE892251A525009B6C12 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/Mac/RxSwift.framework; sourceTree = "<group>"; };
+		1FECAE8A2251A525009B6C12 /* SwifterSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwifterSwift.framework; path = Carthage/Build/Mac/SwifterSwift.framework; sourceTree = "<group>"; };
+		1FECAE8B2251A525009B6C12 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/Mac/RxCocoa.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,9 +54,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1FA54AA020B2BBD0005B2515 /* RxCocoa.framework in Frameworks */,
-				1FA54AA120B2BBD0005B2515 /* RxSwift.framework in Frameworks */,
-				1FA54AA220B2BBD0005B2515 /* SwifterSwift.framework in Frameworks */,
+				1FECAE8C2251A525009B6C12 /* RxSwift.framework in Frameworks */,
+				1FECAE8D2251A525009B6C12 /* SwifterSwift.framework in Frameworks */,
+				1FECAE8E2251A525009B6C12 /* RxCocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,9 +98,9 @@
 		1FA54A9C20B2BBD0005B2515 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1FA54A9D20B2BBD0005B2515 /* RxCocoa.framework */,
-				1FA54A9E20B2BBD0005B2515 /* RxSwift.framework */,
-				1FA54A9F20B2BBD0005B2515 /* SwifterSwift.framework */,
+				1FECAE8B2251A525009B6C12 /* RxCocoa.framework */,
+				1FECAE892251A525009B6C12 /* RxSwift.framework */,
+				1FECAE8A2251A525009B6C12 /* SwifterSwift.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -157,14 +157,14 @@
 					1F1AB2961E666D9F00171458 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 7823BJG877;
-						LastSwiftMigration = 0930;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
 			buildConfigurationList = 1F1AB2921E666D9F00171458 /* Build configuration list for PBXProject "HostsToolForMac" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -212,7 +212,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -307,6 +307,7 @@
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -357,6 +358,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -369,14 +371,14 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = HostsToolForMac/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = ZzzM.HostsToolForMac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -389,14 +391,14 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = HostsToolForMac/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = ZzzM.HostsToolForMac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

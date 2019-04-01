@@ -20,12 +20,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBOutlet weak var menu: NSMenu!
 
-    let barItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
+    let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
 
-        
-        setStatusBarItem(barItem)
+
+        setStatusBarItem(statusItem)
         setUserNotification()
 
         

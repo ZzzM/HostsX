@@ -6,7 +6,7 @@
 	<dict>
 		<key>Resources/Info.plist</key>
 		<data>
-		RtGnAf/epsz+HrHjSNIBBq6O/fY=
+		1pmEHBMchZqh4crGbjBO1cXny4U=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -15,11 +15,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			T5WV+kkFJwtSRfxMTs9F/KC/wA0=
+			RczhEf+eOGkUzuvqWApJ8bSr6sg=
 			</data>
 			<key>hash2</key>
 			<data>
-			vJrcySKhy0Z+NaMGOMfKRdcC0jsuuwl7saiIhB3lK+U=
+			wqHT3918BKScCx+IDUCB7aG+yRvp4RW5qy4JJvwS5vw=
 			</data>
 		</dict>
 		<key>Headers/SwifterSwift.h</key>
@@ -37,22 +37,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Cn+j0a7RJrHSp/2jFW15bYSlnY8=
+			JycpKbN840rNSUnOy58bOVPwEW0=
 			</data>
 			<key>hash2</key>
 			<data>
-			HCdHRN1fYx75zURSo/M7zczrQDKKubUWhwJQnxnQxlU=
+			NPFSQtEs2MN0XXkgGD/2b8sq9hnugxN1nlF0pjStr3c=
 			</data>
 		</dict>
 		<key>Modules/SwifterSwift.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			DrVLeEuJgXM1KFjJx0yjumqGcmI=
+			co7ycUI0m/jdpm/x1EiFhSW2NPk=
 			</data>
 			<key>hash2</key>
 			<data>
-			Q13eGp1ymT3mx/vGE/LOhXDDo1VRfLyDEjl0njKJ1tM=
+			O42er+ExXdZgyEZpU61U+6eqJHddT9lpqv6CIjxa9BQ=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -70,11 +70,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			RtGnAf/epsz+HrHjSNIBBq6O/fY=
+			1pmEHBMchZqh4crGbjBO1cXny4U=
 			</data>
 			<key>hash2</key>
 			<data>
-			PrwpdoAHq9Jfc4Ax9/XndZnr0hld88r7+kg7CBFtKII=
+			9PWuIG0XKwt3JhRdrQC03cetyH3F7h0dd2Dr5NVpJsU=
 			</data>
 		</dict>
 	</dict>

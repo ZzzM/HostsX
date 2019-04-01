@@ -6,7 +6,7 @@
 	<dict>
 		<key>Resources/Info.plist</key>
 		<data>
-		ZoEZsvjEnGNmKcVIElcsl080pcg=
+		1PQbuyume4oLZqzR7WOMEEsMMBc=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -15,33 +15,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			lthNbVI90pNUcFH+CAW2gUd3G30=
+			tEcTDsh6HLn4lra2QYd7fbxpDCM=
 			</data>
 			<key>hash2</key>
 			<data>
-			tAJDzR+7ALJh4oh4BQeuQlWeaGZmxqr7EXKfy+aM5TA=
+			N0K/JlvHaJiEZUROrGIDJAhmVAegV5ixSZ5xQ5MvCO4=
 			</data>
 		</dict>
 		<key>Modules/RxSwift.swiftmodule/x86_64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			+KEsg9fwTJSupoxZi2x/aiPNTxo=
+			u4gjOWkQPkFTsL5LYQZgY7G1yIA=
 			</data>
 			<key>hash2</key>
 			<data>
-			1FoEFXckn9fonM4cQv94kufqsgDBa+MguBZ5In1+UYI=
+			ZpRCRn3FLFbWaAgX2HQuStTt1AwUYEM25eEBI7X/aYM=
 			</data>
 		</dict>
 		<key>Modules/RxSwift.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			3ZJJjCLJ+fiwppzCVMzDh9NpJXc=
+			Y0OJ8QLsj8t4uhCceSVgCkd5PTM=
 			</data>
 			<key>hash2</key>
 			<data>
-			npE3yLnvRvR/gMVPAi1nHKoguCvhAXWIK+ixmy6qr8E=
+			hs4KL+//kq68RdOWDmbXkLYlsnNPpB42xDJgU7dpSvk=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -59,11 +59,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ZoEZsvjEnGNmKcVIElcsl080pcg=
+			1PQbuyume4oLZqzR7WOMEEsMMBc=
 			</data>
 			<key>hash2</key>
 			<data>
-			TMrNAm5C3OGJXZtM84BUK5ZPYSeUTSVl8dx8NXBQSZ0=
+			qpIJS/RiwqmXzqNbt2HuqbSmDUXFt//cUP7b23N8/Iw=
 			</data>
 		</dict>
 	</dict>
