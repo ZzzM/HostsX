@@ -10,6 +10,7 @@
 ### Version 2.3.2：
 -更新至 Swift 5<br/>
 
+
 #### 网络更新机制：
 -第一次更新会完全覆盖原hosts，然后生成“# My Hosts Start”、“# My Hosts End”标识<br/>
 -需要添加的话，只要在“# My Hosts Start”、“# My Hosts End”范围内编辑，
