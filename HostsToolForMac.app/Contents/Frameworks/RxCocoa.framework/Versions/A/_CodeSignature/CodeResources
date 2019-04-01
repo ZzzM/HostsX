@@ -6,7 +6,7 @@
 	<dict>
 		<key>Resources/Info.plist</key>
 		<data>
-		aeauFCsxNOryYHOaDCFsxfwGm+s=
+		7G2YBVU4YTkAkglZ+FwqKal5yoA=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -15,11 +15,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			XaFaG4RzCPXO5FMvCSwS5rMu3NM=
+			hZhLfv4n2UALBUm/wisXK/Gzqus=
 			</data>
 			<key>hash2</key>
 			<data>
-			KrEl4pg7SNvuZfq0+8sVFmDR82ih1ra84OMXxDU3I2E=
+			UP08XRsSyGuH1ak8WJjkDePcfdzJO1xrOMgDz2HPHLA=
 			</data>
 		</dict>
 		<key>Headers/RxCocoa.h</key>
@@ -70,33 +70,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			6oUQnSirxruh8qyuBieQENTM0OE=
+			l+P+3jwLoZn9OtDB/0TNq0MYJMg=
 			</data>
 			<key>hash2</key>
 			<data>
-			jBO+80nbKFGfAqlcwqIQmdhjCtbRRvqdQhPEh7HmZLs=
+			sQwqYZgTaBFy6MTZUOcobQ4ShAeVCZ27r+k6Bit4Z68=
 			</data>
 		</dict>
 		<key>Modules/RxCocoa.swiftmodule/x86_64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			H7CR800hHg9U3TULdfbrjqYxjJk=
+			KBM50qfroCFx0ApUxA1DzWlqP+M=
 			</data>
 			<key>hash2</key>
 			<data>
-			MNxHqb27WhhTcbM5bw4HyqX3Hq1T6Mcs9I+lGC1RruA=
+			JlmyeEDM5uyLmMyZQka3AGNU2MEJZXAvQAnJDwLQEVY=
 			</data>
 		</dict>
 		<key>Modules/RxCocoa.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			UTZPeYp60qEIEQX/WEXmJXYtE8o=
+			1TTmZO2OAvKySJlUhZ3yugMoHPw=
 			</data>
 			<key>hash2</key>
 			<data>
-			xGs/Kjn2fmspW9tOC35KqxeOkltUCiyqxcU65bijDhk=
+			e65I4/E1GMkRk9y9UTcLKaRNZbGy2G0lSkzpxaAeGc4=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -114,11 +114,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			aeauFCsxNOryYHOaDCFsxfwGm+s=
+			7G2YBVU4YTkAkglZ+FwqKal5yoA=
 			</data>
 			<key>hash2</key>
 			<data>
-			t5NKeqTTyd6lbi1Y6TyuKTGwmJiJ07IjG1KubxOh7ZI=
+			dWzO7AMCBdweuhuevnDNP5bDB+zOeB9UzP7EnnlMBtg=
 			</data>
 		</dict>
 	</dict>

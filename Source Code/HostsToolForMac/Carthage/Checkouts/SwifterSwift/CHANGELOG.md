@@ -1,14 +1,123 @@
 # CHANGELOG
+
 The changelog for **SwifterSwift**. Also see the [releases](https://github.com/SwifterSwift/SwifterSwift/releases) on GitHub.
 
-# Upcoming release
+## Upcoming Release
 
 ### Added
+
 ### Changed
-### Fixed
+
 ### Deprecated
+
 ### Removed
+
+### Fixed
+
 ### Security
+
+---
+
+## [v5.0.0](https://github.com/SwifterSwift/SwifterSwift/releases/tag/5.0.0)
+
+### Added
+
+- **Swift 5.0 Support**
+  - Updated the project to Xcode 10.2
+  - Removed unnecessary `public` statements.
+- **Linux Support**
+  - Support for Linux running Swift 5.0 using Swift Package Manager.
+- **UIApplication**:
+  - Added `inferredEnvironment` to get current inferred app environment. by [omaralbeik](https://github.com/omaralbeik)
+  - Added `displayName` to get application name. by [omaralbeik](https://github.com/omaralbeik)
+  - Added `buildNumber` to get application build number. by [omaralbeik](https://github.com/omaralbeik)
+  - Added `version` to get application version number. by [omaralbeik](https://github.com/omaralbeik)
+- **Optional**:
+  - Added `nonEmpty` to get the collection only if it is not nill and not empty. by [omaralbeik](https://github.com/omaralbeik)
+- **FileManager**:
+  - Added `createTemporaryDirectory()` to create a directory for saving temporary files. [#615](https://github.com/SwifterSwift/SwifterSwift/pull/615) by [guykogus](https://github.com/guykogus)
+- **UILabel**:
+  - Added `init(text:style)` to create a `UILabel` with a text and font style. [#607](https://github.com/SwifterSwift/SwifterSwift/pull/607) by [marcocapano](https://github.com/marcocapano)
+- **UIViewController**
+  - Added `presentPopover(_:sourcePoint:size:delegate:animated:completion:)` method to quickly present a `UIViewController` as a popover. [#593](https://github.com/SwifterSwift/SwifterSwift/pull/593) by [marcocapano](https://github.com/marcocapano)
+- **Sequence**:
+  - Added `duplicates()` for getting the duplicated elements in a sequence. [#605](https://github.com/SwifterSwift/SwifterSwift/pull/605) by [dylancfe15](https://github.com/dylancfe15)
+- **Date**:
+- Added `tomorrow` computed property to get tomorrow's date avoiding calling `adding(_:value:)` function. (Completes PR #578) [#587](https://github.com/SwifterSwift/SwifterSwift/pull/587) by [AlexeiGitH](https://github.com/AlexeiGitH)
+  - Added `random(in:)` and `random(in:using:)` to generate random dates using the built-in random functions added to Swift 4.2. [#576](https://github.com/SwifterSwift/SwifterSwift/pull/576/files) by [guykogus](https://github.com/guykogus)
+- **Dictionary**:
+  - Added `Dictionary[path:]` subscript for deep fetching/setting nested values. [#574](https://github.com/SwifterSwift/SwifterSwift/pull/573) by [@calebkleveter](https://github.com/calebkleveter)
+- **UIColor**:
+  - Added `whatsApp` color constant to social struct. [#581](https://github.com/SwifterSwift/SwifterSwift/pull/581) by [staffler-xyz](https://github.com/staffler-xyz)
+- **DispatchQueue**:
+  - Added `isMainQueue` to check if current queue is main queue. [#585](https://github.com/SwifterSwift/SwifterSwift/pull/585) by [jianstm](https://github.com/jianstm)
+  - Added `isCurrent(_:)` to check if current queue is specified queue. [#585](https://github.com/SwifterSwift/SwifterSwift/pull/585) by [jianstm](https://github.com/jianstm)
+- **BidirectionalCollection**:
+  - Added `subscript[offset:]` to get element with negative offset. [#582](https://github.com/SwifterSwift/SwifterSwift/pull/582) by [jianstm](https://github.com/jianstm)
+- **BinaryFloatingPointExtensions**:
+  - Added `rounded(numberOfDecimalPlaces:rule:)` to get the rounded floating number with the specified number of decimal places. [#583](https://github.com/SwifterSwift/SwifterSwift/pull/583) by [jianstm](https://github.com/jianstm)
+- **UIActivity**:
+  - Added `ActivityType` constants for iCloud Drive, WhatsApp, LinkedIn and XING. [#580](https://github.com/SwifterSwift/SwifterSwift/pull/580) by [staffler-xyz](https://github.com/staffler-xyz)
+- **MKMapView**
+  - Added 'register(annotationViewWithClass:)`, `dequeueReusableAnnotationView(withClass:)` and `dequeueReusableAnnotationView(withClass:annotation)` methods. [#629](https://github.com/SwifterSwift/SwifterSwift/pull/629) by [staffler-xyz](https://github.com/staffler-xyz)
+
+### Changed
+
+- **Character**:
+  - Added more cases to `isEmoji`. by [omaralbeik](https://github.com/omaralbeik)
+- **String**:
+  - Added more cases to `isEmoji`. by [omaralbeik](https://github.com/omaralbeik)
+  - Made `camelize`, `latinize`, `reverse`, `slice`, `trim`, `truncate`, `urlDecode`, `urlEncode`, `padStart`, and `padEnd` return a `discardableResult` self. by [omaralbeik](https://github.com/omaralbeik)
+- **Examples**:
+  - Replaced Examples.md with Examples.playground to let users try some examples out of extensions. [#596](https://github.com/SwifterSwift/SwifterSwift/pull/596) by [maxxx777](https://github.com/maxxx777)
+- **StringProtocol**:
+  - Removing Index constraint on `commonSuffix` extension and improving performance and tests. [#606](https://github.com/SwifterSwift/SwifterSwift/pull/606) by [LucianoPAlmeida](https://github.com/LucianoPAlmeida).
+- **RangeReplaceableCollection**:
+  - `Array` extensions `keep(while: )`, `take(while: )` and `skip(while:)` are now `RangeReplaceableCollection` extensions. [#634](https://github.com/SwifterSwift/SwifterSwift/pull/634) by [LucianoPAlmeida](https://github.com/LucianoPAlmeida).
+- **Date**:
+  - Fixed `yesterday` computed property to be calculated using Calendar.date(byAdding:to:) instead of date.addingTimeInterval(-86400) [#641](https://github.com/SwifterSwift/SwifterSwift/pull/641) by [AlexeiGitH](https://github.com/AlexeiGitH).
+
+### Fixed
+
+- **UIImageView**:
+  - Fixed `download` function to use `unowned self`. by [omaralbeik](https://github.com/omaralbeik)
+- **Installation**:
+  - Updated `podspec` to make the group paths in Pods project of SwifterSwift correct with Cocoapods installation. [#590](https://github.com/SwifterSwift/SwifterSwift/pull/590) by [dklinzh](https://github.com/dklinzh)
+- **UIImage**:
+  - Fixed `cropped(to:)` size checking. [#575](https://github.com/SwifterSwift/SwifterSwift/pull/575) by [ilyahal](https://github.com/ilyahal)
+  - Fixed `tint(_ color:, blendMode:)` upside-down image. [#639](https://github.com/SwifterSwift/SwifterSwift/pull/639) by [LucianoPAlmeida](https://github.com/LucianoPAlmeida).
+- **NSAttributedString**:
+  - Fixed `attributes` property crash when the string is empty. [#617](https://github.com/SwifterSwift/SwifterSwift/pull/617) by [LucianoPAlmeida](https://github.com/LucianoPAlmeida).
+- **Date**:
+  - Fixed `yesterday` computed property to be calculated using Calendar.date(byAdding:to:) instead of date.addingTimeInterval(-86400) [#641](https://github.com/SwifterSwift/SwifterSwift/pull/641) by [AlexeiGitH](https://github.com/AlexeiGitH).
+  - Fixed `tomorrow` computed property to be calculated using Calendar.date(byAdding:to:) instead of date.addingTimeInterval(86400) [#642](https://github.com/SwifterSwift/SwifterSwift/pull/642) by [AlexeiGitH](https://github.com/AlexeiGitH).
+
+### Removed
+
+- **SwifterSwift**:
+  - **Breaking Change** Removed `SwifterSwift` by [omaralbeik](https://github.com/omaralbeik).
+- **Collection**:
+  - Removed `firstIndex(where: )`, `firstIndex(of:)`, `lastIndex(where: )`, `lastIndex(of:)` which are no longer needed. [#637](https://github.com/SwifterSwift/SwifterSwift/pull/637) by [marcocapano](https://github.com/marcocapano)
+- **Date**:
+  - Removed `random(from:upTo:)` in favor of `random(in:)` and `random(in:using:)`. [#576](https://github.com/SwifterSwift/SwifterSwift/pull/576) by [guykogus](https://github.com/guykogus)
+  - Removed `timeZone` should never have been added because `Date`s are timezone-agnostic. This came to my attention during unit testing over daylight savings changes. [#594](https://github.com/SwifterSwift/SwifterSwift/pull/594) by [guykogus](https://github.com/guykogus)
+
+### CI
+
+- Updated Travis to use the new [`xcode10.2`](https://docs.travis-ci.com/user/reference/osx/#xcode-102) osx_image.
+- Added [Fastlane](https://fastlane.tools/) to automate the releasing process for maintainers.
+
+---
+
+# [v4.6.0](https://github.com/SwifterSwift/SwifterSwift/releases/tag/4.6.0)
+
+### Added
+- **Date**
+    - Added `yesterday` computed property to quickly get yesterday's date to avoid calling `adding(_:value:)` function. [#578](https://github.com/SwifterSwift/SwifterSwift/pull/578) by [AlexeiGitH](https://github.com/AlexeiGitH)
+- **UIView**
+  - Added `ancestorView(where:)` and `ancestorView(withClass:)` to search for a view in the superviews. [#560](https://github.com/SwifterSwift/SwifterSwift/pull/560) by [overovermind](https://github.com/overovermind)
+### Fixed
+- Fixed Cocoapods installation setting the correct Swift version
 
 ---
 
@@ -606,7 +715,7 @@ N/A
 
 - New **Array** extensions
     - added `groupByKey` to group the elements of the array by key in a dictionary. [#181](https://github.com/SwifterSwift/SwifterSwift/pull/181) by [@LucianoPAlmeida](https://github.com/LucianoPAlmeida)
-    - added `forEach(slice:body:)` to iterate by specified slice size and call a closure. [#194](https://github.com/SwifterSwift/SwifterSwift/pull/194/files) by [@LucianoPAlmeida](https://github.com/LucianoPAlmeida)
+    - added `forEach(slice:body:)` to iterate by specified slice size and call a closure. [#194](https://github.com/SwifterSwift/SwifterSwift/pull/194) by [@LucianoPAlmeida](https://github.com/LucianoPAlmeida)
 - New **Dictionary** extensions
     - add `count(where:)` to count dictionary elements where the condition returns true. [#193](https://github.com/SwifterSwift/SwifterSwift/pull/193) by [@LucianoPAlmeida](https://github.com/LucianoPAlmeida)
 
