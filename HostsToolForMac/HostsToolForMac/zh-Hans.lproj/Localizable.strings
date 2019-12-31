@@ -1,0 +1,33 @@
+/* 
+  File.strings
+  HostsToolForMac
+
+  Created by Zhang.M on 03/03/2017.
+  Copyright © 2017 ZzzM. All rights reserved.
+*/
+"Menu.Title.Import" = "导入";
+"Menu.Title.Download" = "下载";
+"Menu.Title.Settings" = "设置";
+"Menu.Title.Exit" = "退出";
+
+"Settings.Title.Version" = "版本";
+"Settings.Title.Look" = "查看";
+"Settings.Title.Check" = "检查更新";
+"Settings.Title.Hosts" = "Hosts 下载地址";
+
+"Alert.Title.Cancel" = "取消";
+"Alert.Title.Comfirm" = "确认";
+
+"Error.Hosts.Invalid" = "无效的Hosts！";
+"Error.Hosts.Creation" = "Hosts创建失败！";
+
+"Error.Script.Compile" = "脚本编译失败!";
+"Error.Script.Execution" = "脚本执行失败:";
+
+"Hint.Version.Availble" = "最新版本可供使用！";
+"Hint.Version.Latest" = "这是最新版本!";
+"Hint.Script.Succeed" = "成功!";
+
+
+
+

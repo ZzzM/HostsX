@@ -1,0 +1,31 @@
+/* 
+  File.strings
+  HostsToolForMac
+
+  Created by Zhang.M on 03/03/2017.
+  Copyright © 2017 ZzzM. All rights reserved.
+*/
+"Menu.Title.Import" = "Import";
+"Menu.Title.Download" = "Download";
+"Menu.Title.Settings" = "Settings";
+"Menu.Title.Exit" = "Exit";
+
+"Settings.Title.Version" = "Version";
+"Settings.Title.Hosts" = "Hosts URL";
+"Settings.Title.Look" = "Look";
+"Settings.Title.Check" = "Check for Updates";
+
+"Alert.Title.Cancel" = "Cancel";
+"Alert.Title.Comfirm" = "Comfirm";
+
+"Error.Hosts.Invalid" = "Hosts is Invalid!";
+"Error.Hosts.Creation" = "Hosts Creation Failed:";
+
+"Error.Script.Compile" = "Script Failed To Compile!";
+"Error.Script.Execution" = "Script Execution Failed:";
+
+"Hint.Version.Availble" = "New Version Availble!";
+"Hint.Version.Latest" = "The Latest Version!";
+"Hint.Script.Succeed" = "Succeed!";
+
+
