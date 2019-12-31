@@ -5,13 +5,18 @@
   Created by Zhang.M on 03/03/2017.
   Copyright © 2017 ZzzM. All rights reserved.
 */
-"Menu.Title.Import" = "本地导入";
-"Menu.Title.Network" = "网络更新";
-"Menu.Title.Check" = "检查更新";
+"Menu.Title.Import" = "导入";
+"Menu.Title.Download" = "下载";
+"Menu.Title.Settings" = "设置";
 "Menu.Title.Exit" = "退出";
 
-"Submenu.Title.Default" = "默认";
-"Submenu.Title.Mirror" = "镜像";
+"Settings.Title.Version" = "版本";
+"Settings.Title.Look" = "查看";
+"Settings.Title.Check" = "检查更新";
+"Settings.Title.Hosts" = "Hosts 下载地址";
+
+"Alert.Title.Cancel" = "取消";
+"Alert.Title.Comfirm" = "确认";
 
 "Error.Hosts.Invalid" = "无效的Hosts！";
 "Error.Hosts.Creation" = "Hosts创建失败！";

@@ -7,8 +7,6 @@
 //
 
 import Cocoa
-import RxCocoa
-import RxSwift
 
 
 @NSApplicationMain
@@ -23,12 +21,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        setupBarItem(statusItem)
+        setupNotification()
 
-
-        setStatusBarItem(statusItem)
-        setUserNotification()
-
-        
     }
 
     

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15702" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14313.18"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15702"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -20,51 +20,37 @@
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <menu id="bpM-ru-vlk" customClass="MainMenu" customModule="HostsToolForMac" customModuleProvider="target">
             <items>
-                <menuItem title="本地导入" id="HVU-2S-bB1">
+                <menuItem title="导入" id="HVU-2S-bB1">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="importAction:" target="bpM-ru-vlk" id="230-q5-Ka0"/>
                     </connections>
                 </menuItem>
-                <menuItem title="网络更新" id="rJb-5x-wh6">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <menu key="submenu" title="网络更新" id="RuJ-F0-BuC">
-                        <items>
-                            <menuItem title="默认" id="uQP-Zu-3g7">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="defaultUpdateAction:" target="bpM-ru-vlk" id="8NT-hk-Kb5"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="镜像" id="0OD-yk-0ra">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="mirrorUpdateAction:" target="bpM-ru-vlk" id="vrZ-B2-uLk"/>
-                                </connections>
-                            </menuItem>
-                        </items>
-                    </menu>
-                </menuItem>
-                <menuItem isSeparatorItem="YES" id="KeR-GK-CmV"/>
-                <menuItem title="检查更新" id="hZ7-5E-hRx">
+                <menuItem title="下载" id="rJb-5x-wh6">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="appUpdateAction:" target="bpM-ru-vlk" id="DAi-H5-oMR"/>
+                        <action selector="downloadAction:" target="bpM-ru-vlk" id="v5s-uj-xdy"/>
                     </connections>
                 </menuItem>
-                <menuItem title="退出" keyEquivalent="q" id="kux-y0-M3b">
+                <menuItem isSeparatorItem="YES" id="KeR-GK-CmV"/>
+                <menuItem title="设置" id="hZ7-5E-hRx">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="settingsAction:" target="bpM-ru-vlk" id="i3v-gk-UnQ"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="退出" id="kux-y0-M3b">
+                    <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="exitAction:" target="bpM-ru-vlk" id="ipn-Ic-ctG"/>
                     </connections>
                 </menuItem>
             </items>
             <connections>
-                <outlet property="checkItem" destination="hZ7-5E-hRx" id="apB-lb-k6Z"/>
-                <outlet property="defaultItem" destination="uQP-Zu-3g7" id="eWy-SO-xYI"/>
+                <outlet property="downloadItem" destination="rJb-5x-wh6" id="dY5-ha-Wp5"/>
                 <outlet property="exitItem" destination="kux-y0-M3b" id="VJb-2P-syY"/>
                 <outlet property="importItem" destination="HVU-2S-bB1" id="t7f-7a-Ug3"/>
-                <outlet property="mirrorItem" destination="0OD-yk-0ra" id="Yxt-je-W27"/>
-                <outlet property="networkItem" destination="rJb-5x-wh6" id="MXG-nc-h2T"/>
+                <outlet property="settingsItem" destination="hZ7-5E-hRx" id="JBQ-rz-vhG"/>
             </connections>
             <point key="canvasLocation" x="31.5" y="122"/>
         </menu>

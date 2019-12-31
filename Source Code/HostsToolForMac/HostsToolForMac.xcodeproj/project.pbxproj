@@ -15,9 +15,13 @@
 		1FA54A9A20B2BAB5005B2515 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA54A9920B2BAB5005B2515 /* Helper.swift */; };
 		1FA54AA420B2BD52005B2515 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA54AA320B2BD52005B2515 /* Network.swift */; };
 		1FA54AA720B2CF39005B2515 /* Release.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA54AA620B2CF39005B2515 /* Release.swift */; };
-		1FECAE8C2251A525009B6C12 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FECAE892251A525009B6C12 /* RxSwift.framework */; };
-		1FECAE8D2251A525009B6C12 /* SwifterSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FECAE8A2251A525009B6C12 /* SwifterSwift.framework */; };
-		1FECAE8E2251A525009B6C12 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FECAE8B2251A525009B6C12 /* RxCocoa.framework */; };
+		980E5FA62378359900EEF756 /* Foundation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980E5FA52378359900EEF756 /* Foundation+Extension.swift */; };
+		98A85E0A237CF3D4006DA99F /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A85E09237CF3D4006DA99F /* Constant.swift */; };
+		98A85E0C237CFD72006DA99F /* AppDelegate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A85E0B237CFD72006DA99F /* AppDelegate+Extension.swift */; };
+		98D9FA6723BAE523008DD433 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D9FA6623BAE523008DD433 /* SettingsView.swift */; };
+		98D9FA6923BAE531008DD433 /* SettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98D9FA6823BAE531008DD433 /* SettingsView.xib */; };
+		98D9FA6B23BAE6AD008DD433 /* AppKit+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D9FA6A23BAE6AD008DD433 /* AppKit+Extension.swift */; };
+		98D9FA6D23BB3493008DD433 /* Hosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D9FA6C23BB3493008DD433 /* Hosts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -44,9 +48,14 @@
 		1FA54A9920B2BAB5005B2515 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		1FA54AA320B2BD52005B2515 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		1FA54AA620B2CF39005B2515 /* Release.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Release.swift; sourceTree = "<group>"; };
-		1FECAE892251A525009B6C12 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/Mac/RxSwift.framework; sourceTree = "<group>"; };
-		1FECAE8A2251A525009B6C12 /* SwifterSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwifterSwift.framework; path = Carthage/Build/Mac/SwifterSwift.framework; sourceTree = "<group>"; };
-		1FECAE8B2251A525009B6C12 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/Mac/RxCocoa.framework; sourceTree = "<group>"; };
+		980E5FA52378359900EEF756 /* Foundation+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Foundation+Extension.swift"; sourceTree = "<group>"; };
+		986A75BE23B7763000815C9D /* HostsToolForMac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HostsToolForMac.entitlements; sourceTree = "<group>"; };
+		98A85E09237CF3D4006DA99F /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		98A85E0B237CFD72006DA99F /* AppDelegate+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Extension.swift"; sourceTree = "<group>"; };
+		98D9FA6623BAE523008DD433 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		98D9FA6823BAE531008DD433 /* SettingsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsView.xib; sourceTree = "<group>"; };
+		98D9FA6A23BAE6AD008DD433 /* AppKit+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppKit+Extension.swift"; sourceTree = "<group>"; };
+		98D9FA6C23BB3493008DD433 /* Hosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hosts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,9 +63,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1FECAE8C2251A525009B6C12 /* RxSwift.framework in Frameworks */,
-				1FECAE8D2251A525009B6C12 /* SwifterSwift.framework in Frameworks */,
-				1FECAE8E2251A525009B6C12 /* RxCocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,17 +74,19 @@
 			children = (
 				1F1AB2991E666D9F00171458 /* HostsToolForMac */,
 				1FA54A9620B2BA72005B2515 /* HostsToolForMac.app */,
-				1FA54A9C20B2BBD0005B2515 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		1F1AB2991E666D9F00171458 /* HostsToolForMac */ = {
 			isa = PBXGroup;
 			children = (
+				986A75BE23B7763000815C9D /* HostsToolForMac.entitlements */,
+				980E5FA42378358800EEF756 /* Extension */,
 				1FA54AAB20B417F0005B2515 /* View */,
 				1FA54AA520B2CF25005B2515 /* Model */,
-				1FA54A9820B2BA92005B2515 /* Helper */,
+				1FA54A9820B2BA92005B2515 /* Utils */,
 				1F1AB29A1E666D9F00171458 /* AppDelegate.swift */,
+				98A85E0B237CFD72006DA99F /* AppDelegate+Extension.swift */,
 				1F338EC11E696A1D004A3265 /* Localizable.strings */,
 				1F1AB29C1E666D9F00171458 /* Assets.xcassets */,
 				1F1AB2A11E666DA000171458 /* Info.plist */,
@@ -86,29 +94,21 @@
 			path = HostsToolForMac;
 			sourceTree = "<group>";
 		};
-		1FA54A9820B2BA92005B2515 /* Helper */ = {
+		1FA54A9820B2BA92005B2515 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				1FA54A9920B2BAB5005B2515 /* Helper.swift */,
 				1FA54AA320B2BD52005B2515 /* Network.swift */,
+				98A85E09237CF3D4006DA99F /* Constant.swift */,
 			);
-			path = Helper;
-			sourceTree = "<group>";
-		};
-		1FA54A9C20B2BBD0005B2515 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				1FECAE8B2251A525009B6C12 /* RxCocoa.framework */,
-				1FECAE892251A525009B6C12 /* RxSwift.framework */,
-				1FECAE8A2251A525009B6C12 /* SwifterSwift.framework */,
-			);
-			name = Frameworks;
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		1FA54AA520B2CF25005B2515 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				1FA54AA620B2CF39005B2515 /* Release.swift */,
+				98D9FA6C23BB3493008DD433 /* Hosts.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -116,10 +116,21 @@
 		1FA54AAB20B417F0005B2515 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1F1AB29E1E666DA000171458 /* MainMenu.xib */,
 				1F2396D220B5065E00618BB8 /* MainMenu.swift */,
+				98D9FA6623BAE523008DD433 /* SettingsView.swift */,
+				1F1AB29E1E666DA000171458 /* MainMenu.xib */,
+				98D9FA6823BAE531008DD433 /* SettingsView.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		980E5FA42378358800EEF756 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				980E5FA52378359900EEF756 /* Foundation+Extension.swift */,
+				98D9FA6A23BAE6AD008DD433 /* AppKit+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,7 +162,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = ZzzM;
 				TargetAttributes = {
 					1F1AB2961E666D9F00171458 = {
@@ -187,6 +198,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F1AB29D1E666D9F00171458 /* Assets.xcassets in Resources */,
+				98D9FA6923BAE531008DD433 /* SettingsView.xib in Resources */,
 				1F1AB2A01E666DA000171458 /* MainMenu.xib in Resources */,
 				1F338EBF1E696A1D004A3265 /* Localizable.strings in Resources */,
 			);
@@ -201,14 +213,8 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/Mac/RxSwift.framework",
-				"$(SRCROOT)/Carthage/Build/Mac/RxCocoa.framework",
-				"$(SRCROOT)/Carthage/Build/Mac/SwifterSwift.framework",
 			);
 			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxSwift.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxCocoa.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SwifterSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -221,10 +227,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98D9FA6B23BAE6AD008DD433 /* AppKit+Extension.swift in Sources */,
+				98A85E0A237CF3D4006DA99F /* Constant.swift in Sources */,
+				98D9FA6D23BB3493008DD433 /* Hosts.swift in Sources */,
 				1F2396D320B5065E00618BB8 /* MainMenu.swift in Sources */,
+				98A85E0C237CFD72006DA99F /* AppDelegate+Extension.swift in Sources */,
+				98D9FA6723BAE523008DD433 /* SettingsView.swift in Sources */,
 				1FA54AA420B2BD52005B2515 /* Network.swift in Sources */,
 				1F1AB29B1E666D9F00171458 /* AppDelegate.swift in Sources */,
 				1FA54A9A20B2BAB5005B2515 /* Helper.swift in Sources */,
+				980E5FA62378359900EEF756 /* Foundation+Extension.swift in Sources */,
 				1FA54AA720B2CF39005B2515 /* Release.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -366,16 +378,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HostsToolForMac/HostsToolForMac.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 7823BJG877;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
 				INFOPLIST_FILE = HostsToolForMac/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MARKETING_VERSION = 2.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ZzzM.HostsToolForMac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -386,16 +396,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HostsToolForMac/HostsToolForMac.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 7823BJG877;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
 				INFOPLIST_FILE = HostsToolForMac/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MARKETING_VERSION = 2.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ZzzM.HostsToolForMac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

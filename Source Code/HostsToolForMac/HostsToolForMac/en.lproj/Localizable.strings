@@ -5,13 +5,18 @@
   Created by Zhang.M on 03/03/2017.
   Copyright © 2017 ZzzM. All rights reserved.
 */
-"Menu.Title.Import" = "Local Import";
-"Menu.Title.Network" = "Network Update";
-"Menu.Title.Check" = "Check for Update";
+"Menu.Title.Import" = "Import";
+"Menu.Title.Download" = "Download";
+"Menu.Title.Settings" = "Settings";
 "Menu.Title.Exit" = "Exit";
 
-"Submenu.Title.Default" = "Default";
-"Submenu.Title.Mirror" = "Mirror";
+"Settings.Title.Version" = "Version";
+"Settings.Title.Hosts" = "Hosts URL";
+"Settings.Title.Look" = "Look";
+"Settings.Title.Check" = "Check for Updates";
+
+"Alert.Title.Cancel" = "Cancel";
+"Alert.Title.Comfirm" = "Comfirm";
 
 "Error.Hosts.Invalid" = "Hosts is Invalid!";
 "Error.Hosts.Creation" = "Hosts Creation Failed:";
