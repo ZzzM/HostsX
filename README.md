@@ -8,7 +8,7 @@
 下载地址：[Release](https://github.com/ZzzM/HostsToolforMac/releases)
 
 ### Version 2.4.0：
--增加设置入口，可配置、查看Hosts下载地址
+-增加设置入口，可配置、查看Hosts下载地址<br/>
 -适配macOS Catalina
 
 
