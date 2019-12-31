@@ -8,18 +8,20 @@
 下载地址：[Release](https://github.com/ZzzM/HostsToolforMac/releases)
 
 ### Version 2.4.0：
+-简化选项
 -增加设置入口，可配置、查看Hosts下载地址<br/>
 -适配macOS Catalina
 
+#### 简化选项
+![截屏2019-12-31下午5.33.19.png](http://ww1.sinaimg.cn/large/77a575a6gy1gag1lkkon6j204806qabn.jpg)
 
-#### 网络更新机制：
--第一次更新会完全覆盖原hosts，然后生成“# My Hosts Start”、“# My Hosts End”标识<br/>
--需要添加的话，只要在“# My Hosts Start”、“# My Hosts End”范围内编辑，
+#### 设置
+主要用于设置hosts下载地址，支持查看
+![](http://ww1.sinaimg.cn/large/77a575a6gy1gag1i6tw5pj20lw08ugmf.jpg)
 
-#### 效果：
+#### 网络更新机制
+第一次更新会完全覆盖原hosts，然后生成“# My Hosts Start”、“# My Hosts End”标识,需要添加的话，只要在“# My Hosts Start”、“# My Hosts End”范围内编辑，
 
+#### 效果
 防止覆盖自己添加的hosts，只要在“# My Hosts Start”、“# My Hosts End”范围内编辑即可：
 ![](https://ws1.sinaimg.cn/large/77a575a6gy1fgqag558xxj20kj0e70ul.jpg)
-
-### Screenshot：
-![](https://ws1.sinaimg.cn/large/77a575a6gy1frnff3nq3rg208w063b2a.gif)
