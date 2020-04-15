@@ -17,6 +17,7 @@ class MainMenu: NSMenu {
     @IBOutlet weak var exitItem: NSMenuItem!
     
     @IBOutlet weak var settingsItem: NSMenuItem!
+    @IBOutlet weak var homePageItem: NSMenuItem!
     
     override func awakeFromNib() {
 
@@ -24,7 +25,7 @@ class MainMenu: NSMenu {
         downloadItem.title = "Menu.Title.Download".localized
         settingsItem.title = "Menu.Title.Settings".localized
         exitItem.title = "Menu.Title.Exit".localized
-    
+        homePageItem.title = "Menu.Title.HomePage".localized
     }
 
     @IBAction func importAction(_ sender: Any) {
@@ -44,9 +45,12 @@ class MainMenu: NSMenu {
     }
     
     @IBAction func settingsAction(_ sender: Any) {
-        SettingsView.show()
+        SettingsPanel.show()
     }
     
+    @IBAction func homePageAction(_ sender: Any) {
+        AppHomePageURL.open()
+    }
     @IBAction func exitAction(_ sender: Any) {
         NSApp.terminate(.none)
     }

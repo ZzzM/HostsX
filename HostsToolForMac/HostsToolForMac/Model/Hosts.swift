@@ -8,9 +8,7 @@
 import Foundation
 
 enum HostsType: Int, CaseIterable {
-    case
-    code = 1,
-    github
+    case coding = 1, gogs, github
     
     static var current: HostsType! {
         set {
@@ -22,14 +20,20 @@ enum HostsType: Int, CaseIterable {
             if rawValue > 0 {
                 return HostsType(rawValue: rawValue)
             }
-            return .code
+            return .coding
         }
+    }
+    
+    static var names: [String] {
+        return HostsType.allCases.map{$0.name}
     }
     
     var name: String {
         switch self {
-        case .code:
-            return "Code"
+        case .coding:
+            return "Coding"
+        case .gogs:
+            return "Gogs"
         default:
             return "Github"
         }
@@ -37,10 +41,12 @@ enum HostsType: Int, CaseIterable {
     
     var url: URL {
         switch self {
-        case .code:
-            return CodeSourceURL
+        case .coding:
+            return URL(string:"https://scaffrey.coding.net/p/hosts/d/hosts/git/raw/master/hosts-files/hosts")!
+        case .gogs:
+            return URL(string:"https://git.qvq.network/googlehosts/hosts/raw/master/hosts-files/hosts")!
         default:
-            return GithubSourceURL
+            return URL(string:"https://raw.githubusercontent.com/googlehosts/hosts/master/hosts-files/hosts")!
         }
     }
     
@@ -50,6 +56,6 @@ extension String {
     var hostsType: HostsType {
         return HostsType.allCases.first {
             $0.name == self
-        } ?? .code
+        } ?? .coding
     }
 }
