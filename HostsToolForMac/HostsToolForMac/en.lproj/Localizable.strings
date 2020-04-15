@@ -8,10 +8,10 @@
 "Menu.Title.Import" = "Import";
 "Menu.Title.Download" = "Download";
 "Menu.Title.Settings" = "Settings";
+"Menu.Title.HomePage" = "HomePage";
 "Menu.Title.Exit" = "Exit";
 
-"Settings.Title.Version" = "Version";
-"Settings.Title.Hosts" = "Hosts URL";
+"Settings.Title.Hosts" = "Hosts Download Options";
 "Settings.Title.Look" = "Look";
 "Settings.Title.Check" = "Check for Updates";
 

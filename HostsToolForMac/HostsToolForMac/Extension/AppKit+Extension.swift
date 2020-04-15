@@ -9,7 +9,19 @@
 
 import Cocoa
 
-extension NSView {
+extension NSView  {
+    static func loadFromNib() -> Self {
+        var objects: NSArray?
+        Bundle.main.loadNibNamed(typeName,
+                                 owner: .none,
+                                 topLevelObjects: &objects)
+        return objects?.first(where: {
+            $0 is Self
+        }) as! Self
+    }
+}
+
+extension NSWindow  {
     static func loadFromNib() -> Self {
         var objects: NSArray?
         Bundle.main.loadNibNamed(typeName,
