@@ -7,6 +7,9 @@
 //
 
 import Cocoa
+import Sparkle
+
+let updater = SUUpdater()
 
 class MainMenu: NSMenu {
 
@@ -17,7 +20,8 @@ class MainMenu: NSMenu {
     @IBOutlet weak var exitItem: NSMenuItem!
     
     @IBOutlet weak var settingsItem: NSMenuItem!
-    @IBOutlet weak var homePageItem: NSMenuItem!
+    @IBOutlet weak var checkItem: NSMenuItem!
+    @IBOutlet weak var helpItem: NSMenuItem!
     
     override func awakeFromNib() {
 
@@ -25,7 +29,8 @@ class MainMenu: NSMenu {
         downloadItem.title = "Menu.Title.Download".localized
         settingsItem.title = "Menu.Title.Settings".localized
         exitItem.title = "Menu.Title.Exit".localized
-        homePageItem.title = "Menu.Title.HomePage".localized
+        checkItem.title = "Menu.Title.Check".localized
+        helpItem.title = "Menu.Title.Help".localized
     }
 
     @IBAction func importAction(_ sender: Any) {
@@ -48,9 +53,14 @@ class MainMenu: NSMenu {
         SettingsPanel.show()
     }
     
-    @IBAction func homePageAction(_ sender: Any) {
+    @IBAction func checkAction(_ sender: Any) {
+        updater.checkForUpdates(sender)
+    }
+    
+    @IBAction func helpAction(_ sender: Any) {
         AppHomePageURL.open()
     }
+    
     @IBAction func exitAction(_ sender: Any) {
         NSApp.terminate(.none)
     }

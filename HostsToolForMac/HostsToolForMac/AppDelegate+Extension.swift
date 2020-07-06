@@ -12,6 +12,9 @@ import Cocoa
 extension AppDelegate: NSUserNotificationCenterDelegate {
 
     func setupBarItem(_ barItem: NSStatusItem) {
+        
+        updater.automaticallyChecksForUpdates = false
+        
         let itemIcon = #imageLiteral(resourceName: "AppIcon_s")
         itemIcon.isTemplate = true
         barItem.image = itemIcon

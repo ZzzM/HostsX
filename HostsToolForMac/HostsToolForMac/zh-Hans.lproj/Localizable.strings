@@ -8,13 +8,13 @@
 "Menu.Title.Import" = "导入";
 "Menu.Title.Download" = "下载";
 "Menu.Title.Settings" = "设置";
-"Menu.Title.HomePage" = "主页";
+"Menu.Title.Check" = "检查更新";
+"Menu.Title.Help" = "帮助";
 "Menu.Title.Exit" = "退出";
 
 
-"Settings.Title.Look" = "查看";
-"Settings.Title.Check" = "检查更新";
-"Settings.Title.Hosts" = "Hosts 下载配置";
+"Settings.Title.View" = "浏览";
+"Settings.Title.Hosts" = "下载配置";
 
 "Alert.Title.Cancel" = "取消";
 "Alert.Title.Comfirm" = "确认";
@@ -24,10 +24,6 @@
 
 "Error.Script.Compile" = "脚本编译失败!";
 "Error.Script.Execution" = "脚本执行失败:";
-
-"Hint.Version.Availble" = "最新版本可供使用！";
-"Hint.Version.Latest" = "这是最新版本!";
-"Hint.Script.Succeed" = "成功!";
 
 
 
