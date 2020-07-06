@@ -65,21 +65,6 @@ struct Helper {
     
 }
 
-enum VersionStatus {
-    case latest, available, error(String)
-    
-    var message: String {
-        switch self {
-        case .latest:
-            return "Hint.Version.Latest".localized
-        case .available:
-            return "Hint.Version.Availble".localized
-        case .error(let msg):
-            return msg
-        }
-    }
-}
-
 enum ExecutionResult {
     case success(String), invalid, error(String)
     

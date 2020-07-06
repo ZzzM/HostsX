@@ -14,7 +14,6 @@
 		1F338EBF1E696A1D004A3265 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F338EC11E696A1D004A3265 /* Localizable.strings */; };
 		1FA54A9A20B2BAB5005B2515 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA54A9920B2BAB5005B2515 /* Helper.swift */; };
 		1FA54AA420B2BD52005B2515 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA54AA320B2BD52005B2515 /* Network.swift */; };
-		1FA54AA720B2CF39005B2515 /* Release.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA54AA620B2CF39005B2515 /* Release.swift */; };
 		980E5FA62378359900EEF756 /* Foundation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980E5FA52378359900EEF756 /* Foundation+Extension.swift */; };
 		984F41E22446E22000ED4EB9 /* SettingsPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 984F41E12446E22000ED4EB9 /* SettingsPanel.xib */; };
 		98A85E0A237CF3D4006DA99F /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A85E09237CF3D4006DA99F /* Constant.swift */; };
@@ -22,6 +21,7 @@
 		98D9FA6723BAE523008DD433 /* SettingsPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D9FA6623BAE523008DD433 /* SettingsPanel.swift */; };
 		98D9FA6B23BAE6AD008DD433 /* AppKit+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D9FA6A23BAE6AD008DD433 /* AppKit+Extension.swift */; };
 		98D9FA6D23BB3493008DD433 /* Hosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D9FA6C23BB3493008DD433 /* Hosts.swift */; };
+		B3E94D772B692099C453B883 /* libPods-HostsToolForMac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE7430F5CFA6F986E2407DCD /* libPods-HostsToolForMac.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,6 +37,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0B523D9EBF2E1DFF49704BB3 /* Pods-HostsToolForMac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HostsToolForMac.release.xcconfig"; path = "Target Support Files/Pods-HostsToolForMac/Pods-HostsToolForMac.release.xcconfig"; sourceTree = "<group>"; };
 		1F1AB29A1E666D9F00171458 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F1AB29C1E666D9F00171458 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F1AB29F1E666DA000171458 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -47,7 +48,6 @@
 		1FA54A9620B2BA72005B2515 /* HostsToolForMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HostsToolForMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FA54A9920B2BAB5005B2515 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		1FA54AA320B2BD52005B2515 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
-		1FA54AA620B2CF39005B2515 /* Release.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Release.swift; sourceTree = "<group>"; };
 		980E5FA52378359900EEF756 /* Foundation+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Foundation+Extension.swift"; sourceTree = "<group>"; };
 		984F41E12446E22000ED4EB9 /* SettingsPanel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsPanel.xib; sourceTree = "<group>"; };
 		986A75BE23B7763000815C9D /* HostsToolForMac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HostsToolForMac.entitlements; sourceTree = "<group>"; };
@@ -56,6 +56,8 @@
 		98D9FA6623BAE523008DD433 /* SettingsPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPanel.swift; sourceTree = "<group>"; };
 		98D9FA6A23BAE6AD008DD433 /* AppKit+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppKit+Extension.swift"; sourceTree = "<group>"; };
 		98D9FA6C23BB3493008DD433 /* Hosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hosts.swift; sourceTree = "<group>"; };
+		DE7430F5CFA6F986E2407DCD /* libPods-HostsToolForMac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HostsToolForMac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9C9A81E32EF5EDE9CF0BDEB /* Pods-HostsToolForMac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HostsToolForMac.debug.xcconfig"; path = "Target Support Files/Pods-HostsToolForMac/Pods-HostsToolForMac.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,17 +65,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3E94D772B692099C453B883 /* libPods-HostsToolForMac.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C8C76E1E2F19A023C7DB35B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DE7430F5CFA6F986E2407DCD /* libPods-HostsToolForMac.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		1F1AB28E1E666D9F00171458 = {
 			isa = PBXGroup;
 			children = (
 				1F1AB2991E666D9F00171458 /* HostsToolForMac */,
 				1FA54A9620B2BA72005B2515 /* HostsToolForMac.app */,
+				E9D04197FA631EA1ACA4BEE2 /* Pods */,
+				1C8C76E1E2F19A023C7DB35B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,7 +120,6 @@
 		1FA54AA520B2CF25005B2515 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1FA54AA620B2CF39005B2515 /* Release.swift */,
 				98D9FA6C23BB3493008DD433 /* Hosts.swift */,
 			);
 			path = Model;
@@ -133,6 +145,15 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		E9D04197FA631EA1ACA4BEE2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F9C9A81E32EF5EDE9CF0BDEB /* Pods-HostsToolForMac.debug.xcconfig */,
+				0B523D9EBF2E1DFF49704BB3 /* Pods-HostsToolForMac.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -140,11 +161,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1F1AB2A41E666DA000171458 /* Build configuration list for PBXNativeTarget "HostsToolForMac" */;
 			buildPhases = (
+				34FE810BD0DC542E4E98283D /* [CP] Check Pods Manifest.lock */,
 				1F1AB2931E666D9F00171458 /* Sources */,
 				1F1AB2941E666D9F00171458 /* Frameworks */,
 				1F1AB2951E666D9F00171458 /* Resources */,
 				1FA54A9B20B2BB6C005B2515 /* ShellScript */,
 				1F1D38BA2144FB4300BCA38A /* CopyFiles */,
+				AF81ACA4BBE6CA6EB585C4B0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -169,7 +192,6 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 7823BJG877;
 						LastSwiftMigration = 1020;
-						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -220,6 +242,48 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
+		34FE810BD0DC542E4E98283D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HostsToolForMac-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AF81ACA4BBE6CA6EB585C4B0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HostsToolForMac/Pods-HostsToolForMac-frameworks.sh",
+				"${PODS_ROOT}/Sparkle/Sparkle.framework",
+				"${PODS_ROOT}/Sparkle/Sparkle.framework.dSYM",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Sparkle.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/Sparkle.framework.dSYM",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HostsToolForMac/Pods-HostsToolForMac-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -237,7 +301,6 @@
 				1F1AB29B1E666D9F00171458 /* AppDelegate.swift in Sources */,
 				1FA54A9A20B2BAB5005B2515 /* Helper.swift in Sources */,
 				980E5FA62378359900EEF756 /* Foundation+Extension.swift in Sources */,
-				1FA54AA720B2CF39005B2515 /* Release.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,16 +439,18 @@
 		};
 		1F1AB2A51E666DA000171458 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9C9A81E32EF5EDE9CF0BDEB /* Pods-HostsToolForMac.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HostsToolForMac/HostsToolForMac.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7823BJG877;
 				INFOPLIST_FILE = HostsToolForMac/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				MARKETING_VERSION = 2.5.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MARKETING_VERSION = 2.6.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ZzzM.HostsToolForMac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -394,18 +459,22 @@
 		};
 		1F1AB2A61E666DA000171458 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B523D9EBF2E1DFF49704BB3 /* Pods-HostsToolForMac.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HostsToolForMac/HostsToolForMac.entitlements;
 				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 7823BJG877;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = HostsToolForMac/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				MARKETING_VERSION = 2.5.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ZzzM.HostsToolForMac;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MARKETING_VERSION = 2.6.0;
+				PRODUCT_BUNDLE_IDENTIFIER = zzzm.mac.hostTool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;

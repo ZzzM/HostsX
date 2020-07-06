@@ -1,25 +1,24 @@
-# HostsTool For macOS
+# HostsToolforMac
 
 
-#### [**HostsTool For macOS**](https://github.com/ZzzM/HostToolforMac)是Mac平台下的一个简易工具，来获取最新的[**hosts**](https://github.com/racaljk/hosts.git)更新。
-开发语言：Swift 5<br/>
-运行环境：macOS 10.10 或以上<br/>
-最新版本：2.5.0 <br/>
-支持语言：中、英 <br/>
-下载地址：[Release](https://github.com/ZzzM/HostsToolforMac/releases)
+#### [**HostsToolforMac**](https://github.com/ZzzM/HostToolforMac)是macOS下的一个简易工具，来获取最新的[**hosts**](https://github.com/racaljk/hosts.git)更新。
+- 开发语言：Swift 5<br/>
+- 运行环境：macOS 10.12 或以上<br/>
+- 在线更新：需要将解压好的App放至应用程序文件夹
+- [下载地址](https://github.com/ZzzM/HostsToolforMac/releases/download/2.6.0/HostsToolForMac.zip)
 
-### Version 2.5.0：
-- 增加主页入口
-- 重构设置面板
-- 更新Hosts下载源
+### Version 2.6.0：
+- 更新菜单
+- 更新设置面板
+- 支持在线更新
 
-#### 增加主页入口
-<img src="Previews/1.png">
+#### 菜单
+<img src="Previews/p1.png">
 
-#### 重构设置面板
-<img src="Previews/2.png">
+#### Hosts下载源-设置面板
+<img src="Previews/p2.png">
 
-#### 更新Hosts下载源
+#### Hosts下载源
 [coding](https://scaffrey.coding.net/p/hosts/d/hosts/git/raw/master/hosts-files/hosts)<br/>
 [gogs](https://git.qvq.network/googlehosts/hosts/raw/master/hosts-files/hosts)<br/>
 [github](https://raw.githubusercontent.com/googlehosts/hosts/master/hosts-files/hosts)

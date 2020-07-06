@@ -8,12 +8,13 @@
 "Menu.Title.Import" = "Import";
 "Menu.Title.Download" = "Download";
 "Menu.Title.Settings" = "Settings";
-"Menu.Title.HomePage" = "HomePage";
+"Menu.Title.Check" = "Check for Updates";
+"Menu.Title.Help" = "Help";
+
 "Menu.Title.Exit" = "Exit";
 
-"Settings.Title.Hosts" = "Hosts Download Options";
-"Settings.Title.Look" = "Look";
-"Settings.Title.Check" = "Check for Updates";
+"Settings.Title.Hosts" = "Download Options";
+"Settings.Title.View" = "View";
 
 "Alert.Title.Cancel" = "Cancel";
 "Alert.Title.Comfirm" = "Comfirm";
@@ -24,8 +25,5 @@
 "Error.Script.Compile" = "Script Failed To Compile!";
 "Error.Script.Execution" = "Script Execution Failed:";
 
-"Hint.Version.Availble" = "New Version Availble!";
-"Hint.Version.Latest" = "The Latest Version!";
-"Hint.Script.Succeed" = "Succeed!";
 
 

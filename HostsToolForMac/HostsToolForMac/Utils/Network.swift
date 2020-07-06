@@ -12,23 +12,6 @@ import Cocoa
 
 struct Network {
     
-    static func checkVersion(result: @escaping (VersionStatus) -> ()) {
-        
-        request(url: ApiReleasesURL,
-                success:  {
-                    do {
-                        let release = try JSONDecoder().decode(Release.self, from: $0)
-                        result(release.status)
-                    } catch {
-                        result(VersionStatus.error(error.localizedDescription))
-                    }
-        },
-                failure: {
-                    result(VersionStatus.error($0.localizedDescription))
-        })
-        
-    }
-    
     
     private static func request(url: URL,
                                 success: ((Data) -> Void)? = .none,
