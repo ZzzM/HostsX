@@ -1,7 +1,6 @@
 # HostsToolforMac
 
-
-#### 一款轻量级本地 hosts 更新工具。
+一款轻量级本地 hosts 更新工具。
 - 开发语言：Swift 5<br/>
 - 运行环境：macOS 10.12 或以上<br/>
 - 在线更新：需要将解压好的App放至应用程序文件夹
