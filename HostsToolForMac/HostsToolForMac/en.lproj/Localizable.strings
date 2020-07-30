@@ -10,14 +10,11 @@
 "Menu.Title.Settings" = "Settings";
 "Menu.Title.Check" = "Check for Updates";
 "Menu.Title.Help" = "Help";
-
 "Menu.Title.Exit" = "Exit";
 
 "Settings.Title.Hosts" = "Download Options";
 "Settings.Title.View" = "View";
 
-"Alert.Title.Cancel" = "Cancel";
-"Alert.Title.Comfirm" = "Comfirm";
 
 "Error.Hosts.Invalid" = "Hosts is Invalid!";
 "Error.Hosts.Creation" = "Hosts Creation Failed:";
@@ -25,5 +22,5 @@
 "Error.Script.Compile" = "Script Failed To Compile!";
 "Error.Script.Execution" = "Script Execution Failed:";
 
-
+"Succeed.Script.Execution" = "Succeed！";
 

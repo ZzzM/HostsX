@@ -12,12 +12,8 @@
 "Menu.Title.Help" = "帮助";
 "Menu.Title.Exit" = "退出";
 
-
 "Settings.Title.View" = "浏览";
 "Settings.Title.Hosts" = "下载配置";
-
-"Alert.Title.Cancel" = "取消";
-"Alert.Title.Comfirm" = "确认";
 
 "Error.Hosts.Invalid" = "无效的Hosts！";
 "Error.Hosts.Creation" = "Hosts创建失败！";
@@ -26,5 +22,5 @@
 "Error.Script.Execution" = "脚本执行失败:";
 
 
-
+"Succeed.Script.Execution" = "更新成功！";
 

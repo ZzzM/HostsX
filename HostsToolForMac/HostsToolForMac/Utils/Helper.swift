@@ -144,7 +144,7 @@ extension ExecutionResult {
         guard let error = errorDic,
             let message = error["NSAppleScriptErrorMessage"] as? String else {
                 return ExecutionResult
-                    .error("Hint.Script.Succeed".localized)
+                    .success("Succeed.Script.Execution".localized)
         }
         
         return ExecutionResult
