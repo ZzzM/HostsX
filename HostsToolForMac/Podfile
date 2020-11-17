@@ -2,6 +2,8 @@ platform :osx, ‘10.12’
 inhibit_all_warnings!
 
 target 'HostsToolForMac' do
+    
+    use_frameworks!
 
     pod 'Sparkle'
 

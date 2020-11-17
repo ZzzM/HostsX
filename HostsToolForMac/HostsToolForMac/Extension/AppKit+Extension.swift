@@ -32,3 +32,17 @@ extension NSWindow  {
         }) as! Self
     }
 }
+
+extension NSApplication {
+    
+    
+    
+    func open<T: NSWindow>(_ type: T.Type) {
+        
+        if !NSApp.isActive {
+            NSApp.activate(ignoringOtherApps: true)
+        }
+
+        NSApp.runModal(for: T.loadFromNib())
+    }
+}

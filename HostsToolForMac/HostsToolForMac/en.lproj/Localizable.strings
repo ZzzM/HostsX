@@ -5,15 +5,7 @@
   Created by Zhang.M on 03/03/2017.
   Copyright © 2017 ZzzM. All rights reserved.
 */
-"Menu.Title.Import" = "Import";
-"Menu.Title.Download" = "Download";
-"Menu.Title.Settings" = "Settings";
-"Menu.Title.Check" = "Check for Updates";
-"Menu.Title.Help" = "Help";
-"Menu.Title.Exit" = "Exit";
 
-"Settings.Title.Hosts" = "Download Options";
-"Settings.Title.View" = "View";
 
 
 "Error.Hosts.Invalid" = "Hosts is Invalid!";

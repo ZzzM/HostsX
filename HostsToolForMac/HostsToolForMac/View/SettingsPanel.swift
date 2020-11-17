@@ -10,31 +10,18 @@ import Cocoa
 
 class SettingsPanel: NSPanel {
     
-    @IBOutlet weak var optionsLabel: NSTextField!
     @IBOutlet weak var optionsButton: NSPopUpButton!
-    
-    @IBOutlet weak var lookButton: NSButton!
-    
+  
 
-    
     var hostsType: HostsType! {
         return optionsButton.selectedItem?.title.hostsType
     }
     
-    
     override func awakeFromNib() {
 
-        title =  AppName
-
-        standardWindowButton(.miniaturizeButton)?.isHidden = true
-        standardWindowButton(.zoomButton)?.isHidden = true
-        
-        optionsLabel.stringValue = "Settings.Title.Hosts".localized
         optionsButton.addItems(withTitles: HostsType.names)
         optionsButton.selectItem(withTitle: HostsType.current.name)
         optionsButton.menu?.delegate = self
-        
-        lookButton.title = "Settings.Title.View".localized
         
     }
     
@@ -42,16 +29,10 @@ class SettingsPanel: NSPanel {
         hostsType.url.open()
     }
     
-    static func show() {
-        
-        if !NSApp.isActive {
-            NSApp.activate(ignoringOtherApps: true)
-        }
-        
-        let panel = SettingsPanel.loadFromNib()
-        NSApp.runModal(for: panel)
-
+    @IBAction func close(_ sender: Any) {
+        close()
     }
+
     
 }
 

@@ -13,26 +13,6 @@ let updater = SUUpdater()
 
 class MainMenu: NSMenu {
 
-    @IBOutlet weak var importItem: NSMenuItem!
-    
-    @IBOutlet weak var downloadItem: NSMenuItem!
-
-    @IBOutlet weak var exitItem: NSMenuItem!
-    
-    @IBOutlet weak var settingsItem: NSMenuItem!
-    @IBOutlet weak var checkItem: NSMenuItem!
-    @IBOutlet weak var helpItem: NSMenuItem!
-    
-    override func awakeFromNib() {
-
-        importItem.title = "Menu.Title.Import".localized
-        downloadItem.title = "Menu.Title.Download".localized
-        settingsItem.title = "Menu.Title.Settings".localized
-        exitItem.title = "Menu.Title.Exit".localized
-        checkItem.title = "Menu.Title.Check".localized
-        helpItem.title = "Menu.Title.Help".localized
-    }
-
     @IBAction func importAction(_ sender: Any) {
         var result = ExecutionResult.invalid
         if let url = Helper.openPanel() {
@@ -42,23 +22,15 @@ class MainMenu: NSMenu {
     }
     
     @IBAction func downloadAction(_ sender: Any) {
-        Helper.deliverNotification(HostsType.current.url
-        .hosts
-        .compared
-        .executed
-        .message)
+        NSApp.open(DownloadPanel.self)
     }
     
     @IBAction func settingsAction(_ sender: Any) {
-        SettingsPanel.show()
+        NSApp.open(SettingsPanel.self)
     }
     
     @IBAction func checkAction(_ sender: Any) {
         updater.checkForUpdates(sender)
-    }
-    
-    @IBAction func helpAction(_ sender: Any) {
-        AppHomePageURL.open()
     }
     
     @IBAction func exitAction(_ sender: Any) {
@@ -76,12 +48,22 @@ extension String {
     }
 }
 
+extension Data {
+    var hosts: ExecutionResult {
+
+        guard let _hosts = String(data: self, encoding: .utf8) else {
+            return .invalid
+        }
+        
+        return _hosts.verifyResult
+    }
+}
 extension URL{
     var hosts: ExecutionResult {
 
         do {
             return try String(contentsOf: self).verifyResult
-        } catch{
+        } catch {
             
             guard let underlyingError = error.userInfo["NSUnderlyingError"] as? Error else {
                 return .error(error.localizedDescription)

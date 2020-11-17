@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17506" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17506"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="Hosts 正在下载..." allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hidesOnDeactivate="YES" releasedWhenClosed="NO" frameAutosaveName="" animationBehavior="default" id="eAg-EF-aZk" customClass="DownloadPanel" customModule="HostsToolForMac" customModuleProvider="target">
+            <windowStyleMask key="styleMask" titled="YES"/>
+            <rect key="contentRect" x="1920" y="630" width="400" height="107"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="875"/>
+            <view key="contentView" id="aga-gp-vR8">
+                <rect key="frame" x="0.0" y="0.0" width="400" height="107"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jvm-vO-h9u">
+                        <rect key="frame" x="24" y="28" width="64" height="64"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="64" id="9O1-F7-Xgb"/>
+                            <constraint firstAttribute="width" constant="64" id="gL0-eD-wqv"/>
+                        </constraints>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageAlignment="topLeft" imageScaling="axesIndependently" image="NSApplicationIcon" id="ofu-hw-GYG"/>
+                    </imageView>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Fpd-st-BCL">
+                        <rect key="frame" x="289" y="12" width="94" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="pNM-SS-sAR"/>
+                            <constraint firstAttribute="height" constant="32" id="pYb-up-Kbm"/>
+                        </constraints>
+                        <buttonCell key="cell" type="push" title="取消" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="mAX-XV-E73">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                            <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                        </buttonCell>
+                        <connections>
+                            <action selector="close:" target="eAg-EF-aZk" id="jxJ-zF-V57"/>
+                        </connections>
+                    </button>
+                    <progressIndicator maxValue="100" indeterminate="YES" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="E6r-lu-Rnv">
+                        <rect key="frame" x="103" y="44" width="273" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="YPO-N3-Fga"/>
+                        </constraints>
+                    </progressIndicator>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Jvm-vO-h9u" firstAttribute="leading" secondItem="aga-gp-vR8" secondAttribute="leading" constant="24" id="7p2-vQ-Efy"/>
+                    <constraint firstAttribute="trailing" secondItem="Fpd-st-BCL" secondAttribute="trailing" constant="24" id="FNt-qF-fif"/>
+                    <constraint firstItem="E6r-lu-Rnv" firstAttribute="trailing" secondItem="Fpd-st-BCL" secondAttribute="trailing" id="apS-A9-rHt"/>
+                    <constraint firstItem="E6r-lu-Rnv" firstAttribute="leading" secondItem="Jvm-vO-h9u" secondAttribute="trailing" constant="15" id="bXq-lw-zvM"/>
+                    <constraint firstItem="E6r-lu-Rnv" firstAttribute="centerY" secondItem="Jvm-vO-h9u" secondAttribute="centerY" id="oAG-Hq-Wpl"/>
+                    <constraint firstItem="Fpd-st-BCL" firstAttribute="top" secondItem="aga-gp-vR8" secondAttribute="top" constant="56" id="pBn-GY-wEj"/>
+                    <constraint firstItem="Jvm-vO-h9u" firstAttribute="top" secondItem="aga-gp-vR8" secondAttribute="top" constant="15" id="rWe-FW-5fk"/>
+                    <constraint firstItem="Fpd-st-BCL" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Jvm-vO-h9u" secondAttribute="trailing" constant="8" symbolic="YES" id="wOP-0I-SkX"/>
+                </constraints>
+            </view>
+            <connections>
+                <outlet property="progressIndicator" destination="E6r-lu-Rnv" id="h7Y-nI-UId"/>
+            </connections>
+            <point key="canvasLocation" x="121" y="3"/>
+        </window>
+    </objects>
+    <resources>
+        <image name="NSApplicationIcon" width="32" height="32"/>
+    </resources>
+</document>

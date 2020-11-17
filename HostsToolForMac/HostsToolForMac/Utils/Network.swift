@@ -11,12 +11,12 @@ import Cocoa
 
 
 struct Network {
-    
-    
-    private static func request(url: URL,
+
+    static func request(url: URL,
                                 success: ((Data) -> Void)? = .none,
-                                failure: FailureHandler? = .none) {
-        URLSession.shared
+                                failure: FailureHandler? = .none) -> URLSessionTask {
+        
+        let task = URLSession.shared
             .dataTask(with: url) { (data, response, error) in
                 if error != nil {
                     failure? (error!)
@@ -27,7 +27,12 @@ struct Network {
                     success? (data!)
                 }
                 
-        }.resume()
+        }
+        
+        task.resume()
+        
+        return task
+    
     }
 
 }

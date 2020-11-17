@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16097" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17506" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17506"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -20,52 +20,38 @@
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <menu id="bpM-ru-vlk" customClass="MainMenu" customModule="HostsToolForMac" customModuleProvider="target">
             <items>
-                <menuItem title="Import" id="HVU-2S-bB1">
+                <menuItem title="导入" id="HVU-2S-bB1">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="importAction:" target="bpM-ru-vlk" id="230-q5-Ka0"/>
                     </connections>
                 </menuItem>
-                <menuItem title="Download" id="rJb-5x-wh6">
+                <menuItem title="下载" id="rJb-5x-wh6">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="downloadAction:" target="bpM-ru-vlk" id="v5s-uj-xdy"/>
                     </connections>
                 </menuItem>
-                <menuItem title="Settings" id="hZ7-5E-hRx">
+                <menuItem title="设置" id="hZ7-5E-hRx">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="settingsAction:" target="bpM-ru-vlk" id="i3v-gk-UnQ"/>
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="KeR-GK-CmV"/>
-                <menuItem title="Check for Updates" id="rTQ-wQ-fW7">
+                <menuItem title="检查更新" id="rTQ-wQ-fW7">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="checkAction:" target="bpM-ru-vlk" id="Oz6-Oh-tB3"/>
                     </connections>
                 </menuItem>
-                <menuItem title="Help" id="kEk-Qe-uWd">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="helpAction:" target="bpM-ru-vlk" id="mVn-ra-HS8"/>
-                    </connections>
-                </menuItem>
-                <menuItem title="Exit" id="kux-y0-M3b">
+                <menuItem title="退出" id="kux-y0-M3b">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="exitAction:" target="bpM-ru-vlk" id="ipn-Ic-ctG"/>
                     </connections>
                 </menuItem>
             </items>
-            <connections>
-                <outlet property="checkItem" destination="rTQ-wQ-fW7" id="Zxb-G1-b9s"/>
-                <outlet property="downloadItem" destination="rJb-5x-wh6" id="dY5-ha-Wp5"/>
-                <outlet property="exitItem" destination="kux-y0-M3b" id="VJb-2P-syY"/>
-                <outlet property="helpItem" destination="kEk-Qe-uWd" id="SUb-CX-2Ob"/>
-                <outlet property="importItem" destination="HVU-2S-bB1" id="t7f-7a-Ug3"/>
-                <outlet property="settingsItem" destination="hZ7-5E-hRx" id="JBQ-rz-vhG"/>
-            </connections>
             <point key="canvasLocation" x="31.5" y="122"/>
         </menu>
     </objects>

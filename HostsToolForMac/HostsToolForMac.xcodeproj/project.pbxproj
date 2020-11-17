@@ -9,19 +9,21 @@
 /* Begin PBXBuildFile section */
 		1F1AB29B1E666D9F00171458 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1AB29A1E666D9F00171458 /* AppDelegate.swift */; };
 		1F1AB29D1E666D9F00171458 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F1AB29C1E666D9F00171458 /* Assets.xcassets */; };
-		1F1AB2A01E666DA000171458 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F1AB29E1E666DA000171458 /* MainMenu.xib */; };
 		1F2396D320B5065E00618BB8 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2396D220B5065E00618BB8 /* MainMenu.swift */; };
 		1F338EBF1E696A1D004A3265 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F338EC11E696A1D004A3265 /* Localizable.strings */; };
 		1FA54A9A20B2BAB5005B2515 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA54A9920B2BAB5005B2515 /* Helper.swift */; };
 		1FA54AA420B2BD52005B2515 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA54AA320B2BD52005B2515 /* Network.swift */; };
 		980E5FA62378359900EEF756 /* Foundation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980E5FA52378359900EEF756 /* Foundation+Extension.swift */; };
-		984F41E22446E22000ED4EB9 /* SettingsPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 984F41E12446E22000ED4EB9 /* SettingsPanel.xib */; };
+		982DA17825636C6E008173F8 /* DownloadPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982DA17725636C6E008173F8 /* DownloadPanel.swift */; };
+		982DA17D25636FFB008173F8 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 982DA17F25636FFB008173F8 /* MainMenu.xib */; };
+		982DA1852563A396008173F8 /* SettingsPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 982DA1872563A396008173F8 /* SettingsPanel.xib */; };
+		982DA1932563A712008173F8 /* DownloadPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 982DA1952563A712008173F8 /* DownloadPanel.xib */; };
 		98A85E0A237CF3D4006DA99F /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A85E09237CF3D4006DA99F /* Constant.swift */; };
 		98A85E0C237CFD72006DA99F /* AppDelegate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A85E0B237CFD72006DA99F /* AppDelegate+Extension.swift */; };
 		98D9FA6723BAE523008DD433 /* SettingsPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D9FA6623BAE523008DD433 /* SettingsPanel.swift */; };
 		98D9FA6B23BAE6AD008DD433 /* AppKit+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D9FA6A23BAE6AD008DD433 /* AppKit+Extension.swift */; };
 		98D9FA6D23BB3493008DD433 /* Hosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D9FA6C23BB3493008DD433 /* Hosts.swift */; };
-		B3E94D772B692099C453B883 /* libPods-HostsToolForMac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE7430F5CFA6F986E2407DCD /* libPods-HostsToolForMac.a */; };
+		C437A074FFC4A0B0A6CC1937 /* Pods_HostsToolForMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23456CEF06BD9B7F2246B07E /* Pods_HostsToolForMac.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,7 +42,6 @@
 		0B523D9EBF2E1DFF49704BB3 /* Pods-HostsToolForMac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HostsToolForMac.release.xcconfig"; path = "Target Support Files/Pods-HostsToolForMac/Pods-HostsToolForMac.release.xcconfig"; sourceTree = "<group>"; };
 		1F1AB29A1E666D9F00171458 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F1AB29C1E666D9F00171458 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		1F1AB29F1E666DA000171458 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		1F1AB2A11E666DA000171458 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F2396D220B5065E00618BB8 /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
 		1F338EC21E696A1F004A3265 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -48,15 +49,21 @@
 		1FA54A9620B2BA72005B2515 /* HostsToolForMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HostsToolForMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FA54A9920B2BAB5005B2515 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		1FA54AA320B2BD52005B2515 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		23456CEF06BD9B7F2246B07E /* Pods_HostsToolForMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HostsToolForMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		980E5FA52378359900EEF756 /* Foundation+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Foundation+Extension.swift"; sourceTree = "<group>"; };
-		984F41E12446E22000ED4EB9 /* SettingsPanel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsPanel.xib; sourceTree = "<group>"; };
+		982DA17725636C6E008173F8 /* DownloadPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadPanel.swift; sourceTree = "<group>"; };
+		982DA1832563703B008173F8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/MainMenu.xib"; sourceTree = "<group>"; };
+		982DA18425637048008173F8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		982DA1862563A396008173F8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SettingsPanel.xib; sourceTree = "<group>"; };
+		982DA18A2563A3A0008173F8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/SettingsPanel.xib"; sourceTree = "<group>"; };
+		982DA19A2563A71E008173F8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DownloadPanel.xib; sourceTree = "<group>"; };
+		982DA19E2563B7E6008173F8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/DownloadPanel.xib"; sourceTree = "<group>"; };
 		986A75BE23B7763000815C9D /* HostsToolForMac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HostsToolForMac.entitlements; sourceTree = "<group>"; };
 		98A85E09237CF3D4006DA99F /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		98A85E0B237CFD72006DA99F /* AppDelegate+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Extension.swift"; sourceTree = "<group>"; };
 		98D9FA6623BAE523008DD433 /* SettingsPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPanel.swift; sourceTree = "<group>"; };
 		98D9FA6A23BAE6AD008DD433 /* AppKit+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppKit+Extension.swift"; sourceTree = "<group>"; };
 		98D9FA6C23BB3493008DD433 /* Hosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hosts.swift; sourceTree = "<group>"; };
-		DE7430F5CFA6F986E2407DCD /* libPods-HostsToolForMac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HostsToolForMac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9C9A81E32EF5EDE9CF0BDEB /* Pods-HostsToolForMac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HostsToolForMac.debug.xcconfig"; path = "Target Support Files/Pods-HostsToolForMac/Pods-HostsToolForMac.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,7 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3E94D772B692099C453B883 /* libPods-HostsToolForMac.a in Frameworks */,
+				C437A074FFC4A0B0A6CC1937 /* Pods_HostsToolForMac.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,7 +82,7 @@
 		1C8C76E1E2F19A023C7DB35B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DE7430F5CFA6F986E2407DCD /* libPods-HostsToolForMac.a */,
+				23456CEF06BD9B7F2246B07E /* Pods_HostsToolForMac.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -130,8 +137,10 @@
 			children = (
 				1F2396D220B5065E00618BB8 /* MainMenu.swift */,
 				98D9FA6623BAE523008DD433 /* SettingsPanel.swift */,
-				1F1AB29E1E666DA000171458 /* MainMenu.xib */,
-				984F41E12446E22000ED4EB9 /* SettingsPanel.xib */,
+				982DA17725636C6E008173F8 /* DownloadPanel.swift */,
+				982DA1952563A712008173F8 /* DownloadPanel.xib */,
+				982DA17F25636FFB008173F8 /* MainMenu.xib */,
+				982DA1872563A396008173F8 /* SettingsPanel.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -185,7 +194,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 1100;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = ZzzM;
 				TargetAttributes = {
 					1F1AB2961E666D9F00171458 = {
@@ -220,9 +229,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F1AB29D1E666D9F00171458 /* Assets.xcassets in Resources */,
-				984F41E22446E22000ED4EB9 /* SettingsPanel.xib in Resources */,
-				1F1AB2A01E666DA000171458 /* MainMenu.xib in Resources */,
+				982DA17D25636FFB008173F8 /* MainMenu.xib in Resources */,
+				982DA1852563A396008173F8 /* SettingsPanel.xib in Resources */,
 				1F338EBF1E696A1D004A3265 /* Localizable.strings in Resources */,
+				982DA1932563A712008173F8 /* DownloadPanel.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +308,7 @@
 				98A85E0C237CFD72006DA99F /* AppDelegate+Extension.swift in Sources */,
 				98D9FA6723BAE523008DD433 /* SettingsPanel.swift in Sources */,
 				1FA54AA420B2BD52005B2515 /* Network.swift in Sources */,
+				982DA17825636C6E008173F8 /* DownloadPanel.swift in Sources */,
 				1F1AB29B1E666D9F00171458 /* AppDelegate.swift in Sources */,
 				1FA54A9A20B2BAB5005B2515 /* Helper.swift in Sources */,
 				980E5FA62378359900EEF756 /* Foundation+Extension.swift in Sources */,
@@ -307,14 +318,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		1F1AB29E1E666DA000171458 /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1F1AB29F1E666DA000171458 /* Base */,
-			);
-			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
 		1F338EC11E696A1D004A3265 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -322,6 +325,33 @@
 				1F338EC31E696A20004A3265 /* zh-Hans */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		982DA17F25636FFB008173F8 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				982DA1832563703B008173F8 /* zh-Hans */,
+				982DA18425637048008173F8 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		982DA1872563A396008173F8 /* SettingsPanel.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				982DA1862563A396008173F8 /* en */,
+				982DA18A2563A3A0008173F8 /* zh-Hans */,
+			);
+			name = SettingsPanel.xib;
+			sourceTree = "<group>";
+		};
+		982DA1952563A712008173F8 /* DownloadPanel.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				982DA19A2563A71E008173F8 /* en */,
+				982DA19E2563B7E6008173F8 /* zh-Hans */,
+			);
+			name = DownloadPanel.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -352,6 +382,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -411,6 +442,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -445,12 +477,12 @@
 				CODE_SIGN_ENTITLEMENTS = HostsToolForMac/HostsToolForMac.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 2.6.1;
+				CURRENT_PROJECT_VERSION = 2.7.0;
 				DEVELOPMENT_TEAM = 7823BJG877;
 				INFOPLIST_FILE = HostsToolForMac/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MARKETING_VERSION = 2.6.1;
+				MARKETING_VERSION = 2.7.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ZzzM.HostsToolForMac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -466,12 +498,12 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 2.6.1;
+				CURRENT_PROJECT_VERSION = 2.7.0;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = HostsToolForMac/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MARKETING_VERSION = 2.6.1;
+				MARKETING_VERSION = 2.7.0;
 				PRODUCT_BUNDLE_IDENTIFIER = zzzm.mac.hostTool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
