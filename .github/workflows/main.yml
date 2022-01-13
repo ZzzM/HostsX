@@ -10,7 +10,7 @@ on:
 
 jobs:
 
-  Realese:
+  Deploy:
     runs-on: macos-latest
     steps:
 
