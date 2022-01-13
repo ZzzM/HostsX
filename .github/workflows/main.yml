@@ -1,0 +1,67 @@
+
+name: Deploy
+
+on:
+  push:
+    tags:
+      - '*'
+  
+  workflow_dispatch:
+
+jobs:
+
+  Realese:
+    runs-on: macos-latest
+    steps:
+
+    - name: Checkout
+      uses: actions/checkout@v2.4.0
+      
+    - name: Package
+      run: |
+        fastlane run increment_build_number build_number:${GITHUB_SHA::7}
+        fastlane package
+ 
+    - name: Create
+      run: |
+        brew install create-dmg
+        
+        create-dmg \
+        --volicon AppIcon.icns \
+        --hdiutil-quiet \
+        --app-drop-link 0 30  \
+        $APP_SCHEME.dmg $APP_SCHEME.app
+
+    - name: Update
+      run: | 
+ 
+       build=`defaults read $PWD/$APP_SCHEME.app/Contents/Info.plist CFBundleVersion`
+       
+       signature=`$PWD/sign_update -s $SPARKLE_KEY KAI.dmg`
+       signature=${signature%\" *}
+       signature=${signature#*=\"}
+       
+       changelog=`cat CHANGELOG.md`
+       changelog=${changelog%%---*}
+       changelog=${changelog#*###}
+       changelog="###$changelog"
+       content="<!-- $build,$signature -->"
+       
+       echo "$changelog$content" > CHANGELOG.md
+       
+    - name: Release
+      uses: softprops/action-gh-release@v1
+      with:
+        body_path: CHANGELOG.md
+        files: ${{ env.APP_SCHEME }}.dmg
+ 
+    - name: Appcast
+      run: |
+          curl -u ZzzM:$GITPAGE_TOKEN -X POST \
+          https://api.github.com/repos/${{ github.repository }}/pages/builds \
+          -H "Accept: application/vnd.github.mister-fantastic-preview+json"
+              
+env:
+  APP_SCHEME: ${{ secrets.APP_SCHEME }}
+  GITPAGE_TOKEN: ${{ secrets.GITPAGE_TOKEN }}
+  SPARKLE_KEY: ${{ secrets.SPARKLE_KEY }}
