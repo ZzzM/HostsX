@@ -15,12 +15,11 @@ A lightweight macOS App for updating local hosts
 ## Snapshots
 - Menu
 
-<img src="assets/m1.png">
-<img src="assets/m2.png">
-<img src="assets/m3.png">
+<img src="assets/m1.png" height=150> <img src="assets/m2.png" height=150>  <img src="assets/m3.png" height=150>
   
 - Remote configuration
-<img src="assets/r1.png"><img src="assets/r2.png">
+ 
+<img src="assets/r1.png" width=300> <img src="assets/r2.png" width=300>
 
 ## Note
 - Add DNS entries between `# My Hosts Start` and `# My Hosts End`
