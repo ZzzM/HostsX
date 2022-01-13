@@ -1,12 +1,5 @@
 # HostsX
-
-
-
-一款轻量级本地 hosts 更新工具。
-- 开发语言：Swift<br>
-- 运行环境：macOS 10.12 或以上<br>
-- 在线更新：需要将解压好的App放至应用程序文件夹
-- [下载地址](https://github.com/ZzzM/HostsToolforMac/releases/download/2.7.0/HostsToolForMac.zip)
+A lightweight macOS App for updating local hosts 
 
 ## Features
 - Internationalization (简体中文、English)
@@ -35,7 +28,14 @@
 
 
 ## Note
-- 第一次更新会完全覆盖原hosts，然后生成“# My Hosts Start”、“# My Hosts End”标识,需要添加的话，只要在“# My Hosts Start”、“# My Hosts End”范围内编辑，
-- 防止覆盖自己添加的hosts，只要在`“# My Hosts Start”`、`“# My Hosts End”`范围内编辑即可
+- Add DNS entries between `# My Hosts Start` and `# My Hosts End`
+```
+# My Hosts Start
 
+0.0.0.0 www.example0.com
+1.1.1.1 www.example1.com
+2.2.2.2 www.example2.com
+
+# My Hosts End
+```
 
