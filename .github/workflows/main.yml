@@ -29,8 +29,9 @@ jobs:
         create-dmg \
         --volicon AppIcon.icns \
         --hdiutil-quiet \
-        --app-drop-link 0 30  \
-        $APP_SCHEME.dmg $APP_SCHEME.app
+        --app-drop-link 0 30 \
+        $APP_SCHEME.dmg \
+        $APP_SCHEME.app
 
     - name: Update
       run: | 
