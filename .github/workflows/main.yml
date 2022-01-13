@@ -37,7 +37,7 @@ jobs:
  
        build=`defaults read $PWD/$APP_SCHEME.app/Contents/Info.plist CFBundleVersion`
        
-       signature=`$PWD/sign_update -s $SPARKLE_KEY KAI.dmg`
+       signature=`$PWD/sign_update -s $SPARKLE_KEY $APP_SCHEME.dmg`
        signature=${signature%\" *}
        signature=${signature#*=\"}
        
