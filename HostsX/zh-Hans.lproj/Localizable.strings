@@ -1,0 +1,53 @@
+/* 
+  File.strings
+  HostsX
+
+  Created by zm on 2021/12/17.
+  
+*/
+"menu.local" = "本地";
+"menu.remote" = "远程";
+"menu.remote.download" = "下载";
+"menu.remote.config" = "配置";
+"menu.help" = "帮助";
+"menu.help.check" = "检查更新";
+"menu.help.about" = "关于";
+"menu.quit" = "退出";
+
+"hosts.alias" = "名称";
+"hosts.url" = "URL";
+"hosts.origin" = "下载源";
+"hosts.available" = "可用";
+"hosts.unavailable" = "不可用";
+"hosts.unknown" = "未知";
+
+"dialog.cancel" = "取消";
+"dialog.done" = "好的";
+
+"remote.hosts" = "Hosts 配置";
+"remote.hosts.ok" = "完成";
+"remote.alias.prompt" = "3 ~ 8 字符";
+"remote.alias.placeholder" = "输入名称 ...";
+"remote.url.placeholder" = "输入URL ...";
+"remote.alias.prompt.empty" = "名称为空";
+"remote.alias.prompt.invalid" = "无效名称";
+"remote.alias.prompt.exists" = "名称已存在";
+"remote.url.prompt.empty" = "URL为空";
+"remote.url.prompt.invalid" = "无效URL";
+"remote.url.prompt.exists" = "URL已存在";
+
+"remote.hosts.confirm.open" = "确认打开 \n\"%1$@\"？";
+"remote.hosts.confirm.remove" = "确认删除 \n\"%1$@\"？";
+"remote.hosts.confirm.origin" = "确认设置 \n\"%1$@\"\n 为下载源?";
+
+"about.version" = "版本";
+"update.finished" = "更新完成";
+"update.succeeded" = "更新成功";
+"update.failed" = "更新失败";
+"update.unfinished" = "更新未完成";
+
+"error.invalidHosts" = "无效 hosts";
+"error.invalidURL" = "无效 URL";
+"error.compile" = "脚本编译错误";
+"error.execute" = "脚本执行错误：";
+"error.cancelled" = "用户取消";

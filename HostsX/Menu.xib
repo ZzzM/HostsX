@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="19529" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19529"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
+            <connections>
+                <outlet property="delegate" destination="0Ad-dC-CHq" id="eSi-cX-CBc"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customObject id="0Ad-dC-CHq" customClass="AppDelegate" customModule="HostsX" customModuleProvider="target">
+            <connections>
+                <outlet property="menu" destination="20u-S3-3rH" id="7b1-b1-la0"/>
+            </connections>
+        </customObject>
+        <menu autoenablesItems="NO" id="20u-S3-3rH" customClass="AppMenu" customModule="HostsX" customModuleProvider="target">
+            <items>
+                <menuItem title="Local" id="xdD-YS-Hbp">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="onLoacl:" target="20u-S3-3rH" id="sVg-B8-Ehg"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Remote" id="nXu-WU-6I0">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" autoenablesItems="NO" id="qWc-A0-04s">
+                        <items>
+                            <menuItem title="Download" id="ekW-Fa-Ju2">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="onDownload:" target="20u-S3-3rH" id="Gt9-Op-8gu"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Configure" id="ASx-4D-ecR">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="onConfigure:" target="20u-S3-3rH" id="RJV-k0-myU"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="0gE-Dw-okY"/>
+                <menuItem title="Help" id="KXm-r6-DXd">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Help" id="Pgt-Bd-1nL">
+                        <items>
+                            <menuItem title="Check for updates" id="GKT-X2-T5l">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="checkForUpdates:" target="uy0-JH-znn" id="ci5-UC-7J9"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="About" id="uNh-Vh-dFx">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="onAbout:" target="20u-S3-3rH" id="dxs-Lo-SAF"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Quit" id="NpX-84-IRr">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="terminate:" target="-2" id="TcA-d5-IWO"/>
+                    </connections>
+                </menuItem>
+            </items>
+            <connections>
+                <outlet property="aboutItem" destination="uNh-Vh-dFx" id="XxX-kF-o8R"/>
+                <outlet property="checkItem" destination="GKT-X2-T5l" id="14m-IR-SKO"/>
+                <outlet property="configItem" destination="ASx-4D-ecR" id="Aa1-9V-hRT"/>
+                <outlet property="downloadItem" destination="ekW-Fa-Ju2" id="uaf-Zy-0xc"/>
+                <outlet property="helpItem" destination="KXm-r6-DXd" id="QO0-DE-0vQ"/>
+                <outlet property="localItem" destination="xdD-YS-Hbp" id="9H5-aD-Vte"/>
+                <outlet property="quitItem" destination="NpX-84-IRr" id="lxz-oF-9Zt"/>
+                <outlet property="remoteItem" destination="nXu-WU-6I0" id="pcg-bI-AW4"/>
+            </connections>
+            <point key="canvasLocation" x="113" y="106.5"/>
+        </menu>
+        <customObject id="uy0-JH-znn" customClass="SPUStandardUpdaterController"/>
+    </objects>
+</document>

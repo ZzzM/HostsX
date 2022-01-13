@@ -1,0 +1,54 @@
+/* 
+  File.strings
+  HostsX
+
+  Created by zm on 2021/12/17.
+  
+*/
+"menu.local" = "Local";
+"menu.remote" = "Remote";
+"menu.remote.download" = "Download";
+"menu.remote.config" = "Configure";
+"menu.help" = "Help";
+"menu.help.check" = "Check for updates";
+"menu.help.about" = "About";
+"menu.quit" = "Quit";
+
+"hosts.alias" = "Alias";
+"hosts.url" = "URL";
+"hosts.origin" = "Origin";
+"hosts.available" = "Available";
+"hosts.unavailable" = "Unavailable";
+"hosts.unknown" = "Unknown";
+
+"dialog.cancel" = "Cancel";
+"dialog.done" = "Done";
+"remote.hosts" = "Hosts Config";
+"remote.hosts.ok" = "OK";
+"remote.alias.prompt" = "3 ~ 6 Characters";
+"remote.alias.placeholder" = "Enter Alias ...";
+"remote.url.placeholder" = "Enter URL ...";
+
+"remote.alias.prompt.empty" = "Alias is empty";
+"remote.alias.prompt.invalid" = "Invalid alias";
+"remote.alias.prompt.exists" = "Alias already exists";
+"remote.url.prompt.empty" = "URL is empty";
+"remote.url.prompt.invalid" = "Invalid URL";
+"remote.url.prompt.exists" = "URL already exists";
+
+"remote.hosts.confirm.open" = "Confirm to open \n\"%1$@\"?";
+"remote.hosts.confirm.remove" = "Confirm to remove \n\"%1$@\"?";
+"remote.hosts.confirm.origin" = "Confirm to set \n\"%1$@\"\n as origin?";
+
+"about.version" = "Version";
+
+"update.finished" = "Update Finished";
+"update.succeeded" = " Update Succeeded";
+"update.failed" = " Update Failed";
+"update.unfinished" = " Update Unfinished";
+
+"error.invalidHosts" = "Invalid hosts";
+"error.invalidURL" = "Invalid URL";
+"error.compile" = "Script compile  error";
+"error.execute" = "Script execute  error:";
+"error.cancelled" = "User cancelled";
