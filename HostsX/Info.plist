@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>LSUIElement</key>
+	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>SUEnableAutomaticChecks</key>
+	<false/>
+	<key>SUFeedURL</key>
+	<string>https://gitee.com/Yuko/Zzz/raw/master/hostsTool/appcast.xml</string>
+	<key>SUPublicEDKey</key>
+	<string>IqmAL/4PBUY1LejXocSszpdeqxAMQXLi3ydovPOOvvs=</string>
+</dict>
+</plist>

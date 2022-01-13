@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="nrN-Ss-vAW">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19529"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Window Controller-->
+        <scene sceneID="hQv-hv-Q9c">
+            <objects>
+                <windowController showSeguePresentationStyle="single" id="nrN-Ss-vAW" sceneMemberID="viewController">
+                    <window key="window" title="HostsX" subtitle="Remote Settings" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="i8x-Ng-2Gg">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" fullSizeContentView="YES"/>
+                        <windowPositionMask key="initialPositionMask" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="196" y="582" width="400" height="250"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1055"/>
+                        <view key="contentView" id="GQK-3W-8j3">
+                            <rect key="frame" x="0.0" y="0.0" width="400" height="250"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </view>
+                        <connections>
+                            <outlet property="delegate" destination="nrN-Ss-vAW" id="Iho-ua-xbp"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="h6P-N6-zZA" kind="relationship" relationship="window.shadowedContentViewController" id="FW3-BI-GoZ"/>
+                    </connections>
+                </windowController>
+                <customObject id="mRQ-za-eII" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-192" y="188"/>
+        </scene>
+        <!--About View Controller-->
+        <scene sceneID="evO-Ep-9HR">
+            <objects>
+                <viewController storyboardIdentifier="HostsConfigController" id="h6P-N6-zZA" customClass="AboutViewController" customModule="HostsX" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="5rW-V5-bAX" customClass="HostsView" customModule="HostsX" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="x1h-ez-XkE">
+                                <rect key="frame" x="85" y="140" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="Rn5-IX-s7Z"/>
+                                    <constraint firstAttribute="width" secondItem="x1h-ez-XkE" secondAttribute="height" id="sgh-7m-Xeq"/>
+                                </constraints>
+                                <imageCell key="cell" controlSize="large" refusesFirstResponder="YES" alignment="left" imageAlignment="bottom" imageScaling="axesIndependently" image="NSNetwork" id="8Tm-fg-yLE"/>
+                            </imageView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ww0-n9-rX8">
+                                <rect key="frame" x="89" y="90" width="73" height="14"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Version 2.0.0" id="jiy-PD-R3w">
+                                    <font key="font" metaFont="smallSystem"/>
+                                    <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LJh-8k-R3c">
+                                <rect key="frame" x="26" y="15" width="199" height="11"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Copyright © 2016 ZzzM. All rights reserved." id="maC-ya-kOO">
+                                    <font key="font" metaFont="miniSystem"/>
+                                    <color key="textColor" name="tertiaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="B3D-sl-X0A">
+                                <rect key="frame" x="69" y="48" width="112" height="32"/>
+                                <buttonCell key="cell" type="push" title="GitHub Repo" bezelStyle="rounded" alignment="center" refusesFirstResponder="YES" borderStyle="border" imageScaling="axesIndependently" inset="2" id="E7b-Tt-8f4">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <color key="bezelColor" red="0.29399999999999998" green="0.63500000000000001" blue="0.80800000000000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="onGitHub:" target="h6P-N6-zZA" id="ett-LM-IJh"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jKe-IB-N7G">
+                                <rect key="frame" x="84" y="104" width="83" height="36"/>
+                                <textFieldCell key="cell" lineBreakMode="truncatingTail" alignment="justified" title="HostsX" id="DBk-hi-NTw">
+                                    <font key="font" size="25" name="HannotateSC-W5"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="x1h-ez-XkE" firstAttribute="top" secondItem="5rW-V5-bAX" secondAttribute="top" constant="30" id="16F-0P-4TF"/>
+                            <constraint firstItem="LJh-8k-R3c" firstAttribute="centerX" secondItem="5rW-V5-bAX" secondAttribute="centerX" id="1rl-il-sb0"/>
+                            <constraint firstItem="B3D-sl-X0A" firstAttribute="centerX" secondItem="Ww0-n9-rX8" secondAttribute="centerX" id="3Gm-H1-u4s"/>
+                            <constraint firstItem="jKe-IB-N7G" firstAttribute="top" secondItem="x1h-ez-XkE" secondAttribute="bottom" id="CKg-DE-D46"/>
+                            <constraint firstItem="B3D-sl-X0A" firstAttribute="top" secondItem="Ww0-n9-rX8" secondAttribute="bottom" constant="15" id="c78-t4-Qln"/>
+                            <constraint firstItem="Ww0-n9-rX8" firstAttribute="top" secondItem="jKe-IB-N7G" secondAttribute="bottom" id="d9a-gW-nBL"/>
+                            <constraint firstAttribute="bottom" secondItem="LJh-8k-R3c" secondAttribute="bottom" constant="15" id="ej7-y4-Jan"/>
+                            <constraint firstItem="x1h-ez-XkE" firstAttribute="centerX" secondItem="5rW-V5-bAX" secondAttribute="centerX" id="ieF-Hf-hPc"/>
+                            <constraint firstItem="Ww0-n9-rX8" firstAttribute="centerX" secondItem="jKe-IB-N7G" secondAttribute="centerX" id="oIP-Mx-Umn"/>
+                            <constraint firstItem="jKe-IB-N7G" firstAttribute="centerX" secondItem="x1h-ez-XkE" secondAttribute="centerX" id="upN-5A-07k"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="copyrightLabel" destination="LJh-8k-R3c" id="6cR-0P-t4o"/>
+                        <outlet property="iconImageView" destination="x1h-ez-XkE" id="Gd9-7j-R8Z"/>
+                        <outlet property="nameLabel" destination="jKe-IB-N7G" id="O8b-lb-1tq"/>
+                        <outlet property="versionLabel" destination="Ww0-n9-rX8" id="deB-Sc-snq"/>
+                    </connections>
+                </viewController>
+                <customObject id="OWf-bX-285" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-192" y="514"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="NSNetwork" width="32" height="32"/>
+    </resources>
+</document>

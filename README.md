@@ -8,24 +8,19 @@ A lightweight macOS App for updating local hosts
 ## Compatibility
 - Requires **macOS 10.12** or later
 
-## 版本
-
-| 版本 |  说明 |
-| ----  | ---- |
-| 2.7.0 | 更新菜单<br>更新设置面板<br>新增下载提示面板<br>适配 macOS Big Sur 11.0.1|
-| 2.6.1 | - |
-| 2.6.0 | 更新菜单<br>更新设置面板<br>支持在线更新 |
+## Changlogs
+- [简体中文](CHANGELOG_SC.md)
+- [English](CHANGELOG.md)
 
 ## Snapshots
-- 主页
-<img src="Previews/p1.png">
+- Menu
+
+<img src="assets/m1.png">
+<img src="assets/m2.png">
+<img src="assets/m3.png">
   
-- 下载
-<img src="Previews/p2.png"> 
-
-- 设置
-<img src="Previews/p3.png">
-
+- Remote configuration
+<img src="assets/r1.png"><img src="assets/r2.png">
 
 ## Note
 - Add DNS entries between `# My Hosts Start` and `# My Hosts End`

@@ -1,0 +1,27 @@
+default_platform(:mac)
+
+platform :mac do
+  
+
+  lane :package do
+  
+    build
+    clean
+
+  end
+
+
+  lane :build do
+    build_app(
+      clean: true,
+      silent: true,
+      export_method: 'mac-application'
+      )
+  end
+
+  lane :clean do
+    sh "rm -vfr ~/Library/Developer/Xcode/Archives/*"
+  end
+
+
+end
