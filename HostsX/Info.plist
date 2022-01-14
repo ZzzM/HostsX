@@ -12,7 +12,7 @@
 	<key>SUEnableAutomaticChecks</key>
 	<false/>
 	<key>SUFeedURL</key>
-	<string>https://gitee.com/Yuko/Zzz/raw/master/hostsTool/appcast.xml</string>
+	<string>https://zzzm.github.io/HostsX/appcast.xml</string>
 	<key>SUPublicEDKey</key>
 	<string>IqmAL/4PBUY1LejXocSszpdeqxAMQXLi3ydovPOOvvs=</string>
 </dict>

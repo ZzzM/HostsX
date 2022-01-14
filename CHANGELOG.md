@@ -1,4 +1,4 @@
-## 2.8.0 - 2022-01-13
+## 2.8.0 - 2022-01-14
 
 ### Changed
 - Updated App name from **HostsToolForMac**  to **HostsX**
