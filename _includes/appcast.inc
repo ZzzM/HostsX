@@ -7,6 +7,7 @@
         {% for release in site.github.releases %}
             {% unless release.draft %}
                 {% unless release.prerelease and page.release_only %}
+                    {% if release.body contains '<!--' %}
                     <item>
                         <title>{{ release.name }}</title>
                         <description><![CDATA[{{ release.body | markdownify }}]]></description>
@@ -22,6 +23,7 @@
                                 type="application/octet-stream" />
                         {% endfor %}
                     </item>
+                    {% endif %}
                 {% endunless %}
             {% endunless %}
         {% endfor %}
