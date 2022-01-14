@@ -1,16 +1,18 @@
 
-<!-- [![](https://img.shields.io/badge/%E7%AE%80%E4%BB%8B-%E4%B8%AD%E6%96%87-orange)]() --> 
+<!-- [![](https://img.shields.io/badge/%E7%AE%80%E4%BB%8B-%E4%B8%AD%E6%96%87-orange)]()  -->
 <h1>
-HostsX </br>
+HostsX</br>
 <a href="https://github.com/ZzzM/HostsX/releases/latest"><img src="https://img.shields.io/github/v/release/ZzzM/HostsX"></a>
-<img src="https://img.shields.io/github/languages/top/ZzzM/HostsX">
+<a href="https://github.com/ZzzM/HostsX/releases/latest"><img src="https://img.shields.io/github/release-date/ZzzM/HostsX"></a>
+<a href="https://raw.githubusercontent.com/ZzzM/HostsX/master/LICENSE.md"><img src="https://img.shields.io/github/license/ZzzM/HostsX"></a>
+<!-- <img src="https://img.shields.io/badge/docs-%E7%AE%80%E4%B8%AD-red"> -->
 </h1>
 
-A lightweight macOS App for updating local hosts 
+A lightweight macOS App for updating local hosts
 
 ## Features
-- Internationalization (简体中文、English)
-- Dark mode
+- [x] Internationalization (简体中文、English)
+- [x] Dark mode
 
 ## Compatibility
 - Requires **macOS 10.12** or later
