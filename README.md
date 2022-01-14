@@ -28,7 +28,8 @@ A lightweight macOS App for updating local hosts
   
 - Remote configuration
  
-<img src="assets/r1.png" width=300> <img src="assets/r2.png" width=300>
+<img src="assets/r1.png" width=250> <img src="assets/r2.png" width=250>
+<img src="assets/r3.png" width=250>
 
 ## Note
 - Add DNS entries between `# My Hosts Start` and `# My Hosts End`
