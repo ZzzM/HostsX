@@ -4,8 +4,10 @@
 HostsX</br>
 <a href="https://github.com/ZzzM/HostsX/releases/latest"><img src="https://img.shields.io/github/v/release/ZzzM/HostsX"></a>
 <a href="https://github.com/ZzzM/HostsX/releases/latest"><img src="https://img.shields.io/github/release-date/ZzzM/HostsX"></a>
-<a href="https://raw.githubusercontent.com/ZzzM/HostsX/master/LICENSE.md"><img src="https://img.shields.io/github/license/ZzzM/HostsX"></a>
-<!-- <img src="https://img.shields.io/badge/docs-%E7%AE%80%E4%B8%AD-red"> -->
+<a href="https://raw.githubusercontent.com/ZzzM/HostsX/master/LICENSE"><img src="https://img.shields.io/github/license/ZzzM/HostsX"></a>
+<a href="https://zzzm.github.io/2020/02/24/hostsx/">
+<img src="https://img.shields.io/badge/docs-%E4%B8%AD%E6%96%87-red">
+</a>
 </h1>
 
 A lightweight macOS App for updating local hosts
