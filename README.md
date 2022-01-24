@@ -17,7 +17,7 @@ A lightweight macOS App for updating local hosts
 ## Compatibility
 - Requires **macOS 10.12** or later
 
-## Changlogs
+## Changelogs
 - [简体中文](CHANGELOG_SC.md)
 - [English](CHANGELOG.md)
 
