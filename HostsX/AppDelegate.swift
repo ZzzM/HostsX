@@ -11,15 +11,18 @@ import Cocoa
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    private let statusItem = NSStatusItem.system
+    private lazy var statusItem = NSStatusItem.system
+
 
     @IBOutlet weak var menu: AppMenu!
 
+
+
     func applicationDidFinishLaunching(_ aNotification: Notification) {
 
-        statusItem.setAttributedTitle(Bundle.main.bundleName)
+        statusItem.setMenuBarIcon()
         statusItem.menu = menu
-        //RemoteSource.restore()
+
     }
 
 

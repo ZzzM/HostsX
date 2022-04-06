@@ -1,9 +1,19 @@
+## 2.8.1 - 2022-04-06
+
+### Changed
+- Updated App icon
+- Updated App Font
+- Updated menubar icon
+- Show hosts status with icons
+
+---
+
 ## 2.8.0 - 2022-01-14
 
 ### Changed
 - Updated App name from **HostsToolForMac**  to **HostsX**
 - Updated App icon
-- Updadted menu items in the menubar
+- Updated menu items in the menubar
 
 ### Added
 - Added about view

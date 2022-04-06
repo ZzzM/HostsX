@@ -107,15 +107,6 @@ extension NSView {
     }
 }
 
-extension NSImageView {
-    func addShadow() {
-        let shadow = NSShadow()
-        shadow.shadowOffset = .init(width: 2, height: -2)
-        shadow.shadowColor = .lightGray
-        shadow.shadowBlurRadius = 3
-        self.shadow = shadow
-    }
-}
 
 extension NSViewController {
 
@@ -141,26 +132,26 @@ extension NSStoryboard {
 }
 
 extension NSMenu {
-    func addImageItem(_ name: NSImage.Name, action: Selector?) {
+    func addItemIcon(_ name: String, action: Selector?) {
         let item = NSMenuItem(title: "", action: action, keyEquivalent: "")
-        let image = NSImage(named: name)
-        image?.isTemplate = true
-        item.image = image
+        let icon = NSImage(named: name)
+        icon?.isTemplate = true
+        item.image = icon
         addItem(item)
     }
 }
 
-extension NSMenuItem {
-    func setAttributedTitle(_ title: String) {
-        attributedTitle = NSAttributedString(string: title, attributes: Attributes.menu)
-    }
-}
+
 
 extension NSStatusItem {
-    func setAttributedTitle(_ title: String?) {
-        guard title != nil else { return }
-        button?.attributedTitle = NSAttributedString(string: title!, attributes: Attributes.menu)
+
+    func setMenuBarIcon() {
+        guard let icon = NSImage(named: NSImage.Name("menuBarIcon")) else { return }
+        icon.isTemplate = true
+        icon.size = CGSize(width: 16, height: 16)
+        button?.image = icon
     }
+
 }
 
 extension Optional where Wrapped == NSWindowController {

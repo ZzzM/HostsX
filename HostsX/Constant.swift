@@ -48,20 +48,12 @@ extension NSSize {
 }
 
 extension NSImage.Name {
-    static let backward = "back"
     static let star = "star"
     static let add = "add"
     static let link = "link"
     static let trash = "trash"
 }
 
-enum Attributes {
-    static let menu: [NSAttributedString.Key: NSFont] = [.font: .menu]
-}
-
-extension NSFont {
-    static let menu = NSFont(name: "HannotateSC-W5", size: 13)!
-}
 
 extension NSStoryboard {
     static let remote = NSStoryboard(name: "Remote", bundle: .none)
@@ -71,6 +63,4 @@ extension NSStoryboard {
 extension NSColor {
     @available(macOS 10.13, *)
     static let backgroud = NSColor(named: "backgroudColor")
-    static let accent = NSColor(displayP3Red: 0.294, green: 0.635, blue: 0.808, alpha: 1)
-
 }

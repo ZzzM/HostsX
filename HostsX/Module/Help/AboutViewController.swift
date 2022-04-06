@@ -27,8 +27,6 @@ class AboutViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         iconImageView.image = NSApp.applicationIconImage
-        iconImageView.addShadow()
-
         nameLabel.stringValue = name
         versionLabel.stringValue = version
         copyrightLabel.stringValue = copyright

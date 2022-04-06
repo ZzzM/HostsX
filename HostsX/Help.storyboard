@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="nrN-Ss-vAW">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="nrN-Ss-vAW">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="20037"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -40,17 +41,17 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="x1h-ez-XkE">
-                                <rect key="frame" x="85" y="140" width="80" height="80"/>
+                                <rect key="frame" x="65" y="115" width="120" height="120"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="Rn5-IX-s7Z"/>
+                                    <constraint firstAttribute="width" constant="120" id="Rn5-IX-s7Z"/>
                                     <constraint firstAttribute="width" secondItem="x1h-ez-XkE" secondAttribute="height" id="sgh-7m-Xeq"/>
                                 </constraints>
                                 <imageCell key="cell" controlSize="large" refusesFirstResponder="YES" alignment="left" imageAlignment="bottom" imageScaling="axesIndependently" image="NSNetwork" id="8Tm-fg-yLE"/>
                             </imageView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ww0-n9-rX8">
-                                <rect key="frame" x="89" y="90" width="73" height="14"/>
+                                <rect key="frame" x="94" y="73" width="62" height="11"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Version 2.0.0" id="jiy-PD-R3w">
-                                    <font key="font" metaFont="smallSystem"/>
+                                    <font key="font" metaFont="miniSystem"/>
                                     <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -64,32 +65,32 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="B3D-sl-X0A">
-                                <rect key="frame" x="69" y="48" width="112" height="32"/>
-                                <buttonCell key="cell" type="push" title="GitHub Repo" bezelStyle="rounded" alignment="center" refusesFirstResponder="YES" borderStyle="border" imageScaling="axesIndependently" inset="2" id="E7b-Tt-8f4">
+                                <rect key="frame" x="68" y="31" width="114" height="32"/>
+                                <buttonCell key="cell" type="push" title="GitHub for HostsX" bezelStyle="rounded" imagePosition="leading" alignment="center" refusesFirstResponder="YES" borderStyle="border" inset="2" id="E7b-Tt-8f4">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
+                                    <font key="font" metaFont="miniSystem"/>
                                 </buttonCell>
-                                <color key="bezelColor" red="0.29399999999999998" green="0.63500000000000001" blue="0.80800000000000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="contentTintColor" name="AccentColor"/>
                                 <connections>
                                     <action selector="onGitHub:" target="h6P-N6-zZA" id="ett-LM-IJh"/>
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jKe-IB-N7G">
-                                <rect key="frame" x="84" y="104" width="83" height="36"/>
+                                <rect key="frame" x="88" y="89" width="74" height="26"/>
                                 <textFieldCell key="cell" lineBreakMode="truncatingTail" alignment="justified" title="HostsX" id="DBk-hi-NTw">
-                                    <font key="font" size="25" name="HannotateSC-W5"/>
+                                    <font key="font" textStyle="title1" name=".SFNS-Regular"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="x1h-ez-XkE" firstAttribute="top" secondItem="5rW-V5-bAX" secondAttribute="top" constant="30" id="16F-0P-4TF"/>
+                            <constraint firstItem="x1h-ez-XkE" firstAttribute="top" secondItem="5rW-V5-bAX" secondAttribute="top" constant="15" id="16F-0P-4TF"/>
                             <constraint firstItem="LJh-8k-R3c" firstAttribute="centerX" secondItem="5rW-V5-bAX" secondAttribute="centerX" id="1rl-il-sb0"/>
                             <constraint firstItem="B3D-sl-X0A" firstAttribute="centerX" secondItem="Ww0-n9-rX8" secondAttribute="centerX" id="3Gm-H1-u4s"/>
                             <constraint firstItem="jKe-IB-N7G" firstAttribute="top" secondItem="x1h-ez-XkE" secondAttribute="bottom" id="CKg-DE-D46"/>
                             <constraint firstItem="B3D-sl-X0A" firstAttribute="top" secondItem="Ww0-n9-rX8" secondAttribute="bottom" constant="15" id="c78-t4-Qln"/>
-                            <constraint firstItem="Ww0-n9-rX8" firstAttribute="top" secondItem="jKe-IB-N7G" secondAttribute="bottom" id="d9a-gW-nBL"/>
+                            <constraint firstItem="Ww0-n9-rX8" firstAttribute="top" secondItem="jKe-IB-N7G" secondAttribute="bottom" constant="5" id="d9a-gW-nBL"/>
                             <constraint firstAttribute="bottom" secondItem="LJh-8k-R3c" secondAttribute="bottom" constant="15" id="ej7-y4-Jan"/>
                             <constraint firstItem="x1h-ez-XkE" firstAttribute="centerX" secondItem="5rW-V5-bAX" secondAttribute="centerX" id="ieF-Hf-hPc"/>
                             <constraint firstItem="Ww0-n9-rX8" firstAttribute="centerX" secondItem="jKe-IB-N7G" secondAttribute="centerX" id="oIP-Mx-Umn"/>
@@ -110,5 +111,8 @@
     </scenes>
     <resources>
         <image name="NSNetwork" width="32" height="32"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

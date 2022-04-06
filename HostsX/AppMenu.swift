@@ -24,14 +24,14 @@ class AppMenu: NSMenu {
     private var wc: NSWindowController?
     
     override func awakeFromNib() {
-        localItem.setAttributedTitle(Localization.Menu.local)
-        remoteItem.setAttributedTitle(Localization.Menu.remote)
-        downloadItem.setAttributedTitle(Localization.Menu.remoteDownload)
-        configItem.setAttributedTitle(Localization.Menu.remoteConfig)
-        helpItem.setAttributedTitle(Localization.Menu.help)
-        checkItem.setAttributedTitle(Localization.Menu.helpCheck)
-        aboutItem.setAttributedTitle(Localization.Menu.helpAbout)
-        quitItem.setAttributedTitle(Localization.Menu.quit)
+        localItem.title = Localization.Menu.local
+        remoteItem.title = Localization.Menu.remote
+        downloadItem.title = Localization.Menu.remoteDownload
+        configItem.title = Localization.Menu.remoteConfig
+        helpItem.title = Localization.Menu.help
+        checkItem.title = Localization.Menu.helpCheck
+        aboutItem.title = Localization.Menu.helpAbout
+        quitItem.title = Localization.Menu.quit
     }
 
     @IBAction func onLoacl(_ sender: NSMenuItem) {

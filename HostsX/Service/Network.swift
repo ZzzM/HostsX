@@ -21,6 +21,7 @@ struct Network {
             return completion(.unavailable)
         }
 
+
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringCacheData, timeoutInterval: 30)
 
         task = URLSession.shared.dataTask(with: request) {  data, response, error in

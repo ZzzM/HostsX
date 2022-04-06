@@ -12,21 +12,14 @@ enum HostsStatus: Codable {
     
     case unknown, available, unavailable
  
-    var color: NSColor {
+    var icon: NSImage {
         switch self {
-        case .unknown: return .systemGray
-        case .available: return .accent
-        case .unavailable: return .systemPink
+        case .unknown: return .init(named: NSImage.statusNoneName)!
+        case .available: return .init(named: NSImage.statusAvailableName)!
+        case .unavailable: return .init(named: NSImage.statusUnavailableName)!
         }
     }
-    
-    var description: String {
-        switch self {
-        case .unknown: return Localization.Hosts.unknown
-        case .available:  return Localization.Hosts.available
-        case .unavailable: return Localization.Hosts.unavailable
-        }
-    }
+
 }
 
 

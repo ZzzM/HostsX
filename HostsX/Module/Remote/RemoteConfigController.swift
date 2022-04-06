@@ -12,8 +12,8 @@ class RemoteConfigController: NSViewController {
     @IBOutlet weak var tableView: NSTableView!
 
     @IBOutlet weak var aliasLabel: NSTextField!
-    
-    @IBOutlet weak var statusLabel: NSTextField!
+
+    @IBOutlet weak var statusIcon: NSImageView!
 
     @IBOutlet weak var originButton: NSButton!
 
@@ -22,7 +22,6 @@ class RemoteConfigController: NSViewController {
     override func viewDidDisappear() {
         super.viewDidDisappear()
         RemoteSource.cancel()
-
     }
     
     override func viewDidLoad() {
@@ -66,9 +65,9 @@ class RemoteConfigController: NSViewController {
 extension RemoteConfigController {
 
     private func setupMenu() {
-        remoteMenu.addImageItem(.link, action: #selector(open))
-        remoteMenu.addImageItem(.add, action: #selector(insert))
-        remoteMenu.addImageItem(.trash, action: #selector(remove))
+        remoteMenu.addItemIcon(.link, action: #selector(open))
+        remoteMenu.addItemIcon(.add, action: #selector(insert))
+        remoteMenu.addItemIcon(.trash, action: #selector(remove))
     }
 
     private func showHosts() {
@@ -76,8 +75,7 @@ extension RemoteConfigController {
             DispatchQueue.main.async { [weak self] in
                 guard let strong = self else { return }
                 strong.aliasLabel.stringValue = hosts.alias
-                strong.statusLabel.backgroundColor = hosts.status.color
-                strong.statusLabel.stringValue = hosts.status.description
+                strong.statusIcon.image = hosts.status.icon
                 strong.originButton.isHidden = !RemoteSource.canSetAsOrigin
             }
         }

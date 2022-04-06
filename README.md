@@ -22,7 +22,7 @@ A lightweight macOS App for updating local hosts
 - [English](CHANGELOG.md)
 
 ## Snapshots
-- Menu
+- Menubar
 
 <img src="assets/m1.png" height=150> <img src="assets/m2.png" height=150>  <img src="assets/m3.png" height=150>
   
