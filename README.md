@@ -11,7 +11,7 @@ HostsX</br>
 A lightweight macOS App for updating local hosts
 
 ## Features
-- [x] Internationalization (简体中文、English)
+- [x] Localization (简体中文、English)
 - [x] Dark mode
 
 ## Compatibility
@@ -43,5 +43,5 @@ A lightweight macOS App for updating local hosts
 # My Hosts End
 ```
 
-## Libraries
+## Dependencies
 - [Sparkle](https://github.com/sparkle-project/Sparkle)
