@@ -2,7 +2,7 @@
 
 ### Changed
 - Updated App icon
-- Updated App Font
+- Updated App font
 - Updated menubar icon
 - Show hosts status with icons
 
