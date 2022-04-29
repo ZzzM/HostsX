@@ -18,8 +18,8 @@ A lightweight macOS App for updating local hosts
 - Requires **macOS 10.12** or later
 
 ## Changelogs
-- [简体中文](CHANGELOG_SC.md)
-- [English](CHANGELOG.md)
+- [简体中文](changelogs/CHANGELOG_SC.md)
+- [English](changelogs/CHANGELOG.md)
 
 ## Snapshots
 - Menubar

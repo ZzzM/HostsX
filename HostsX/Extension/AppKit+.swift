@@ -12,12 +12,16 @@ extension Bundle {
         infoDictionary?["CFBundleName"] as? String
     }
 
-    var shortVersion: String? {
+    var version: String? {
         infoDictionary?["CFBundleShortVersionString"] as? String
     }
 
-    var version: String? {
-        infoDictionary?["CFBundleVersion"] as? String
+    var commitHash: String? {
+        infoDictionary?["CommitHash"] as? String
+    }
+
+    var commitDate: String? {
+        infoDictionary?["CommitDate"] as? String
     }
     
     var humanReadableCopyright: String? {

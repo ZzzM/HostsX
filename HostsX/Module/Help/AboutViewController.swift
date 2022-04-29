@@ -17,10 +17,10 @@ class AboutViewController: NSViewController {
     private var name = Bundle.main.bundleName ?? "HostsX"
 
     private var version: String {
-        guard let short = Bundle.main.shortVersion, let build = Bundle.main.version else {
+        guard let version = Bundle.main.version, let hash = Bundle.main.commitHash else {
             return ""
         }
-        return "\(Localization.About.version) \(short) (\(build))"
+        return "\(Localization.About.version) \(version) (\(hash))"
     }
     private var copyright = Bundle.main.humanReadableCopyright ?? ""
 

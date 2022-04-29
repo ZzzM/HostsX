@@ -52,7 +52,7 @@
                             <menuItem title="Check for updates" id="GKT-X2-T5l">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
-                                    <action selector="checkForUpdates:" target="uy0-JH-znn" id="ci5-UC-7J9"/>
+                                    <action selector="checkForUpdates:" target="fsD-U9-FQE" id="Ksf-kB-dnl"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="About" id="uNh-Vh-dFx">
@@ -83,6 +83,6 @@
             </connections>
             <point key="canvasLocation" x="113" y="106.5"/>
         </menu>
-        <customObject id="uy0-JH-znn" customClass="SPUStandardUpdaterController"/>
+        <customObject id="fsD-U9-FQE" customClass="SPUStandardUpdaterController"/>
     </objects>
 </document>

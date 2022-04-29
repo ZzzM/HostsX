@@ -10,6 +10,7 @@
 		9828C8372772C3A800CC87BC /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9828C8362772C3A800CC87BC /* NotificationHelper.swift */; };
 		983E5367277367FD00CE84DE /* Help.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 983E5366277367FD00CE84DE /* Help.storyboard */; };
 		983E53692773696500CE84DE /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983E53682773696500CE84DE /* AboutViewController.swift */; };
+		9842E3412808031D00F218D8 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 9842E3402808031D00F218D8 /* Sparkle */; };
 		98526DC52769C40E00D84F87 /* Foundition+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98526DC42769C40E00D84F87 /* Foundition+.swift */; };
 		98526DC72769C44800D84F87 /* AppKit+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98526DC62769C44800D84F87 /* AppKit+.swift */; };
 		98706F6A276C37B500037F77 /* Menu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98706F69276C37B500037F77 /* Menu.xib */; };
@@ -75,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9842E3412808031D00F218D8 /* Sparkle in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,6 +216,7 @@
 			);
 			name = HostsX;
 			packageProductDependencies = (
+				9842E3402808031D00F218D8 /* Sparkle */,
 			);
 			productName = HostsX;
 			productReference = 98D573ED2758A0E2001C2D8C /* HostsX.app */;
@@ -245,7 +248,7 @@
 			);
 			mainGroup = 98D573E42758A0E2001C2D8C;
 			packageReferences = (
-				98FBFABF2806A51F0027D74C /* XCRemoteSwiftPackageReference "Sparkle" */,
+				9842E33F2808031D00F218D8 /* XCRemoteSwiftPackageReference "Sparkle" */,
 			);
 			productRefGroup = 98D573EE2758A0E2001C2D8C /* Products */;
 			projectDirPath = "";
@@ -463,7 +466,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MARKETING_VERSION = 2.8.1;
+				MARKETING_VERSION = 2.8.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.alpha.hostsx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -494,7 +497,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MARKETING_VERSION = 2.8.1;
+				MARKETING_VERSION = 2.8.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.alpha.hostsx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -527,7 +530,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		98FBFABF2806A51F0027D74C /* XCRemoteSwiftPackageReference "Sparkle" */ = {
+		9842E33F2808031D00F218D8 /* XCRemoteSwiftPackageReference "Sparkle" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/sparkle-project/Sparkle";
 			requirement = {
@@ -536,6 +539,14 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9842E3402808031D00F218D8 /* Sparkle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9842E33F2808031D00F218D8 /* XCRemoteSwiftPackageReference "Sparkle" */;
+			productName = Sparkle;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 98D573E52758A0E2001C2D8C /* Project object */;
 }
