@@ -8,7 +8,7 @@ HostsX</br>
 </a>
 </h1>
 
-A lightweight macOS App for updating local hosts
+A lightweight macOS app for updating local hosts
 
 ## Features
 - [x] Localization (简体中文、English)
