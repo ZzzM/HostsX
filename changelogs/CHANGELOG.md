@@ -1,3 +1,11 @@
+## 2.9.0 - 2023-12-31
+
+### Changed
+- Menu items
+- Remote configuration UI
+- Requires **macOS 10.13** or later
+  
+---
 ## 2.8.2 - 2022-04-29
 
 ### Fixed
@@ -8,9 +16,9 @@
 ## 2.8.1 - 2022-04-06
 
 ### Changed
-- Updated App icon
-- Updated App font
-- Updated menubar icon
+- App icon
+- App font
+- Menubar icon
 - Show hosts status with icons
 
 ---
@@ -18,13 +26,13 @@
 ## 2.8.0 - 2022-01-14
 
 ### Changed
-- Updated App name from **HostsToolForMac**  to **HostsX**
-- Updated App icon
-- Updated menu items in the menubar
+- App name from **HostsToolForMac**  to **HostsX**
+- App icon
+- menu items in the menubar
 
 ### Added
-- Added about view
-- Added remote configuration view
+- About UI
+- Remote configuration UI
 
 ---
 
@@ -49,19 +57,19 @@
 
 ### Changed
 - Support online upgrade
-- Updadted menu items in the menubar
-- Updated settings view
+- Menu items in the menubar
+- Settings UI
 
 ---
 
 ## 2.5.0 - 2020-04-15
 
 ### Changed
-- Updated settings view
-- Updated hosts sources
+- Settings UI
+- Hosts sources
 
 ### Added
-- Added homepage menuItem
+- Homepage menuItem
 
 ---
 

@@ -17,6 +17,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var menu: AppMenu!
 
 
+    func applicationWillFinishLaunching(_ notification: Notification) {
+        check()
+    }
+
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
 
@@ -37,3 +41,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 }
 
+extension AppDelegate {
+    private func check() {
+        let id = Bundle.main.identifier
+        NSRunningApplication
+            .runningApplications(withBundleIdentifier: id)
+            .filter(\.isFinishedLaunching)
+            .forEach { $0.terminate() }
+    }
+}

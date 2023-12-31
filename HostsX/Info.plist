@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CommitDate</key>
+	<string>2023.12.31 20:23</string>
+	<key>CommitHash</key>
+	<string>a5adc04</string>
 	<key>LSUIElement</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -15,9 +19,5 @@
 	<string>https://zzzm.github.io/HostsX/appcast.xml</string>
 	<key>SUPublicEDKey</key>
 	<string>IqmAL/4PBUY1LejXocSszpdeqxAMQXLi3ydovPOOvvs=</string>
-	<key>CommitDate</key>
-	<string>CommitDate</string>
-	<key>CommitHash</key>
-	<string>CommitHash</string>
 </dict>
 </plist>

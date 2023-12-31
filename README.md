@@ -1,5 +1,6 @@
 <h1>
-HostsX</br>
+<img src=HostsX/Assets.xcassets/AppIcon.appiconset/icon_512x512.png width=80>
+<p>HostsX</p>
 <a href="https://github.com/ZzzM/HostsX/releases/latest"><img src="https://img.shields.io/github/v/release/ZzzM/HostsX"></a>
 <a href="https://github.com/ZzzM/HostsX/releases/latest"><img src="https://img.shields.io/github/release-date/ZzzM/HostsX"></a>
 <a href="https://raw.githubusercontent.com/ZzzM/HostsX/master/LICENSE"><img src="https://img.shields.io/github/license/ZzzM/HostsX"></a>
@@ -15,33 +16,107 @@ A lightweight macOS app for updating local hosts
 - [x] Dark mode
 
 ## Compatibility
-- Requires **macOS 10.12** or later
+- **2.9.0** requires **macOS 10.13** or later
+- **<= 2.8.2** requires **macOS 10.12** or later
 
 ## Changelogs
 - [简体中文](changelogs/CHANGELOG_SC.md)
 - [English](changelogs/CHANGELOG.md)
 
 ## Snapshots
+
+### 2.9.0
+
 - Menubar
 
-<img src="assets/m1.png" height=150> <img src="assets/m2.png" height=150>  <img src="assets/m3.png" height=150>
-  
-- Remote configuration
+    <img src="assets/m1.png" height=120> 
+
  
-<img src="assets/r1.png" width=250> <img src="assets/r2.png" width=250>
-<img src="assets/r3.png" width=250>
+    `Local`: Import a hosts to replace local hosts
 
-## Note
-- Add DNS entries between `# My Hosts Start` and `# My Hosts End`
-```
-# My Hosts Start
+    `Reset`: Reset local hosts to default
+   
+  
+- Remote
 
-0.0.0.0 www.example0.com
-1.1.1.1 www.example1.com
-2.2.2.2 www.example2.com
+    <img src="assets/r1.png" height=200>
 
-# My Hosts End
-```
+
+    `Sync Button`: Download default remote hosts and overwrite local hosts
+
+    `Add Button`: Add a remote source
+
+
+### 2.8.2
+
+- Menubar
+
+    <img src="assets/m2o.png" height=120> 
+    <img src="assets/m3o.png" height=120> 
+
+    `Local`: Import a hosts to replace local hosts
+
+    `Remote - Download`: Download default remote hosts and overwrite local hosts
+
+- Remote
+
+    <img src="assets/r1o.png" height=200>
+
+    `Orign`: It indicates that this is a default source
+
+    <img src="assets/r2o.png" height=200>
+
+    `Orign Button (Top right corner)`: Set a remote source as default source 
+   
+    <img src="assets/r3o.png" height=100>
+    
+    `More Menu`:  Right click to show
+    
+    `Open Button (1st Menu item)`: Open a remote source with your browser
+
+    `Add Button (2nd Menu item)`: Add a remote source
+
+    `Remove Button (3rd Menu item)`: Remove a remote source
+    
+
+## FAQ
+
+1. **"HostsX" is damaged and can't be opened.**
+
+    <img src="assets/101.png" width=300>
+
+    Or open `Terminal` and run  
+
+    ```shell
+    sudo xattr -r -d com.apple.quarantine /Applications/HostsX.app
+    ```
+2. **How to synchronize remote hosts**
+
+    2.9.0
+    1. Set a remote source as default source
+    2. Click `Sync Button`
+
+    2.8.2
+    1. Click `Orign Button` to set a remote source as default source
+    2. Open app menubar menu
+    3. Click `Remote - Download`
+
+3. **How to avoid overwriting your local hosts (Only Remote)**
+
+    Put the content that you don't want to be overwritten between `# My Hosts Start` and `# My Hosts End`, like below
+    ```
+    # My Hosts Start
+
+    the content that you don't want to be overwritten
+
+    # My Hosts End
+
+    the content from a remote source
+    ```
+4. **What's the `hosts_old`**
+    
+    When completing a local or remote operation, it will create a `hosts_old` to record the contents before the changes
+
 
 ## Dependencies
 - [Sparkle](https://github.com/sparkle-project/Sparkle)

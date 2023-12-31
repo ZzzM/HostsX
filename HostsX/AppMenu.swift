@@ -12,50 +12,64 @@ class AppMenu: NSMenu {
     @IBOutlet weak var localItem: NSMenuItem!
 
     @IBOutlet weak var remoteItem: NSMenuItem!
-    @IBOutlet weak var downloadItem: NSMenuItem!
-    @IBOutlet weak var configItem: NSMenuItem!
 
-    @IBOutlet weak var helpItem: NSMenuItem!
-    @IBOutlet weak var checkItem: NSMenuItem!
+    @IBOutlet weak var resetItem: NSMenuItem!
     @IBOutlet weak var aboutItem: NSMenuItem!
 
     @IBOutlet weak var quitItem: NSMenuItem!
 
-    private var wc: NSWindowController?
-    
+
+    private lazy var remoteWC = windowController(from: .remote)
+    private lazy var aboutWC = windowController(from: .about)
+
     override func awakeFromNib() {
-        localItem.title = Localization.Menu.local
-        remoteItem.title = Localization.Menu.remote
-        downloadItem.title = Localization.Menu.remoteDownload
-        configItem.title = Localization.Menu.remoteConfig
-        helpItem.title = Localization.Menu.help
-        checkItem.title = Localization.Menu.helpCheck
-        aboutItem.title = Localization.Menu.helpAbout
-        quitItem.title = Localization.Menu.quit
+        localItem.title = L10n.Menu.local
+        remoteItem.title = L10n.Menu.remote
+        resetItem.title = L10n.Menu.reset
+        aboutItem.title = L10n.Menu.about
+        quitItem.title = L10n.Menu.quit
     }
 
-    @IBAction func onLoacl(_ sender: NSMenuItem) {
-        FileHelper.localUpdate {
-            NotificationHelper.deliver(category: .loacl, error: $0)
+    @IBAction func localAction(_ sender: Any) {
+        FileHelper.localUpdate { error in
+            guard let error else { return }
+            HXAlert.showError(error)
         }
     }
 
-    
-    @IBAction func onDownload(_ sender: NSMenuItem) {
-        sender.isEnabled.toggle()
-        FileHelper.remoteUpdate {
-            sender.isEnabled.toggle()
-            NotificationHelper.deliver(category: .remote, error: $0)
+    @IBAction func remoteAction(_ sender: Any) {
+        show(remoteWC)
+    }
+
+
+    @IBAction func resetAction(_ sender: Any) {
+        let titles = [L10n.Button.reset, L10n.Button.cancel]
+        let rsp = HXAlert.show(title: L10n.Menu.resetHint, buttonTitles: titles)
+        guard .alertFirstButtonReturn == rsp else {
+            return
+        }
+
+        FileHelper.reset { error in
+            guard let error else { return }
+            HXAlert.showError(error)
         }
     }
-
-    @IBAction func onConfigure(_ sender: Any) {
-        wc.show(.remote)
-    }
-
 
     @IBAction func onAbout(_ sender: Any) {
-        wc.show(.help)
+        show(aboutWC)
     }
     
+}
+
+extension AppMenu {
+
+    func windowController(from: NSStoryboard) -> NSWindowController? {
+        from.instantiateInitialController() as? NSWindowController
+    }
+
+    func show(_ windowController: NSWindowController?) {
+        NSApp.setActivationPolicy(.regular)
+        NSApp.activate(ignoringOtherApps: true)
+        windowController?.window?.orderFrontRegardless()
+    }
 }

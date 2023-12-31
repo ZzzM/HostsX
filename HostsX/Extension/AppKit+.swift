@@ -8,7 +8,13 @@
 import AppKit
 
 extension Bundle {
+
+    var identifier: String {
+        bundleIdentifier ?? "com.alpha.hostsx"
+    }
+
     var bundleName: String? {
+
         infoDictionary?["CFBundleName"] as? String
     }
 
@@ -47,50 +53,44 @@ extension NSTableView {
 
     func setup() {
         headerView = .none
-        select(0)
     }
 
-    func moved() {
-        move(selectedRow)
+    func move(at row: Int) {
+
+        _move(at: row)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [self] in
             reloadData()
-            select(0)
         }
     }
 
-    func removed(_ row: Int) {
-        remove(row)
+    func remove(at row: Int) {
+        _remove(at: row)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [self] in
             reloadData()
-            select(0)
         }
     }
 
-    func inserted() {
-        insert(1)
+    func insert() {
+        _insert(at: 1)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [self] in
             reloadData()
-            select(1)
         }
     }
 
-    private func select(_ row: Int) {
-        selectRowIndexes(IndexSet(integer: row), byExtendingSelection: false)
-    }
 
-    private func insert(_ row: Int) {
+    private func _insert(at row: Int) {
         beginUpdates()
         insertRows(at: IndexSet(integer: row), withAnimation: .slideLeft)
         endUpdates()
     }
 
-    private func remove(_ row: Int) {
+    private func _remove(at row: Int) {
         beginUpdates()
         removeRows(at: IndexSet(integer: row), withAnimation: .slideRight)
         endUpdates()
     }
 
-    private func move(_ row: Int) {
+    private func _move(at row: Int) {
         beginUpdates()
         moveRow(at: row, to: 0)
         endUpdates()
@@ -118,12 +118,8 @@ extension NSViewController {
         view.window?.contentViewController = controller
     }
 
-    func showConfirm(_ message: String, completion: @escaping VoidClosure) {
-        Dialog.showConfirm(from: self, message: message, completion: completion)
-    }
-
-    func showInfo(_ message: String) {
-        Dialog.showInfo(from: self, message:message)
+    func showAlert(_ title: String? = .none, message: String? = .none) {
+        HXAlert.show(title: title, message: message)
     }
 
 }
@@ -135,18 +131,6 @@ extension NSStoryboard {
 
 }
 
-extension NSMenu {
-    func addItemIcon(_ name: String, action: Selector?) {
-        let item = NSMenuItem(title: "", action: action, keyEquivalent: "")
-        let icon = NSImage(named: name)
-        icon?.isTemplate = true
-        item.image = icon
-        addItem(item)
-    }
-}
-
-
-
 extension NSStatusItem {
 
     func setMenuBarIcon() {
@@ -156,13 +140,4 @@ extension NSStatusItem {
         button?.image = icon
     }
 
-}
-
-extension Optional where Wrapped == NSWindowController {
-    mutating func show(_ content: NSStoryboard) {
-        self?.close()
-        self = content.instantiateInitialController() as? NSWindowController
-        self?.showWindow(.none)
-        NSApp.activate(ignoringOtherApps: true)
-    }
 }

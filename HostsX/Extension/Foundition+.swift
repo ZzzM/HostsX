@@ -32,20 +32,21 @@ extension NSAppleScript {
 }
 
 extension Optional where Wrapped == NSAppleScript {
-    func doShell() throws {
+    func execute() throws {
         var errorInfo : NSDictionary?
-        guard let appleScript = self else {
-            throw HostsError.compile
+        guard let self else {
+            throw HXError.scriptCompilation
         }
-        appleScript.executeAndReturnError(&errorInfo)
+        self.executeAndReturnError(&errorInfo)
 
-        guard let errorMessage = errorInfo?["NSAppleScriptErrorMessage"]  as? String else {
+        guard let message = errorInfo?["NSAppleScriptErrorMessage"] as? String else {
             return
         }
 
-        switch errorInfo?["NSAppleScriptErrorNumber"]  as? Int {
-        case -128: throw HostsError.cancelled
-        default: throw HostsError.execute(errorMessage)
+        switch errorInfo?["NSAppleScriptErrorNumber"] as? Int {
+        //case -128: throw HXError.cancelled
+        case -128: return
+        default: throw HXError.scriptExcution(message)
         }
 
     }

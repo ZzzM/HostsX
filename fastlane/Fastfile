@@ -2,38 +2,82 @@ default_platform(:mac)
 
 platform :mac do
   
-  lane :package do
+  before_all do
+    ENV["APP_NAME"] = "HostsX"
+    ENV["APP_VERSION"] = last_git_tag
+    ENV["SYS_MIN_VERSION"] = "10.13.0"
+    ENV["BUILD_PATH"] = "./build"
+  end
+
+  lane :create_dmg do
     setup
     build
     clean
-
+    sh "cd .. && zsh ./scripts/create_dmg.sh"
   end
-  
-  
+
   private_lane :setup do
-    app_name = ENV["APP_NAME"]
+
+    name = ENV["APP_NAME"]
+    version = ENV["APP_VERSION"]
+
     commit = last_git_commit
     date = Time.now.utc.localtime("+08:00").strftime("%Y.%m.%d %k:%M")  
-    version = ENV["APP_VERSION"]
-    path = "#{app_name}/Info.plist"
+    path = "#{name}/Info.plist"
     
-    increment_version_number_in_xcodeproj(version_number: version, scheme: app_name)
-    increment_build_number_in_xcodeproj(build_number: version, scheme: app_name)
+    increment_version_number_in_xcodeproj(version_number: version, scheme: name)
+    increment_build_number_in_xcodeproj(build_number: version, scheme: name)
     set_info_plist_value(path: path, key: "CommitHash", value: commit[:abbreviated_commit_hash])
     set_info_plist_value(path: path, key: "CommitDate", value: date)
-
+  
   end
 
-
   private_lane :build do 
-    build_app(
+
+    build_mac_app(
+      scheme: ENV["APP_NAME"],
       clean: true,
       silent: true,
-      export_method: 'mac-application')
+      export_method: "mac-application",
+      output_directory: ENV["BUILD_PATH"])
+      
   end
 
   private_lane :clean do
     sh "rm -vfr ~/Library/Developer/Xcode/Archives/*"
+  end
+
+
+  # TEST
+  lane :test do |options|
+    setup
+    build
+    clean
+    sh "cd .. && zsh ./scripts/test.sh"
+  end
+  
+  # lane :release do |options|
+
+  #   name = ENV["APP_NAME"]
+  #   tag = ENV["APP_VERSION"]
+
+  #   repo = options[:repo]
+  #   token = options[:token]
+
+  #   github_release = set_github_release(
+  #     repository_name: repo,
+  #     api_token: token,
+  #     name: tag,
+  #     tag_name: tag,
+  #     description: (File.read("../TEST.md") rescue "No changelog provided"),
+  #     upload_assets: ["#{name}.dmg"])
+      
+  # end
+
+  lane :show do
+    # msg = File.read("../TEST.md")
+    UI.message ENV["APP_NAME"]
+    UI.message ENV["APP_VERSION"]
   end
 
 

@@ -15,26 +15,26 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 ## Mac
 
-### mac package
+### mac create_dmg
 
 ```sh
-[bundle exec] fastlane mac package
+[bundle exec] fastlane mac create_dmg
 ```
 
 
 
-### mac build
+### mac test
 
 ```sh
-[bundle exec] fastlane mac build
+[bundle exec] fastlane mac test
 ```
 
 
 
-### mac clean
+### mac show
 
 ```sh
-[bundle exec] fastlane mac clean
+[bundle exec] fastlane mac show
 ```
 
 
